@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   get,
@@ -20,50 +20,44 @@ import {
 import { IfPermission } from '@folio/stripes/core';
 import { ViewMetaData } from '@folio/stripes/smart-components';
 import {
+  getLocationOptions,
   ORDER_FORMATS,
   useAccordionToggle,
   useModalToggle,
 } from '@folio/stripes-acq-components';
 
+import {
+  PIECE_FORMAT_OPTIONS,
+  PIECE_STATUS,
+} from '../common/constants';
 import TitleInformation from './TitleInformation';
 import ExpectedPiecesList from './ExpectedPiecesList';
 import ReceivedPiecesList from './ReceivedPiecesList';
 import AddPieceModal from './AddPieceModal';
-import ReceivingModal from './ReceivingModal';
 import {
   ORDER_FORMAT_TO_PIECE_FORMAT,
-  PIECE_FORMAT_OPTIONS,
-  PIECE_STATUS,
   TITLE_ACCORDION_LABELS,
   TITLE_ACCORDION,
 } from './constants';
-import {
-  getLocationsForSelect,
-  getPiecesToReceive,
-} from './utils';
+import { TitleDetailsActions } from './TitleDetailsActions';
 
 const TitleDetails = ({
-  items,
   locations,
   onAddPiece,
   onCheckIn,
   onClose,
   onEdit,
-  onReceive,
   onUnreceivePiece,
   pieces,
   poLine,
-  requests,
   title,
 }) => {
   const [expandAll, sections, toggleSection] = useAccordionToggle();
   const [isAcknowledgeNote, toggleAcknowledgeNote] = useModalToggle();
   const [isAddPieceModalOpened, toggleAddPieceModal] = useModalToggle();
   const [isUnreceiveConfirmation, toggleUnreceiveConfirmation] = useModalToggle();
-  const [isReceivingModalOpened, toggleReceivingModal] = useModalToggle();
   const [pieceValues, setPieceValues] = useState({});
   const [pieceToUnreceive, setPieceToUnreceive] = useState();
-  const [pieceToReceive, setPieceToReceive] = useState();
   const receivingNote = get(poLine, 'details.receivingNote');
   const expectedPieces = pieces.filter(({ receivingStatus }) => receivingStatus === PIECE_STATUS.expected);
 
@@ -107,24 +101,16 @@ const TitleDetails = ({
     [onAddPiece, toggleAddPieceModal],
   );
 
-  const onReceivePiece = useCallback(
-    (piece) => {
-      onReceive(piece);
-      toggleReceivingModal();
-    },
-    [onReceive, toggleReceivingModal],
+  const expectedPiecesActions = useMemo(
+    () => (
+      <TitleDetailsActions
+        checkinItems={checkinItems}
+        openModal={openModal}
+        titleId={title.id}
+      />
+    ),
+    [title.id, checkinItems, openModal],
   );
-
-  const newPieceButton = checkinItems
-    ? (
-      <Button
-        data-test-add-piece-button
-        onClick={openModal}
-      >
-        <FormattedMessage id="ui-receiving.piece.button.addPiece" />
-      </Button>
-    )
-    : null;
 
   const confirmUnreceivePiece = useCallback(
     () => {
@@ -140,14 +126,6 @@ const TitleDetails = ({
       toggleUnreceiveConfirmation();
     },
     [toggleUnreceiveConfirmation, setPieceToUnreceive],
-  );
-
-  const mountReceivingModal = useCallback(
-    (piece) => {
-      setPieceToReceive(piece);
-      toggleReceivingModal();
-    },
-    [toggleReceivingModal, setPieceToReceive],
   );
 
   const onEditPiece = useCallback(
@@ -218,15 +196,14 @@ const TitleDetails = ({
         </Accordion>
 
         <Accordion
+          displayWhenClosed={expectedPiecesActions}
+          displayWhenOpen={expectedPiecesActions}
           id={TITLE_ACCORDION.expected}
           label={TITLE_ACCORDION_LABELS.expected}
-          displayWhenOpen={newPieceButton}
         >
           <ExpectedPiecesList
             onEditPiece={onEditPiece}
-            onReceivePiece={mountReceivingModal}
-            pieces={getPiecesToReceive(expectedPieces, items, requests)}
-            requests={requests}
+            pieces={expectedPieces}
           />
         </Accordion>
 
@@ -237,8 +214,6 @@ const TitleDetails = ({
           <ReceivedPiecesList
             onUnreceivePiece={mountUnreceivePieceConfirmation}
             pieces={receivedPieces}
-            items={items}
-            requests={requests}
           />
         </Accordion>
       </AccordionSet>
@@ -264,7 +239,7 @@ const TitleDetails = ({
           createInventoryValues={getCreateInventoryValues()}
           initialValues={initialValuesPiece}
           instanceId={title.instanceId}
-          locations={getLocationsForSelect(locations)}
+          locations={getLocationOptions(locations)}
           onCheckIn={onCheckIn}
           onSubmit={onSave}
           pieceFormatOptions={pieceFormatOptions}
@@ -282,41 +257,25 @@ const TitleDetails = ({
           open
         />
       )}
-
-      {isReceivingModalOpened && (
-        <ReceivingModal
-          close={toggleReceivingModal}
-          initialValues={pieceToReceive}
-          locations={getLocationsForSelect(locations)}
-          onSubmit={onReceivePiece}
-          poLineNumber={poLineNumber}
-          title={title.title}
-        />
-      )}
     </Pane>
   );
 };
 
 TitleDetails.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
   locations: PropTypes.arrayOf(PropTypes.object),
   onAddPiece: PropTypes.func.isRequired,
   onCheckIn: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   onEdit: PropTypes.func.isRequired,
-  onReceive: PropTypes.func.isRequired,
   onUnreceivePiece: PropTypes.func.isRequired,
   pieces: PropTypes.arrayOf(PropTypes.object),
   poLine: PropTypes.object.isRequired,
-  requests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.object.isRequired,
 };
 
 TitleDetails.defaultProps = {
   locations: [],
   pieces: [],
-  items: [],
-  requests: [],
 };
 
 export default TitleDetails;
