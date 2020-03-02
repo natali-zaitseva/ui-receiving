@@ -10,7 +10,7 @@
     "title.titleLookUp": "Recherche de titre",
     "title.lineLookUp": "Recherche de numéro de ligne de commande",
     "title.titleLookUpNoPlugin": "[no instance-selection plugin]",
-    "title.actions.load.error": "Echec lors du chargement de ligne de titre ou de commande",
+    "title.actions.load.error": "Échec lors du chargement de ligne de titre ou de commande",
     "title.contributors": "Contributeurs",
     "title.edition": "Édition",
     "title.expected": "Attendu",
@@ -98,5 +98,12 @@
     "piece.itemStatus.Undefined": "Indéfini",
     "piece.itemStatus": "Statut de l'article",
     "piece.request": "Demande",
-    "piece.request.isOpened": "Oui"
+    "piece.request.isOpened": "Oui",
+    "piece.pieceFormat.other": "Autre",
+    "title.details.button.receive": "Réception",
+    "title.actions.receive.error": "Erreur lors de la réception",
+    "title.actions.receive.success": "Réceptionné avec succès",
+    "title.details.button.unreceive": "Unreceive",
+    "title.actions.unreceive.error": "Unreceive error",
+    "title.actions.unreceive.success": "Unreceive success"
 }
