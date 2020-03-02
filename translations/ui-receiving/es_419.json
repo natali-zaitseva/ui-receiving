@@ -98,5 +98,12 @@
     "piece.itemStatus.Undefined": "Undefined",
     "piece.itemStatus": "Item status",
     "piece.request": "Request",
-    "piece.request.isOpened": "Yes"
+    "piece.request.isOpened": "Yes",
+    "piece.pieceFormat.other": "Other",
+    "title.details.button.receive": "Receive",
+    "title.actions.receive.error": "Receive error",
+    "title.actions.receive.success": "Receive success",
+    "title.details.button.unreceive": "Unreceive",
+    "title.actions.unreceive.error": "Unreceive error",
+    "title.actions.unreceive.success": "Unreceive success"
 }

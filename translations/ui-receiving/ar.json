@@ -98,5 +98,12 @@
     "piece.itemStatus.Undefined": "غير معرّف",
     "piece.itemStatus": "حالة المادة",
     "piece.request": "طلب",
-    "piece.request.isOpened": "نعم"
+    "piece.request.isOpened": "نعم",
+    "piece.pieceFormat.other": "أخرى",
+    "title.details.button.receive": "استلام",
+    "title.actions.receive.error": "خطأ في الاستلام",
+    "title.actions.receive.success": "نجح الاستلام",
+    "title.details.button.unreceive": "Unreceive",
+    "title.actions.unreceive.error": "Unreceive error",
+    "title.actions.unreceive.success": "Unreceive success"
 }
