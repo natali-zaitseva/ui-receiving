@@ -58,7 +58,9 @@
           "inventory-storage.material-types.collection.get",
           "inventory.items.collection.get",
           "orders-storage.pieces.collection.get",
-          "orders.po-lines.item.get"
+          "orders.po-lines.item.get",
+          "orders.titles.all",
+          "orders.pieces.all"
         ]
       },
       {
