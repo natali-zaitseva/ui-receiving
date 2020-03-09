@@ -103,7 +103,14 @@
     "title.details.button.receive": "استلام",
     "title.actions.receive.error": "خطأ في الاستلام",
     "title.actions.receive.success": "نجح الاستلام",
-    "title.details.button.unreceive": "Unreceive",
-    "title.actions.unreceive.error": "Unreceive error",
-    "title.actions.unreceive.success": "Unreceive success"
+    "title.details.button.unreceive": "إلغاء استلام",
+    "title.actions.unreceive.error": "خطأ في إلغاء الاستلام",
+    "title.actions.unreceive.success": "نجاح إلغاء الاستلام",
+    "requests.title.single": "مادة لها طلب مفتوح",
+    "requests.title.multiple": "عدة مواد لها طلبات مفتوحة",
+    "requests.message.single": "المادة التالية لها طلب مفتوح",
+    "requests.message.multiple": "المواد التالية لها طلبات مفتوحة",
+    "requests.message.barcode": "باركود ({barcode})",
+    "requests.message.itemId": "المادة ({itemId})",
+    "requests.footer.close": "إغلاق"
 }

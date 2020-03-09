@@ -103,7 +103,14 @@
     "title.details.button.receive": "Réception",
     "title.actions.receive.error": "Erreur lors de la réception",
     "title.actions.receive.success": "Réceptionné avec succès",
-    "title.details.button.unreceive": "Unreceive",
-    "title.actions.unreceive.error": "Unreceive error",
-    "title.actions.unreceive.success": "Unreceive success"
+    "title.details.button.unreceive": "Ne pas réceptionner",
+    "title.actions.unreceive.error": "Non-réception: erreur",
+    "title.actions.unreceive.success": "Non-réception : succès",
+    "requests.title.single": "Un article a une demande en cours",
+    "requests.title.multiple": "Plusieurs articles ont des demandes en cours",
+    "requests.message.single": "L'article suivant a une demande en cours",
+    "requests.message.multiple": "Les articles suivants ont des demandes-réservations en cours",
+    "requests.message.barcode": "Code-barres ( {barcode} )",
+    "requests.message.itemId": "Élément ( {itemId} )",
+    "requests.footer.close": "Fermer"
 }
