@@ -102,8 +102,15 @@
     "piece.pieceFormat.other": "Other",
     "title.details.button.receive": "Receive",
     "title.actions.receive.error": "Receive error",
-    "title.actions.receive.success": "Receive success",
+    "title.actions.receive.success": "Receiving successful",
     "title.details.button.unreceive": "Unreceive",
     "title.actions.unreceive.error": "Unreceive error",
-    "title.actions.unreceive.success": "Unreceive success"
+    "title.actions.unreceive.success": "Unreceiving successful",
+    "requests.title.single": "An item has an open request",
+    "requests.title.multiple": "Multiple items have open requests",
+    "requests.message.single": "The following item has an open request",
+    "requests.message.multiple": "The following items have open requests",
+    "requests.message.barcode": "Barcode ({barcode})",
+    "requests.message.itemId": "Item ({itemId})",
+    "requests.footer.close": "Close"
 }

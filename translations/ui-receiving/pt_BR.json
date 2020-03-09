@@ -105,5 +105,12 @@
     "title.actions.receive.success": "Recebido com sucesso",
     "title.details.button.unreceive": "Cancelar recebimento",
     "title.actions.unreceive.error": "Erro ao cancelar recebimento",
-    "title.actions.unreceive.success": "Cancelamento de recebimento com sucesso"
+    "title.actions.unreceive.success": "Cancelamento de recebimento com sucesso",
+    "requests.title.single": "Um item tem uma solicitação em aberto",
+    "requests.title.multiple": "Vários itens têm solicitações em aberto",
+    "requests.message.single": "O item a seguir possui uma solicitação em aberto",
+    "requests.message.multiple": "Os seguintes itens têm solicitações em aberto",
+    "requests.message.barcode": "Código de barras ({barcode})",
+    "requests.message.itemId": "Item ({itemId})",
+    "requests.footer.close": "Fechar"
 }
