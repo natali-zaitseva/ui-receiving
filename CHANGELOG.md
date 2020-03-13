@@ -1,6 +1,10 @@
 # Change history for ui-receiving
 
-## [1.0.0](https://github.com/folio-org/ui-receiving/tree/v1.0.0) (in progress)
+## (IN PROGRESS)
+
+### Stories
+
+## [1.0.0](https://github.com/folio-org/ui-receiving/tree/v1.0.0) (2020-03-13)
 
 ### Stories
 * [UIREC-56](https://issues.folio.org/browse/UIREC-56) Edit piece from clicking table row
