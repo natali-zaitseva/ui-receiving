@@ -47,7 +47,6 @@
     "piece.actions.checkInItem.error": "Receiving error",
     "piece.actions.confirm": "Continue",
     "piece.actions.load.error": "Failed to load pieces",
-    "piece.actions.receive": "Receive",
     "piece.actions.save": "Save & close",
     "piece.addPieceModal.editTitle": "Edit piece",
     "piece.addPieceModal.title": "Add piece",
@@ -112,5 +111,8 @@
     "requests.message.multiple": "The following items have open requests",
     "requests.message.barcode": "Barcode ({barcode})",
     "requests.message.itemId": "Item ({itemId})",
-    "requests.footer.close": "Close"
+    "requests.footer.close": "Close",
+    "title.closedOrderMessage": "Purchase order is closed - {reason}",
+    "title.polDetails": "POL details",
+    "piece.actions.quickReceive": "Quick receive"
 }
