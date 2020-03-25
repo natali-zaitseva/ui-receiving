@@ -47,7 +47,6 @@
     "piece.actions.checkInItem.error": "Erreur de réception",
     "piece.actions.confirm": "Continuer",
     "piece.actions.load.error": "Échec du chargement des pièces",
-    "piece.actions.receive": "Réceptionner",
     "piece.actions.save": "Sauvegarder et fermer",
     "piece.addPieceModal.editTitle": "Éditer la pièce",
     "piece.addPieceModal.title": "Ajouter une pièce",
@@ -112,5 +111,8 @@
     "requests.message.multiple": "Les articles suivants ont des demandes-réservations en cours",
     "requests.message.barcode": "Code-barres ( {barcode} )",
     "requests.message.itemId": "Élément ( {itemId} )",
-    "requests.footer.close": "Fermer"
+    "requests.footer.close": "Fermer",
+    "title.closedOrderMessage": "Purchase order is closed - {reason}",
+    "title.polDetails": "POL details",
+    "piece.actions.quickReceive": "Quick receive"
 }

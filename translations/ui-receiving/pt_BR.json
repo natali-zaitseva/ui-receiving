@@ -47,7 +47,6 @@
     "piece.actions.checkInItem.error": "Erro no recebimento",
     "piece.actions.confirm": "Continuar",
     "piece.actions.load.error": "Falha ao carregar as peças",
-    "piece.actions.receive": "Receber",
     "piece.actions.save": "Salvar e fechar",
     "piece.addPieceModal.editTitle": "Editar peça",
     "piece.addPieceModal.title": "Adicionar peça",
@@ -112,5 +111,8 @@
     "requests.message.multiple": "Os seguintes itens têm solicitações em aberto",
     "requests.message.barcode": "Código de barras ({barcode})",
     "requests.message.itemId": "Item ({itemId})",
-    "requests.footer.close": "Fechar"
+    "requests.footer.close": "Fechar",
+    "title.closedOrderMessage": "Purchase order is closed - {reason}",
+    "title.polDetails": "POL details",
+    "piece.actions.quickReceive": "Quick receive"
 }

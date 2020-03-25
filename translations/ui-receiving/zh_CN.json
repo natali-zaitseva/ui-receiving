@@ -47,7 +47,6 @@
     "piece.actions.checkInItem.error": "接收错误",
     "piece.actions.confirm": "继续",
     "piece.actions.load.error": "无法加载件",
-    "piece.actions.receive": "接收",
     "piece.actions.save": "保存并关闭",
     "piece.addPieceModal.editTitle": "编辑件",
     "piece.addPieceModal.title": "添加件",
@@ -112,5 +111,8 @@
     "requests.message.multiple": "The following items have open requests",
     "requests.message.barcode": "Barcode ({barcode})",
     "requests.message.itemId": "Item ({itemId})",
-    "requests.footer.close": "Close"
+    "requests.footer.close": "Close",
+    "title.closedOrderMessage": "Purchase order is closed - {reason}",
+    "title.polDetails": "POL details",
+    "piece.actions.quickReceive": "Quick receive"
 }

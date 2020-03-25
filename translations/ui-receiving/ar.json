@@ -47,7 +47,6 @@
     "piece.actions.checkInItem.error": "خطأ في الاستلام",
     "piece.actions.confirm": "متابعة",
     "piece.actions.load.error": "فشل تحميل القطع",
-    "piece.actions.receive": "استلام",
     "piece.actions.save": "حفظ وإغلاق",
     "piece.addPieceModal.editTitle": "تحرير القطعة",
     "piece.addPieceModal.title": "إضافة قطعة",
@@ -112,5 +111,8 @@
     "requests.message.multiple": "المواد التالية لها طلبات مفتوحة",
     "requests.message.barcode": "باركود ({barcode})",
     "requests.message.itemId": "المادة ({itemId})",
-    "requests.footer.close": "إغلاق"
+    "requests.footer.close": "إغلاق",
+    "title.closedOrderMessage": "Purchase order is closed - {reason}",
+    "title.polDetails": "POL details",
+    "piece.actions.quickReceive": "استلام سريع"
 }
