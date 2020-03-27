@@ -1,5 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import {
   get,
   sortBy,
@@ -48,6 +50,8 @@ import Title from './Title';
 import POLDetails from './POLDetails';
 
 const TitleDetails = ({
+  history,
+  location,
   onAddPiece,
   onCheckIn,
   onClose,
@@ -61,6 +65,7 @@ const TitleDetails = ({
   const [isAcknowledgeNote, toggleAcknowledgeNote] = useModalToggle();
   const [isAddPieceModalOpened, toggleAddPieceModal] = useModalToggle();
   const [pieceValues, setPieceValues] = useState({});
+  const [confirmAcknowledgeNote, setConfirmAcknowledgeNote] = useState();
   const receivingNote = get(poLine, 'details.receivingNote');
   const expectedPieces = pieces.filter(({ receivingStatus }) => receivingStatus === PIECE_STATUS.expected);
 
@@ -78,8 +83,10 @@ const TitleDetails = ({
     pieceFormatOptions = PIECE_FORMAT_OPTIONS.filter(({ value }) => value === initialValuesPiece.format);
   }
 
-  const openModal = useCallback(
+  const openAddPieceModal = useCallback(
     () => {
+      setConfirmAcknowledgeNote(() => toggleAddPieceModal);
+
       return (
         title.isAcknowledged
           ? toggleAcknowledgeNote()
@@ -87,6 +94,29 @@ const TitleDetails = ({
       );
     },
     [title.isAcknowledged, toggleAcknowledgeNote, toggleAddPieceModal],
+  );
+
+  const goToReceiveList = useCallback(
+    () => {
+      history.push({
+        pathname: `/receiving/receive/${title.id}`,
+        search: location.search,
+      });
+    },
+    [title.id, history, location.search],
+  );
+
+  const openReceiveList = useCallback(
+    () => {
+      setConfirmAcknowledgeNote(() => goToReceiveList);
+
+      return (
+        title.isAcknowledged
+          ? toggleAcknowledgeNote()
+          : goToReceiveList()
+      );
+    },
+    [title.isAcknowledged, toggleAcknowledgeNote, goToReceiveList],
   );
 
   const getCreateInventoryValues = useCallback(
@@ -110,12 +140,13 @@ const TitleDetails = ({
     () => (
       <TitleDetailsExpectedActions
         checkinItems={checkinItems}
-        openModal={openModal}
-        titleId={title.id}
         hasReceive={hasReceive}
+        openAddPieceModal={openAddPieceModal}
+        openReceiveList={openReceiveList}
+        titleId={title.id}
       />
     ),
-    [title.id, checkinItems, openModal, hasReceive],
+    [title.id, checkinItems, openAddPieceModal, hasReceive, openReceiveList],
   );
 
   const hasUnreceive = Boolean(receivedPieces.length);
@@ -132,9 +163,9 @@ const TitleDetails = ({
   const onEditPiece = useCallback(
     (piece) => {
       setPieceValues(piece);
-      openModal();
+      openAddPieceModal();
     },
-    [openModal, setPieceValues],
+    [openAddPieceModal, setPieceValues],
   );
 
   const lastMenu = (
@@ -254,7 +285,7 @@ const TitleDetails = ({
           onCancel={toggleAcknowledgeNote}
           onConfirm={() => {
             toggleAcknowledgeNote();
-            toggleAddPieceModal();
+            confirmAcknowledgeNote();
           }}
           open
         />
@@ -276,6 +307,8 @@ const TitleDetails = ({
 };
 
 TitleDetails.propTypes = {
+  history: ReactRouterPropTypes.history.isRequired,
+  location: ReactRouterPropTypes.location.isRequired,
   onAddPiece: PropTypes.func.isRequired,
   onCheckIn: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
@@ -290,4 +323,4 @@ TitleDetails.defaultProps = {
   pieces: [],
 };
 
-export default TitleDetails;
+export default withRouter(TitleDetails);
