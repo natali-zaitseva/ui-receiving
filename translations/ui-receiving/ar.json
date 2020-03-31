@@ -112,7 +112,7 @@
     "requests.message.barcode": "باركود ({barcode})",
     "requests.message.itemId": "المادة ({itemId})",
     "requests.footer.close": "إغلاق",
-    "title.closedOrderMessage": "Purchase order is closed - {reason}",
-    "title.polDetails": "POL details",
+    "title.closedOrderMessage": "تم غلق أمر الشراء - {reason}",
+    "title.polDetails": "تفاصيل سطر أمر الشراء",
     "piece.actions.quickReceive": "استلام سريع"
 }
