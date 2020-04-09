@@ -20,6 +20,7 @@ export default @interactor class TitleReceiveInteractor {
 
   cancelButton = new ButtonInteractor('[data-test-cancel-button]');
   receiveButton = new ButtonInteractor('[data-test-save-button]');
+  receivingNote = isPresent('[data-test-message-banner]');
   pieces = collection('#title-receive-list [class*=mclRow---]', {
     checked: new CheckboxInteractor('[data-test-title-receive-checked]'),
   });
