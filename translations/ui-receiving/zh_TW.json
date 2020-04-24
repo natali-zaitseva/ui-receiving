@@ -1,6 +1,6 @@
 {
     "meta.title": "接收中",
-    "titles.search": "Search",
+    "titles.search": "查詢",
     "titles.orderStatus": "Order status",
     "titles.title": "Title",
     "title.paneTitle.create": "New title",
@@ -37,7 +37,7 @@
     "search.productIds": "Product ID (For the specific title or the package)",
     "search.purchaseOrder.poNumber": "PO number",
     "search.poLine.poLineNumber": "POL number",
-    "search.barcode": "Barcode",
+    "search.barcode": "條碼",
     "title.package": "Package",
     "title.locations": "Locations",
     "piece.actions.addItem": "Add item",
