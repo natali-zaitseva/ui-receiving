@@ -8,6 +8,7 @@ import {
 import {
   AcqCheckboxFilter,
   AcqTagsFilter,
+  AcqUnitFilter,
   LocationFilterContainer,
   MaterialTypeFilterContainer,
   ORDER_FORMAT_OPTIONS,
@@ -16,15 +17,8 @@ import {
   PluggableOrganizationFilter,
 } from '@folio/stripes-acq-components';
 
-const FILTERS = {
-  ORDER_STATUS: 'purchaseOrder.workflowStatus',
-  ORDER_ORGANIZATION: 'purchaseOrder.vendor',
-  POL_TAGS: 'poLine.tags.tagList',
-  ORDER_TYPE: 'purchaseOrder.orderType',
-  ORDER_FORMAT: 'poLine.orderFormat',
-  LOCATION: 'poLine.locations',
-  MATERIAL_TYPE: 'materialType',
-};
+import { PIECE_STATUS_OPTIONS } from '../../common/constants';
+import { FILTERS } from '../constants';
 
 const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters(name, values);
 
@@ -40,7 +34,7 @@ const ReceivingListFilter = ({
   return (
     <AccordionSet>
       <AcqCheckboxFilter
-        id={FILTERS.ORDER_STATUS}
+        id={`filter-${FILTERS.ORDER_STATUS}`}
         activeFilters={activeFilters[FILTERS.ORDER_STATUS]}
         labelId="ui-receiving.filter.orderStatus"
         name={FILTERS.ORDER_STATUS}
@@ -49,7 +43,7 @@ const ReceivingListFilter = ({
       />
 
       <PluggableOrganizationFilter
-        id={FILTERS.ORDER_ORGANIZATION}
+        id={`filter-${FILTERS.ORDER_ORGANIZATION}`}
         activeFilters={activeFilters[FILTERS.ORDER_ORGANIZATION]}
         labelId="ui-receiving.filter.vendor"
         name={FILTERS.ORDER_ORGANIZATION}
@@ -57,7 +51,7 @@ const ReceivingListFilter = ({
       />
 
       <AcqCheckboxFilter
-        id={FILTERS.ORDER_TYPE}
+        id={`filter-${FILTERS.ORDER_TYPE}`}
         activeFilters={activeFilters[FILTERS.ORDER_TYPE]}
         labelId="ui-receiving.filter.orderType"
         name={FILTERS.ORDER_TYPE}
@@ -66,7 +60,7 @@ const ReceivingListFilter = ({
       />
 
       <MaterialTypeFilterContainer
-        id={FILTERS.MATERIAL_TYPE}
+        id={`filter-${FILTERS.MATERIAL_TYPE}`}
         activeFilters={activeFilters[FILTERS.MATERIAL_TYPE]}
         labelId="ui-receiving.filter.materialType"
         name={FILTERS.MATERIAL_TYPE}
@@ -74,7 +68,7 @@ const ReceivingListFilter = ({
       />
 
       <AcqCheckboxFilter
-        id={FILTERS.ORDER_FORMAT}
+        id={`filter-${FILTERS.ORDER_FORMAT}`}
         activeFilters={activeFilters[FILTERS.ORDER_FORMAT]}
         labelId="ui-receiving.filter.orderFormat"
         name={FILTERS.ORDER_FORMAT}
@@ -83,17 +77,34 @@ const ReceivingListFilter = ({
       />
 
       <AcqTagsFilter
-        id={FILTERS.POL_TAGS}
+        id={`filter-${FILTERS.POL_TAGS}`}
         activeFilters={activeFilters[FILTERS.POL_TAGS]}
         name={FILTERS.POL_TAGS}
         onChange={adaptedApplyFilters}
       />
 
       <LocationFilterContainer
-        id={FILTERS.LOCATION}
+        id={`filter-${FILTERS.LOCATION}`}
         activeFilter={activeFilters[FILTERS.LOCATION] && activeFilters[FILTERS.LOCATION][0]}
         labelId="ui-receiving.filter.location"
         name={FILTERS.LOCATION}
+        onChange={adaptedApplyFilters}
+      />
+
+      <AcqCheckboxFilter
+        id={`filter-${FILTERS.RECEIVING_STATUS}`}
+        activeFilters={activeFilters[FILTERS.RECEIVING_STATUS]}
+        labelId="ui-receiving.filter.receivingStatus"
+        name={FILTERS.RECEIVING_STATUS}
+        onChange={adaptedApplyFilters}
+        options={PIECE_STATUS_OPTIONS}
+      />
+
+      <AcqUnitFilter
+        id={`filter-${FILTERS.ACQUISITIONS_UNIT}`}
+        activeFilters={activeFilters[FILTERS.ACQUISITIONS_UNIT]}
+        labelId="ui-receiving.filter.acqUnits"
+        name={FILTERS.ACQUISITIONS_UNIT}
         onChange={adaptedApplyFilters}
       />
     </AccordionSet>
