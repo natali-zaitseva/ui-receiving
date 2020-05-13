@@ -4,7 +4,7 @@
     "titles.orderStatus": "訂單狀態",
     "titles.title": "題名",
     "title.paneTitle.create": "新增題名",
-    "title.section.itemDetails": "館藏詳細資料",
+    "title.section.itemDetails": "單件詳細資料",
     "title.section.lineDetails": "PO line details",
     "titles.lineNumber": "POL number",
     "title.titleLookUp": "Title look-up",
@@ -114,5 +114,9 @@
     "requests.footer.close": "關閉",
     "title.closedOrderMessage": "Purchase order is closed - {reason}",
     "title.polDetails": "POL details",
-    "piece.actions.quickReceive": "Quick receive"
+    "piece.actions.quickReceive": "Quick receive",
+    "filter.acqUnits": "Acquisition units",
+    "filter.receivingStatus": "Receiving status",
+    "piece.pieceStatus.expected": "Expected",
+    "piece.pieceStatus.received": "Received"
 }

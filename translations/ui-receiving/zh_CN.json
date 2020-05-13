@@ -114,5 +114,9 @@
     "requests.footer.close": "关闭",
     "title.closedOrderMessage": "采购订单已关闭- {reason}",
     "title.polDetails": "订单行详情",
-    "piece.actions.quickReceive": "快速接收"
+    "piece.actions.quickReceive": "快速接收",
+    "filter.acqUnits": "Acquisition units",
+    "filter.receivingStatus": "Receiving status",
+    "piece.pieceStatus.expected": "Expected",
+    "piece.pieceStatus.received": "Received"
 }
