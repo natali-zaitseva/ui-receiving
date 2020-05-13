@@ -114,5 +114,9 @@
     "requests.footer.close": "Close",
     "title.closedOrderMessage": "Purchase order is closed - {reason}",
     "title.polDetails": "POL details",
-    "piece.actions.quickReceive": "Quick receive"
+    "piece.actions.quickReceive": "Quick receive",
+    "filter.acqUnits": "Acquisition units",
+    "filter.receivingStatus": "Receiving status",
+    "piece.pieceStatus.expected": "Expected",
+    "piece.pieceStatus.received": "Received"
 }

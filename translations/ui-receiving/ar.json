@@ -114,5 +114,9 @@
     "requests.footer.close": "إغلاق",
     "title.closedOrderMessage": "تم غلق أمر الشراء - {reason}",
     "title.polDetails": "تفاصيل سطر أمر الشراء",
-    "piece.actions.quickReceive": "استلام سريع"
+    "piece.actions.quickReceive": "استلام سريع",
+    "filter.acqUnits": "وحدات التزويد",
+    "filter.receivingStatus": "حالة الاستلام",
+    "piece.pieceStatus.expected": "متوقع",
+    "piece.pieceStatus.received": "تم استلامه"
 }
