@@ -116,7 +116,7 @@
     "title.polDetails": "POL details",
     "piece.actions.quickReceive": "Quick receive",
     "filter.acqUnits": "Устройства поиска",
-    "filter.receivingStatus": "Receiving status",
+    "filter.receivingStatus": "Статус получения",
     "piece.pieceStatus.expected": "Ожидаемый",
     "piece.pieceStatus.received": "Получено"
 }
