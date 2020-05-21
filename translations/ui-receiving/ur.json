@@ -55,8 +55,6 @@
     "piece.comment": "Comment",
     "piece.format": "Piece format",
     "piece.location": "Select location",
-    "piece.pieceFormat.electronic": "Electronic",
-    "piece.pieceFormat.physical": "Physical",
     "piece.receiptDate": "Expected receipt date",
     "piece.receivedDate": "Received date",
     "piece.receivingNoteModal.title": "Receiving note",
@@ -98,7 +96,6 @@
     "piece.itemStatus": "Item status",
     "piece.request": "Request",
     "piece.request.isOpened": "Yes",
-    "piece.pieceFormat.other": "Other",
     "title.details.button.receive": "Receive",
     "title.actions.receive.error": "Receive error",
     "title.actions.receive.success": "وصولی کامیاب",
@@ -117,6 +114,5 @@
     "piece.actions.quickReceive": "Quick receive",
     "filter.acqUnits": "Acquisition units",
     "filter.receivingStatus": "Receiving status",
-    "piece.pieceStatus.expected": "Expected",
-    "piece.pieceStatus.received": "Received"
+    "find-po-line-plugin-unavailable": "Find PO line plugin is not available"
 }
