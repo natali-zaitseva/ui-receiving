@@ -55,8 +55,6 @@
     "piece.comment": "Comentário",
     "piece.format": "Formato da peça",
     "piece.location": "Selecione a localização",
-    "piece.pieceFormat.electronic": "Eletrônico",
-    "piece.pieceFormat.physical": "Físico",
     "piece.receiptDate": "Data prevista de recebimento",
     "piece.receivedDate": "Data de recebimento",
     "piece.receivingNoteModal.title": "Nota de recebimento",
@@ -98,7 +96,6 @@
     "piece.itemStatus": "Status do item",
     "piece.request": "Requisição",
     "piece.request.isOpened": "Sim",
-    "piece.pieceFormat.other": "Outros",
     "title.details.button.receive": "Receber",
     "title.actions.receive.error": "Erro no recebimento",
     "title.actions.receive.success": "Recebido com sucesso",
@@ -117,6 +114,5 @@
     "piece.actions.quickReceive": "Recebimento rápido",
     "filter.acqUnits": "Unidades de aquisição",
     "filter.receivingStatus": "Status de recebimento",
-    "piece.pieceStatus.expected": "Esperado",
-    "piece.pieceStatus.received": "Recebido"
+    "find-po-line-plugin-unavailable": "O plugin de busca de linha de pedidos não está disponível"
 }

@@ -55,8 +55,6 @@
     "piece.comment": "Commento",
     "piece.format": "Formato del pezzo",
     "piece.location": "Seleziona sezione",
-    "piece.pieceFormat.electronic": "Elettronico",
-    "piece.pieceFormat.physical": "Fisico",
     "piece.receiptDate": "Data di ricezione prevista",
     "piece.receivedDate": "Data di ricezione",
     "piece.receivingNoteModal.title": "Nota di ricezione",
@@ -98,7 +96,6 @@
     "piece.itemStatus": "Stato item",
     "piece.request": "Richiesta",
     "piece.request.isOpened": "Si",
-    "piece.pieceFormat.other": "Other",
     "title.details.button.receive": "Receive",
     "title.actions.receive.error": "Receive error",
     "title.actions.receive.success": "Receiving successful",
@@ -117,6 +114,5 @@
     "piece.actions.quickReceive": "Quick receive",
     "filter.acqUnits": "Acquisition units",
     "filter.receivingStatus": "Receiving status",
-    "piece.pieceStatus.expected": "Expected",
-    "piece.pieceStatus.received": "Received"
+    "find-po-line-plugin-unavailable": "Find PO line plugin is not available"
 }

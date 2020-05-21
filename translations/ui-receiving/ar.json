@@ -55,8 +55,6 @@
     "piece.comment": "تعليق",
     "piece.format": "تنسيق القطعة",
     "piece.location": "اختر الموقع",
-    "piece.pieceFormat.electronic": "إلكتروني",
-    "piece.pieceFormat.physical": "مادي",
     "piece.receiptDate": "تاريخ الاستلام المتوقع",
     "piece.receivedDate": "تاريخ الاستلام",
     "piece.receivingNoteModal.title": "ملاحظة الاستلام",
@@ -98,7 +96,6 @@
     "piece.itemStatus": "حالة المادة",
     "piece.request": "طلب",
     "piece.request.isOpened": "نعم",
-    "piece.pieceFormat.other": "أخرى",
     "title.details.button.receive": "استلام",
     "title.actions.receive.error": "خطأ في الاستلام",
     "title.actions.receive.success": "نجح الاستلام",
@@ -117,6 +114,5 @@
     "piece.actions.quickReceive": "استلام سريع",
     "filter.acqUnits": "وحدات التزويد",
     "filter.receivingStatus": "حالة الاستلام",
-    "piece.pieceStatus.expected": "متوقع",
-    "piece.pieceStatus.received": "تم استلامه"
+    "find-po-line-plugin-unavailable": "برنامج باحث خط أمر الشراء المساعد غير متاح"
 }

@@ -55,8 +55,6 @@
     "piece.comment": "备注",
     "piece.format": "件格式",
     "piece.location": "选择馆藏地",
-    "piece.pieceFormat.electronic": "电子的",
-    "piece.pieceFormat.physical": "实体的",
     "piece.receiptDate": "预期接收日期",
     "piece.receivedDate": "收到日期",
     "piece.receivingNoteModal.title": "接收附注",
@@ -98,7 +96,6 @@
     "piece.itemStatus": "单件状态",
     "piece.request": "请求",
     "piece.request.isOpened": "是",
-    "piece.pieceFormat.other": "其他",
     "title.details.button.receive": "接收",
     "title.actions.receive.error": "接收错误",
     "title.actions.receive.success": "接收成功",
@@ -117,6 +114,5 @@
     "piece.actions.quickReceive": "快速接收",
     "filter.acqUnits": "Acquisition units",
     "filter.receivingStatus": "Receiving status",
-    "piece.pieceStatus.expected": "Expected",
-    "piece.pieceStatus.received": "Received"
+    "find-po-line-plugin-unavailable": "Find PO line plugin is not available"
 }
