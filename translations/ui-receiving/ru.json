@@ -114,5 +114,5 @@
     "piece.actions.quickReceive": "Quick receive",
     "filter.acqUnits": "Устройства поиска",
     "filter.receivingStatus": "Статус получения",
-    "find-po-line-plugin-unavailable": "Find PO line plugin is not available"
+    "find-po-line-plugin-unavailable": "Поиск плагина строки заказа не доступен"
 }
