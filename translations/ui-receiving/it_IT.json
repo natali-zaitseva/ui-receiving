@@ -30,7 +30,6 @@
     "title.details.button.edit": "Modifica",
     "title.edit.cancel": "Annulla",
     "title.actions.save.success": "Il titolo <b>{title}</b> è stato aggiunto con successo per la <b>riga PO {poLineNumber}</b>",
-    "title.actions.save.error": "Il titolo <b>{title}</b> non è stato aggiunto con successo per la <b>riga PO {poLineNumber}</b>",
     "search.keyword": "Parola chiave",
     "search.title": "Titolo (Titoli in ricezione)",
     "search.poLine.titleOrPackage": "Pacchetto (nome pacchetto POL)",
@@ -114,5 +113,7 @@
     "piece.actions.quickReceive": "Quick receive",
     "filter.acqUnits": "Acquisition units",
     "filter.receivingStatus": "Receiving status",
-    "find-po-line-plugin-unavailable": "Find PO line plugin is not available"
+    "find-po-line-plugin-unavailable": "Find PO line plugin is not available",
+    "title.actions.save.error.genericError": "The title {title} has not been added for PO line {poLineNumber}",
+    "title.actions.save.error.titleExist": "The title {title} for PO line {poLineNumber} already exists"
 }
