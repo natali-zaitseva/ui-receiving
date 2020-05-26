@@ -30,7 +30,6 @@
     "title.details.button.edit": "Editar",
     "title.edit.cancel": "Cancelar",
     "title.actions.save.success": "O título <b>{title}</b> foi adicionado com sucesso à <b>linha do pedido {poLineNumber}</b>",
-    "title.actions.save.error": "O título <b>{title}</b> não foi adicionado à <b>linha do pedido {poLineNumber}</b>",
     "search.keyword": "Palavra-chave",
     "search.title": "Título (Recebendo títulos)",
     "search.poLine.titleOrPackage": "Pacote (Número da linha do pedido do nome do pacote)",
@@ -114,5 +113,7 @@
     "piece.actions.quickReceive": "Recebimento rápido",
     "filter.acqUnits": "Unidades de aquisição",
     "filter.receivingStatus": "Status de recebimento",
-    "find-po-line-plugin-unavailable": "O plugin de busca de linha de pedidos não está disponível"
+    "find-po-line-plugin-unavailable": "O plugin de busca de linha de pedidos não está disponível",
+    "title.actions.save.error.genericError": "O título {title} não foi adicionado à linha do pedido {poLineNumber}",
+    "title.actions.save.error.titleExist": "O título {title} da linha do pedido {poLineNumber} já existe"
 }

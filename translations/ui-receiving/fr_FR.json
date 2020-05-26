@@ -30,7 +30,6 @@
     "title.details.button.edit": "Modifier",
     "title.edit.cancel": "Annuler",
     "title.actions.save.success": "Le titre <b> {title} </b> a été ajouté avec succès pour la <b> ligne de commande {poLineNumber} </b>",
-    "title.actions.save.error": "Le titre <b> {title} </b> n'a pas été ajouté pour la <b> ligne de commande {poLineNumber} </b>",
     "search.keyword": "Mot-clé",
     "search.title": "Titre (réception des titres)",
     "search.poLine.titleOrPackage": "Bouquet (ligne de commande/nom du bouquet)",
@@ -114,5 +113,7 @@
     "piece.actions.quickReceive": "Quick receive",
     "filter.acqUnits": "Unités d'acquisition",
     "filter.receivingStatus": "Statut de réception",
-    "find-po-line-plugin-unavailable": "Find PO line plugin is not available"
+    "find-po-line-plugin-unavailable": "Find PO line plugin is not available",
+    "title.actions.save.error.genericError": "The title {title} has not been added for PO line {poLineNumber}",
+    "title.actions.save.error.titleExist": "The title {title} for PO line {poLineNumber} already exists"
 }

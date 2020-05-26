@@ -30,7 +30,6 @@
     "title.details.button.edit": "تحرير",
     "title.edit.cancel": "إلغاء",
     "title.actions.save.success": "تمت إضافة العنوان <b>{title}</b> بنجاح إلى <b>سطر أمر الشراء {poLineNumber}</b>",
-    "title.actions.save.error": "لم تتم إضافة العنوان <b>{title}</b> إلى <b>سطر أمر الشراء {poLineNumber}</b>",
     "search.keyword": "كلمة مفتاحية",
     "search.title": "عنوان (عناوين مستلمة)",
     "search.poLine.titleOrPackage": "الحزمة (اسم حزمة سطر أمر الشراء)",
@@ -114,5 +113,7 @@
     "piece.actions.quickReceive": "استلام سريع",
     "filter.acqUnits": "وحدات التزويد",
     "filter.receivingStatus": "حالة الاستلام",
-    "find-po-line-plugin-unavailable": "برنامج باحث خط أمر الشراء المساعد غير متاح"
+    "find-po-line-plugin-unavailable": "برنامج باحث خط أمر الشراء المساعد غير متاح",
+    "title.actions.save.error.genericError": "لم تتم إضافة العنوان {title} إلى سطر أمر الشراء {poLineNumber}",
+    "title.actions.save.error.titleExist": "العنوان {title} لسطر أمراء الشراء {poLineNumber} موجود بالفعل"
 }

@@ -30,7 +30,6 @@
     "title.details.button.edit": "Edit",
     "title.edit.cancel": "Cancel",
     "title.actions.save.success": "The title <b>{title}</b> has been successfully added for <b>PO line {poLineNumber}</b>",
-    "title.actions.save.error": "The title <b>{title}</b> has not been added for <b>PO line {poLineNumber}</b>",
     "search.keyword": "Keyword",
     "search.title": "Title (Receiving titles)",
     "search.poLine.titleOrPackage": "Package (POL Package name)",
@@ -114,5 +113,7 @@
     "piece.actions.quickReceive": "Quick receive",
     "filter.acqUnits": "Устройства поиска",
     "filter.receivingStatus": "Статус получения",
-    "find-po-line-plugin-unavailable": "Поиск плагина строки заказа не доступен"
+    "find-po-line-plugin-unavailable": "Поиск плагина строки заказа не доступен",
+    "title.actions.save.error.genericError": "Название {название} не было добавлено для строки заказа {Номер_Строки_заказа}",
+    "title.actions.save.error.titleExist": "Название {название} для строки заказа {Номер_Строки_заказа} уже существует"
 }
