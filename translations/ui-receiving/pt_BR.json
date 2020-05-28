@@ -115,5 +115,7 @@
     "filter.receivingStatus": "Status de recebimento",
     "find-po-line-plugin-unavailable": "O plugin de busca de linha de pedidos não está disponível",
     "title.actions.save.error.genericError": "O título {title} não foi adicionado à linha do pedido {poLineNumber}",
-    "title.actions.save.error.titleExist": "O título {title} da linha do pedido {poLineNumber} já existe"
+    "title.actions.save.error.titleExist": "O título {title} da linha do pedido {poLineNumber} já existe",
+    "piece.connectedItem": "Conectado",
+    "piece.createItem": "Criar item"
 }

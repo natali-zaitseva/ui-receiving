@@ -115,5 +115,7 @@
     "filter.receivingStatus": "حالة الاستلام",
     "find-po-line-plugin-unavailable": "برنامج باحث خط أمر الشراء المساعد غير متاح",
     "title.actions.save.error.genericError": "لم تتم إضافة العنوان {title} إلى سطر أمر الشراء {poLineNumber}",
-    "title.actions.save.error.titleExist": "العنوان {title} لسطر أمراء الشراء {poLineNumber} موجود بالفعل"
+    "title.actions.save.error.titleExist": "العنوان {title} لسطر أمراء الشراء {poLineNumber} موجود بالفعل",
+    "piece.connectedItem": "Connected",
+    "piece.createItem": "Create item"
 }
