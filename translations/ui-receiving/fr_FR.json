@@ -115,5 +115,7 @@
     "filter.receivingStatus": "Statut de réception",
     "find-po-line-plugin-unavailable": "Find PO line plugin is not available",
     "title.actions.save.error.genericError": "The title {title} has not been added for PO line {poLineNumber}",
-    "title.actions.save.error.titleExist": "The title {title} for PO line {poLineNumber} already exists"
+    "title.actions.save.error.titleExist": "The title {title} for PO line {poLineNumber} already exists",
+    "piece.connectedItem": "Connected",
+    "piece.createItem": "Create item"
 }

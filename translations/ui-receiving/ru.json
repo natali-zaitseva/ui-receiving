@@ -115,5 +115,7 @@
     "filter.receivingStatus": "Статус получения",
     "find-po-line-plugin-unavailable": "Поиск плагина строки заказа не доступен",
     "title.actions.save.error.genericError": "Название {название} не было добавлено для строки заказа {Номер_Строки_заказа}",
-    "title.actions.save.error.titleExist": "Название {название} для строки заказа {Номер_Строки_заказа} уже существует"
+    "title.actions.save.error.titleExist": "Название {название} для строки заказа {Номер_Строки_заказа} уже существует",
+    "piece.connectedItem": "Connected",
+    "piece.createItem": "Create item"
 }
