@@ -28,6 +28,7 @@ import {
 import {
   checkIn,
   getHydratedPieces,
+  ifMissingPermanentLoanTypeId,
 } from '../common/utils';
 import TitleReceive from './TitleReceive';
 import OpenedRequestsModal from './OpenedRequestsModal';
@@ -136,9 +137,14 @@ function TitleReceiveContainer({ history, location, match, mutator, resources })
           } else {
             setTimeout(onCancel);
           }
-        })
-        .catch(() => {
-          showCallout({ messageId: 'ui-receiving.title.actions.receive.error', type: 'error' });
+        }, async response => {
+          const isMissingPermanentLoanTypeId = await ifMissingPermanentLoanTypeId(response);
+
+          if (isMissingPermanentLoanTypeId) {
+            showCallout({ messageId: 'ui-receiving.title.actions.missingLoanTypeId.error', type: 'error' });
+          } else {
+            showCallout({ messageId: 'ui-receiving.title.actions.receive.error', type: 'error' });
+          }
         });
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
