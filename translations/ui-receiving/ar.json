@@ -116,6 +116,7 @@
     "find-po-line-plugin-unavailable": "برنامج باحث خط أمر الشراء المساعد غير متاح",
     "title.actions.save.error.genericError": "لم تتم إضافة العنوان {title} إلى سطر أمر الشراء {poLineNumber}",
     "title.actions.save.error.titleExist": "العنوان {title} لسطر أمراء الشراء {poLineNumber} موجود بالفعل",
-    "piece.connectedItem": "Connected",
-    "piece.createItem": "Create item"
+    "piece.connectedItem": "متصل",
+    "piece.createItem": "إنشاء مادة",
+    "title.actions.missingLoanTypeId.error": "لا يمكن إنشاء المادة، لم يتم ضبط permanentLoanTypeId، يرجى ضبطه في الإعدادات - الطلبيات- نوع الإعارة"
 }

@@ -117,5 +117,6 @@
     "title.actions.save.error.genericError": "The title {title} has not been added for PO line {poLineNumber}",
     "title.actions.save.error.titleExist": "The title {title} for PO line {poLineNumber} already exists",
     "piece.connectedItem": "Connected",
-    "piece.createItem": "Create item"
+    "piece.createItem": "Create item",
+    "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type"
 }
