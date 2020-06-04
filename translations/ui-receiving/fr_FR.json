@@ -114,8 +114,8 @@
     "filter.acqUnits": "Unités d'acquisition",
     "filter.receivingStatus": "Statut de réception",
     "find-po-line-plugin-unavailable": "Find PO line plugin is not available",
-    "title.actions.save.error.genericError": "The title {title} has not been added for PO line {poLineNumber}",
-    "title.actions.save.error.titleExist": "The title {title} for PO line {poLineNumber} already exists",
+    "title.actions.save.error.genericError": "Le titre {title} n'a pas été ajouté pour la ligne de commande {poLineNumber}",
+    "title.actions.save.error.titleExist": "Le titre {title} pour la ligne de commande {poLineNumber} existe déjà",
     "piece.connectedItem": "Connecté",
     "piece.createItem": "Créer un élément",
     "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type"
