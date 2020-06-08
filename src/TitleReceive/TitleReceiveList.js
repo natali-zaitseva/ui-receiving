@@ -30,9 +30,13 @@ const visibleColumns = [
   'isCreateItem',
 ];
 
+const columnWidths = {
+  location: '250px',
+};
+
 export const TitleReceiveList = ({
   fields,
-  props: { createInventoryValues, instanceId, selectLocation, toggleCheckedAll },
+  props: { createInventoryValues, instanceId, selectLocation, toggleCheckedAll, locations, poLineLocationIds },
 }) => {
   const field = fields.name;
   const cellFormatters = useMemo(
@@ -80,13 +84,20 @@ export const TitleReceiveList = ({
             fullWidth
           />
         ),
-        location: record => (
-          <FieldLocationFinal
-            locationId={fields.value[record.rowIndex]?.locationId}
-            onChange={({ id }) => selectLocation(id, `${field}[${record.rowIndex}].locationId`)}
-            name={`${field}[${record.rowIndex}].locationId`}
-          />
-        ),
+        location: record => {
+          const locationId = fields.value[record.rowIndex]?.locationId;
+          const locationIds = locationId ? [...new Set([...poLineLocationIds, locationId])] : poLineLocationIds;
+
+          return (
+            <FieldLocationFinal
+              locationLookupLabel={<FormattedMessage id="ui-receiving.piece.locationLookup" />}
+              prepopulatedLocationsIds={locationIds}
+              locationsForDict={locations}
+              name={`${field}[${record.rowIndex}].locationId`}
+              onChange={({ id }) => selectLocation(id, `${field}[${record.rowIndex}].locationId`)}
+            />
+          );
+        },
         hasRequest: record => (
           record.request
             ? <FormattedMessage id="ui-receiving.piece.request.isOpened" />
@@ -104,7 +115,7 @@ export const TitleReceiveList = ({
       };
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+    [locations, poLineLocationIds],
   );
 
   const isAllChecked = fields.value.every(({ checked }) => !!checked);
@@ -140,6 +151,7 @@ export const TitleReceiveList = ({
   return (
     <MultiColumnList
       columnMapping={columnMapping}
+      columnWidths={columnWidths}
       contentData={fields.value}
       formatter={cellFormatters}
       id="title-receive-list"
@@ -154,8 +166,10 @@ TitleReceiveList.propTypes = {
   fields: PropTypes.object.isRequired,
   props: PropTypes.shape({
     createInventoryValues: PropTypes.object.isRequired,
-    instanceId: PropTypes.string.isRequired,
+    instanceId: PropTypes.string,
     selectLocation: PropTypes.func.isRequired,
     toggleCheckedAll: PropTypes.func.isRequired,
+    poLineLocationIds: PropTypes.arrayOf(PropTypes.string),
+    locations: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
 };

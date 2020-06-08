@@ -11,10 +11,12 @@ import AddPieceModal from './AddPieceModal';
 
 const AddPieceModalContainer = ({
   close,
-  onSubmit,
   initialValues,
   instanceId,
+  locations,
+  locationIds,
   onCheckIn,
+  onSubmit,
   poLine,
 }) => {
   const createInventoryValues = useMemo(
@@ -38,6 +40,8 @@ const AddPieceModalContainer = ({
       createInventoryValues={createInventoryValues}
       initialValues={initialValues}
       instanceId={instanceId}
+      locationIds={locationIds}
+      locations={locations}
       onCheckIn={onCheckIn}
       onSubmit={onSubmit}
       pieceFormatOptions={pieceFormatOptions}
@@ -49,6 +53,8 @@ AddPieceModalContainer.propTypes = {
   close: PropTypes.func.isRequired,
   initialValues: PropTypes.object.isRequired,
   instanceId: PropTypes.string,
+  locations: PropTypes.arrayOf(PropTypes.object),
+  locationIds: PropTypes.arrayOf(PropTypes.string),
   onCheckIn: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   poLine: PropTypes.object.isRequired,

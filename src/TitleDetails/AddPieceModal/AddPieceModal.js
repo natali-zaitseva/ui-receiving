@@ -35,11 +35,13 @@ const AddPieceModal = ({
   handleSubmit,
   hasValidationErrors,
   instanceId,
+  locationIds,
+  locations,
   onCheckIn,
   pieceFormatOptions,
   values: formValues,
 }) => {
-  const { format, id, locationId, receivingStatus } = formValues;
+  const { format, id, receivingStatus } = formValues;
   const isLocationRequired = includes(createInventoryValues[format], INVENTORY_RECORDS_TYPE.instanceAndHolding);
   const isNotReceived = receivingStatus !== PIECE_STATUS.received;
   const labelId = id ? 'ui-receiving.piece.addPieceModal.editTitle' : 'ui-receiving.piece.addPieceModal.title';
@@ -139,10 +141,12 @@ const AddPieceModal = ({
           <Col xs={6}>
             <FieldLocationFinal
               isDisabled={!isNotReceived}
-              locationId={locationId}
-              onChange={form.mutators.setLocationValue}
               labelId="ui-receiving.piece.location"
+              locationLookupLabel={<FormattedMessage id="ui-receiving.piece.locationLookup" />}
+              locationsForDict={locations}
               name="locationId"
+              onChange={form.mutators.setLocationValue}
+              prepopulatedLocationsIds={locationIds}
               required={isLocationRequired}
             />
           </Col>
@@ -183,6 +187,8 @@ AddPieceModal.propTypes = {
     value: PropTypes.string,
   })),
   hasValidationErrors: PropTypes.bool.isRequired,
+  locationIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+  locations: PropTypes.arrayOf(PropTypes.object),
 };
 
 AddPieceModal.defaultProps = {

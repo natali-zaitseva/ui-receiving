@@ -9,6 +9,7 @@ import {
   itemsResource,
   LIMIT_MAX,
   LOAN_TYPES,
+  locationsManifest,
   PIECE_FORMAT,
   PIECE_STATUS,
   pieceResource,
@@ -27,6 +28,7 @@ import {
 } from '../common/resources';
 import {
   checkIn,
+  fetchLocations,
   getHydratedPieces,
   ifMissingPermanentLoanTypeId,
 } from '../common/utils';
@@ -39,6 +41,7 @@ function TitleReceiveContainer({ history, location, match, mutator, resources })
   const [pieces, setPieces] = useState();
   const [title, setTitle] = useState();
   const [poLine, setPoLine] = useState();
+  const [locations, setLocations] = useState();
   const poLineId = title?.poLineId;
   const instanceId = title?.instanceId;
 
@@ -78,6 +81,16 @@ function TitleReceiveContainer({ history, location, match, mutator, resources })
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [poLineId],
+  );
+
+  useEffect(
+    () => {
+      if (pieces && poLine) {
+        fetchLocations(mutator.locations, pieces, poLine).then(setLocations);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [pieces, poLine],
   );
 
   const onCancel = useCallback(
@@ -160,8 +173,10 @@ function TitleReceiveContainer({ history, location, match, mutator, resources })
     }),
     [poLine],
   );
+  const poLineLocationIds = useMemo(() => poLine?.locations?.map(({ locationId }) => locationId), [poLine]);
 
-  if (!(pieces && poLine && title)) return null;
+  if (!(pieces && poLine && title && locations)) return null;
+
   const initialValues = { receivedItems: pieces };
   const paneTitle = `${poLine.poLineNumber} - ${title.title}`;
 
@@ -175,6 +190,8 @@ function TitleReceiveContainer({ history, location, match, mutator, resources })
         onSubmit={onSubmit}
         paneTitle={paneTitle}
         receivingNote={poLine?.details?.receivingNote}
+        poLineLocationIds={poLineLocationIds}
+        locations={locations}
       />
       {receivedPiecesWithRequests.length && (
         <OpenedRequestsModal
@@ -207,6 +224,10 @@ TitleReceiveContainer.manifest = Object.freeze({
   loanTypes: {
     ...LOAN_TYPES,
     accumulate: true,
+    fetch: false,
+  },
+  locations: {
+    ...locationsManifest,
     fetch: false,
   },
 });

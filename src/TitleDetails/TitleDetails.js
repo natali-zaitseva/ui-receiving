@@ -47,11 +47,15 @@ import Title from './Title';
 import POLDetails from './POLDetails';
 
 function getNewPieceValues(titleId, poLine) {
-  const { orderFormat, id: poLineId, receiptDate } = poLine;
+  const { orderFormat, id: poLineId, receiptDate, locations } = poLine;
   const initialValuesPiece = { receiptDate, poLineId, titleId };
 
   if (orderFormat !== ORDER_FORMATS.PEMix) {
     initialValuesPiece.format = ORDER_FORMAT_TO_PIECE_FORMAT[orderFormat];
+  }
+
+  if (locations.length === 1) {
+    initialValuesPiece.locationId = locations[0].locationId;
   }
 
   return initialValuesPiece;
@@ -60,6 +64,7 @@ function getNewPieceValues(titleId, poLine) {
 const TitleDetails = ({
   history,
   location,
+  locations,
   onAddPiece,
   onCheckIn,
   onClose,
@@ -83,6 +88,12 @@ const TitleDetails = ({
   const { id: poLineId, receiptDate, poLineNumber, checkinItems } = poLine;
   const titleId = title.id;
   const isOrderClosed = order.workflowStatus === ORDER_STATUSES.closed;
+  const pieceLocationId = pieceValues.locationId;
+  const poLineLocations = poLine?.locations?.map(({ locationId }) => locationId) ?? [];
+  const poLineLocationIds = useMemo(() => poLineLocations, [poLineLocations]);
+  const locationIds = useMemo(() => (
+    pieceLocationId ? [...new Set([...poLineLocationIds, pieceLocationId])] : poLineLocationIds
+  ), [poLineLocationIds, pieceLocationId]);
 
   const openAddPieceModal = useCallback(
     (e, piece) => {
@@ -291,6 +302,8 @@ const TitleDetails = ({
           close={toggleAddPieceModal}
           initialValues={pieceValues}
           instanceId={title.instanceId}
+          locations={locations}
+          locationIds={locationIds}
           onCheckIn={onCheckIn}
           onSubmit={onSave}
           poLine={poLine}
@@ -303,6 +316,7 @@ const TitleDetails = ({
 TitleDetails.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
   location: ReactRouterPropTypes.location.isRequired,
+  locations: PropTypes.arrayOf(PropTypes.object),
   onAddPiece: PropTypes.func.isRequired,
   onCheckIn: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
