@@ -1,12 +1,12 @@
 {
   "name": "@folio/receiving",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Description for receiving",
   "main": "index.js",
   "repository": "",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=8.9.4"
+    "node": ">=10"
   },
   "stripes": {
     "actsAs": [
@@ -18,15 +18,20 @@
     "okapiInterfaces": {
       "acquisitions-units": "1.1",
       "circulation": "9.0",
+      "configuration": "2.0",
       "holdings-storage": "4.2",
+      "identifier-types": "1.2",
       "inventory": "10.0",
       "location-units": "2.0",
       "locations": "3.0",
+      "material-types": "2.2",
       "order-lines": "1.0",
       "orders-storage.pieces": "4.0",
       "orders": "10.0",
       "pieces": "2.0",
-      "receiving": "1.0"
+      "receiving": "1.0",
+      "tags": "1.0",
+      "titles": "1.2"
     },
     "queryResource": "query",
     "icons": [
@@ -184,7 +189,7 @@
     "regenerator-runtime": "^0.13.3"
   },
   "dependencies": {
-    "@folio/stripes-acq-components": "^2.0.1",
+    "@folio/stripes-acq-components": "^2.1.0",
     "final-form": "^4.18.2",
     "lodash": "^4.17.5",
     "prop-types": "^15.5.10",
