@@ -111,12 +111,13 @@
     "title.closedOrderMessage": "采购订单已关闭- {reason}",
     "title.polDetails": "订单行详情",
     "piece.actions.quickReceive": "快速接收",
-    "filter.acqUnits": "Acquisition units",
-    "filter.receivingStatus": "Receiving status",
-    "find-po-line-plugin-unavailable": "Find PO line plugin is not available",
-    "title.actions.save.error.genericError": "The title {title} has not been added for PO line {poLineNumber}",
-    "title.actions.save.error.titleExist": "The title {title} for PO line {poLineNumber} already exists",
-    "piece.connectedItem": "Connected",
-    "piece.createItem": "Create item",
-    "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type"
+    "filter.acqUnits": "采购单元",
+    "filter.receivingStatus": "接收状态",
+    "find-po-line-plugin-unavailable": "查找订单行插件不可用",
+    "title.actions.save.error.genericError": "尚未为采购订单行{poLineNumber}添加标题{title}",
+    "title.actions.save.error.titleExist": "采购订单行{poLineNumber}的标题{title} {poLineNumber}已存在",
+    "piece.connectedItem": "已连接",
+    "piece.createItem": "创建单件",
+    "title.actions.missingLoanTypeId.error": "无法创建单件，未设置永久借阅类型Id，请在“设置”-“订单”-“借阅类型”中进行设置",
+    "piece.locationLookup": "Assign a different location"
 }

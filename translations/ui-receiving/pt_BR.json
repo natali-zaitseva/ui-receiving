@@ -118,5 +118,6 @@
     "title.actions.save.error.titleExist": "O título {title} da linha do pedido {poLineNumber} já existe",
     "piece.connectedItem": "Conectado",
     "piece.createItem": "Criar item",
-    "title.actions.missingLoanTypeId.error": "O item não pode ser criado, PermanentLoanTypeId não está definido. Defina-o em Configurações - Pedidos - Tipo de empréstimo"
+    "title.actions.missingLoanTypeId.error": "O item não pode ser criado, PermanentLoanTypeId não está definido. Defina-o em Configurações - Pedidos - Tipo de empréstimo",
+    "piece.locationLookup": "Atribuir um local diferente"
 }

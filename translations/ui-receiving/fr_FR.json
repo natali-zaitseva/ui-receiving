@@ -118,5 +118,6 @@
     "title.actions.save.error.titleExist": "Le titre {title} pour la ligne de commande {poLineNumber} existe déjà",
     "piece.connectedItem": "Connecté",
     "piece.createItem": "Créer un élément",
-    "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type"
+    "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type",
+    "piece.locationLookup": "Attribuer un emplacement différent"
 }

@@ -101,12 +101,12 @@
     "title.details.button.unreceive": "Unreceive",
     "title.actions.unreceive.error": "Unreceive error",
     "title.actions.unreceive.success": "Получение успешно отменено ",
-    "requests.title.single": "Экземпляр запрошен",
+    "requests.title.single": "Экземпляр заказан",
     "requests.title.multiple": "Multiple items have open requests",
-    "requests.message.single": "The following item has an open request",
-    "requests.message.multiple": "The following items have open requests",
+    "requests.message.single": "Следующий экземпляр заказан",
+    "requests.message.multiple": "Следующие экземпляры присутствуют в открытых заказах",
     "requests.message.barcode": "Штрих-код ({barcode})",
-    "requests.message.itemId": "Item ({itemId})",
+    "requests.message.itemId": "Экземпляр ({itemId})",
     "requests.footer.close": "Закрыть",
     "title.closedOrderMessage": "Purchase order is closed - {reason}",
     "title.polDetails": "POL details",
@@ -118,5 +118,6 @@
     "title.actions.save.error.titleExist": "Название {название} для строки заказа {Номер_Строки_заказа} уже существует",
     "piece.connectedItem": "Подключённый",
     "piece.createItem": "Создать экземпляр",
-    "title.actions.missingLoanTypeId.error": "Элемент не может быть создан, так как не установлен идентификатор постоянного типа книговыдачи. Пожалуйста, установите его следующим образом: «Настройки» - «Заказы» - «Тип книговыдачи»."
+    "title.actions.missingLoanTypeId.error": "Элемент не может быть создан, так как не установлен идентификатор постоянного типа книговыдачи. Пожалуйста, установите его следующим образом: «Настройки» - «Заказы» - «Тип книговыдачи».",
+    "piece.locationLookup": "Assign a different location"
 }

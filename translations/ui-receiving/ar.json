@@ -118,5 +118,6 @@
     "title.actions.save.error.titleExist": "العنوان {title} لسطر أمراء الشراء {poLineNumber} موجود بالفعل",
     "piece.connectedItem": "متصل",
     "piece.createItem": "إنشاء مادة",
-    "title.actions.missingLoanTypeId.error": "لا يمكن إنشاء المادة، لم يتم ضبط permanentLoanTypeId، يرجى ضبطه في الإعدادات - الطلبيات- نوع الإعارة"
+    "title.actions.missingLoanTypeId.error": "لا يمكن إنشاء المادة، لم يتم ضبط permanentLoanTypeId، يرجى ضبطه في الإعدادات - الطلبيات- نوع الإعارة",
+    "piece.locationLookup": "تعيين موقع مختلف"
 }
