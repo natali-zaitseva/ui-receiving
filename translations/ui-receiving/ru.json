@@ -105,7 +105,7 @@
     "requests.title.multiple": "Multiple items have open requests",
     "requests.message.single": "Следующий экземпляр заказан",
     "requests.message.multiple": "Следующие экземпляры присутствуют в открытых заказах",
-    "requests.message.barcode": "Штрих-код ({barcode})",
+    "requests.message.barcode": "Штрихкод ({barcode})",
     "requests.message.itemId": "Экземпляр ({itemId})",
     "requests.footer.close": "Закрыть",
     "title.closedOrderMessage": "Purchase order is closed - {reason}",
