@@ -119,5 +119,11 @@
     "piece.connectedItem": "متصل",
     "piece.createItem": "إنشاء مادة",
     "title.actions.missingLoanTypeId.error": "لا يمكن إنشاء المادة، لم يتم ضبط permanentLoanTypeId، يرجى ضبطه في الإعدادات - الطلبيات- نوع الإعارة",
-    "piece.locationLookup": "تعيين موقع مختلف"
+    "piece.locationLookup": "تعيين موقع مختلف",
+    "title.accessProvider": "مقدم خدمة الوصول",
+    "title.materialSupplier": "مزود المواد",
+    "title.orderType.One-Time": "لمرة واحدة",
+    "title.orderType.Ongoing": "جاري",
+    "title.orderType": "نوع الطلبية",
+    "title.vendor": "مورّد"
 }

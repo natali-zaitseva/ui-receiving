@@ -119,5 +119,11 @@
     "piece.connectedItem": "Подключённый",
     "piece.createItem": "Создать экземпляр",
     "title.actions.missingLoanTypeId.error": "Элемент не может быть создан, так как не установлен идентификатор постоянного типа книговыдачи. Пожалуйста, установите его следующим образом: «Настройки» - «Заказы» - «Тип книговыдачи».",
-    "piece.locationLookup": "Assign a different location"
+    "piece.locationLookup": "Assign a different location",
+    "title.accessProvider": "Access provider",
+    "title.materialSupplier": "Material supplier",
+    "title.orderType.One-Time": "One-time",
+    "title.orderType.Ongoing": "Ongoing",
+    "title.orderType": "Order type",
+    "title.vendor": "Vendor"
 }

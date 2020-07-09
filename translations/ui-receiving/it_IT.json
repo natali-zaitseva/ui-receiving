@@ -119,5 +119,11 @@
     "piece.connectedItem": "Connected",
     "piece.createItem": "Create item",
     "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type",
-    "piece.locationLookup": "Assign a different location"
+    "piece.locationLookup": "Assign a different location",
+    "title.accessProvider": "Access provider",
+    "title.materialSupplier": "Material supplier",
+    "title.orderType.One-Time": "One-time",
+    "title.orderType.Ongoing": "Ongoing",
+    "title.orderType": "Order type",
+    "title.vendor": "Vendor"
 }
