@@ -119,5 +119,11 @@
     "piece.connectedItem": "Conectado",
     "piece.createItem": "Criar item",
     "title.actions.missingLoanTypeId.error": "O item não pode ser criado, PermanentLoanTypeId não está definido. Defina-o em Configurações - Pedidos - Tipo de empréstimo",
-    "piece.locationLookup": "Atribuir um local diferente"
+    "piece.locationLookup": "Atribuir um local diferente",
+    "title.accessProvider": "Access provider",
+    "title.materialSupplier": "Material supplier",
+    "title.orderType.One-Time": "One-time",
+    "title.orderType.Ongoing": "Ongoing",
+    "title.orderType": "Order type",
+    "title.vendor": "Vendor"
 }
