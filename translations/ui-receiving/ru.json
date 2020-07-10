@@ -124,6 +124,6 @@
     "title.materialSupplier": "Material supplier",
     "title.orderType.One-Time": "One-time",
     "title.orderType.Ongoing": "Ongoing",
-    "title.orderType": "Order type",
+    "title.orderType": "Тип заказа",
     "title.vendor": "Vendor"
 }
