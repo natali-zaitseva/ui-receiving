@@ -120,10 +120,10 @@
     "piece.createItem": "Créer un élément",
     "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type",
     "piece.locationLookup": "Attribuer un emplacement différent",
-    "title.accessProvider": "Access provider",
+    "title.accessProvider": "Fournisseur d'accès",
     "title.materialSupplier": "Material supplier",
-    "title.orderType.One-Time": "One-time",
-    "title.orderType.Ongoing": "Ongoing",
-    "title.orderType": "Order type",
-    "title.vendor": "Vendor"
+    "title.orderType.One-Time": "Une seule fois",
+    "title.orderType.Ongoing": "Continu",
+    "title.orderType": "Type de commande",
+    "title.vendor": "Fournisseur"
 }
