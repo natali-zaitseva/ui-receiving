@@ -89,7 +89,7 @@
     "piece.itemStatus.Available": "Disponibile",
     "piece.itemStatus.In process": "In lavorazione",
     "piece.itemStatus.In transit": "In transito",
-    "piece.itemStatus.On order": "Ordinato",
+    "piece.itemStatus.On order": "In acquisizione",
     "piece.itemStatus.Received": "Ricevuto",
     "piece.itemStatus.Undefined": "Non definito",
     "piece.itemStatus": "Stato item",
