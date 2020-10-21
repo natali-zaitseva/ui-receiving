@@ -80,6 +80,7 @@ const TitleDetails = ({
   const [isAddPieceModalOpened, toggleAddPieceModal] = useModalToggle();
   const [pieceValues, setPieceValues] = useState({});
   const [confirmAcknowledgeNote, setConfirmAcknowledgeNote] = useState();
+  const [isConfirmReceiving, toggleConfirmReceiving] = useModalToggle();
   const receivingNote = get(poLine, 'details.receivingNote');
   const expectedPieces = pieces.filter(({ receivingStatus }) => receivingStatus === PIECE_STATUS.expected);
 
@@ -144,6 +145,15 @@ const TitleDetails = ({
     [title.isAcknowledged, toggleAcknowledgeNote, goToReceiveList],
   );
 
+  const onReceivePieces = useCallback(() => (
+    isOrderClosed ? toggleConfirmReceiving() : openReceiveList()
+  ), [isOrderClosed, toggleConfirmReceiving, openReceiveList]);
+
+  const onConfirmReceiving = useCallback(() => {
+    toggleConfirmReceiving();
+    openReceiveList();
+  }, [toggleConfirmReceiving, openReceiveList]);
+
   const onSave = useCallback(
     (values) => {
       onAddPiece(values);
@@ -159,11 +169,11 @@ const TitleDetails = ({
         checkinItems={checkinItems}
         hasReceive={hasReceive}
         openAddPieceModal={openAddPieceModal}
-        openReceiveList={openReceiveList}
+        openReceiveList={onReceivePieces}
         titleId={titleId}
       />
     ),
-    [titleId, checkinItems, openAddPieceModal, hasReceive, openReceiveList],
+    [titleId, checkinItems, openAddPieceModal, hasReceive, onReceivePieces],
   );
 
   const hasUnreceive = Boolean(receivedPieces.length);
@@ -316,6 +326,18 @@ const TitleDetails = ({
           onCheckIn={onCheckIn}
           onSubmit={onSave}
           poLine={poLine}
+        />
+      )}
+
+      {isConfirmReceiving && (
+        <ConfirmationModal
+          confirmLabel={<FormattedMessage id="ui-receiving.piece.actions.confirm" />}
+          heading={<FormattedMessage id="ui-receiving.piece.confirmReceiving.title" />}
+          id="confirm-receiving"
+          message={<FormattedMessage id="ui-receiving.piece.confirmReceiving.message" />}
+          onCancel={toggleConfirmReceiving}
+          onConfirm={onConfirmReceiving}
+          open
         />
       )}
     </Pane>
