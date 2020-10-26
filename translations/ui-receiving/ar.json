@@ -127,5 +127,7 @@
     "title.orderType": "نوع الطلبية",
     "title.vendor": "مورّد",
     "piece.actions.selectAll": "تحديد كل القطع",
-    "piece.actions.select": "اختر قطعة"
+    "piece.actions.select": "اختر قطعة",
+    "piece.confirmReceiving.title": "تم إغلاق الطلبية",
+    "piece.confirmReceiving.message": "الطلبية المرتبطة بهذا العنوان تم إغلاقها. هل أنت متأكد من أنك تريد استلام هذه القطعة؟"
 }
