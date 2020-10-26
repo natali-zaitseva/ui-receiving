@@ -127,5 +127,7 @@
     "title.orderType": "Tipo de pedido",
     "title.vendor": "Fornecedor",
     "piece.actions.selectAll": "Selecionar todas as peças",
-    "piece.actions.select": "Selecionar peça"
+    "piece.actions.select": "Selecionar peça",
+    "piece.confirmReceiving.title": "Pedido encerrado",
+    "piece.confirmReceiving.message": "O pedido vinculado a este título está fechado. Tem certeza de que deseja receber esta(s) peça(s)?"
 }

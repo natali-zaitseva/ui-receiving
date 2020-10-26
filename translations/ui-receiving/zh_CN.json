@@ -127,5 +127,7 @@
     "title.orderType": "订购类型",
     "title.vendor": "供应商",
     "piece.actions.selectAll": "选择所有件",
-    "piece.actions.select": "选择件"
+    "piece.actions.select": "选择件",
+    "piece.confirmReceiving.title": "Order closed",
+    "piece.confirmReceiving.message": "The order linked to this Title is closed. Are you sure you want to receive this piece(s)?"
 }

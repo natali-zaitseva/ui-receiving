@@ -127,5 +127,7 @@
     "title.orderType": "Тип заказа",
     "title.vendor": "Vendor",
     "piece.actions.selectAll": "Выбрать все части",
-    "piece.actions.select": "Выбрать часть"
+    "piece.actions.select": "Выбрать часть",
+    "piece.confirmReceiving.title": "Order closed",
+    "piece.confirmReceiving.message": "The order linked to this Title is closed. Are you sure you want to receive this piece(s)?"
 }
