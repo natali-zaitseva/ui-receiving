@@ -129,5 +129,6 @@
     "piece.actions.selectAll": "Selecionar todas as peças",
     "piece.actions.select": "Selecionar peça",
     "piece.confirmReceiving.title": "Pedido encerrado",
-    "piece.confirmReceiving.message": "O pedido vinculado a este título está fechado. Tem certeza de que deseja receber esta(s) peça(s)?"
+    "piece.confirmReceiving.message": "O pedido vinculado a este título está fechado. Tem certeza de que deseja receber esta(s) peça(s)?",
+    "titles.orderWorkflow": "Status do pedido"
 }

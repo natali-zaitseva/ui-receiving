@@ -129,5 +129,6 @@
     "piece.actions.selectAll": "Select all pieces",
     "piece.actions.select": "Select piece",
     "piece.confirmReceiving.title": "Order closed",
-    "piece.confirmReceiving.message": "The order linked to this Title is closed. Are you sure you want to receive this piece(s)?"
+    "piece.confirmReceiving.message": "The order linked to this Title is closed. Are you sure you want to receive this piece(s)?",
+    "titles.orderWorkflow": "Order workflow"
 }
