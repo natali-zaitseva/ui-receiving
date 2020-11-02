@@ -107,7 +107,7 @@
     "requests.message.multiple": "The following items have open requests",
     "requests.message.barcode": "バーコード（ {barcode} ）",
     "requests.message.itemId": "Item ({itemId})",
-    "requests.footer.close": "Close",
+    "requests.footer.close": "閉じる",
     "title.closedOrderMessage": "Purchase order is closed - {reason}",
     "title.polDetails": "POL details",
     "piece.actions.quickReceive": "Quick receive",
