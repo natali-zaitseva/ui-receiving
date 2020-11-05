@@ -128,7 +128,7 @@
     "title.vendor": "Vendor",
     "piece.actions.selectAll": "Select all pieces",
     "piece.actions.select": "Select piece",
-    "piece.confirmReceiving.title": "Order closed",
-    "piece.confirmReceiving.message": "The order linked to this Title is closed. Are you sure you want to receive this piece(s)?",
+    "piece.confirmReceiving.title": "Ordine chiuso",
+    "piece.confirmReceiving.message": "L'ordine collegato a questo titolo è chiuso. Sei sicuro di voler ricevere questo/i pezzo/i?",
     "titles.orderWorkflow": "Order status"
 }
