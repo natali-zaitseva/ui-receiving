@@ -110,7 +110,7 @@
     "requests.footer.close": "Fermer",
     "title.closedOrderMessage": "Le bon de commande est clôturé - {reason}",
     "title.polDetails": "POL details",
-    "piece.actions.quickReceive": "Quick receive",
+    "piece.actions.quickReceive": "Réception rapide",
     "filter.acqUnits": "Unités d'acquisition",
     "filter.receivingStatus": "Statut de réception",
     "find-po-line-plugin-unavailable": "Find PO line plugin is not available",
