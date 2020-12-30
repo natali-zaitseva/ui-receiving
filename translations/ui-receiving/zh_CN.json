@@ -130,5 +130,5 @@
     "piece.actions.select": "选择件",
     "piece.confirmReceiving.title": "订单已关闭",
     "piece.confirmReceiving.message": "链接到该标题的订单已关闭。确定要收件吗？",
-    "titles.orderWorkflow": "订单工作流程"
+    "titles.orderWorkflow": "订单状态"
 }
