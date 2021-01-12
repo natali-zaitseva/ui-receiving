@@ -34,7 +34,7 @@
     "search.title": "Titel (Inventarisierte Titel)",
     "search.poLine.titleOrPackage": "Paket (Bestellposten Paket)",
     "search.productIds": "Produkt-ID (Titel oder Paket)",
-    "search.purchaseOrder.poNumber": "PO number",
+    "search.purchaseOrder.poNumber": "Bestellnummer",
     "search.poLine.poLineNumber": "Bestellpostennummer",
     "search.barcode": "Barcode",
     "title.package": "Paket",
