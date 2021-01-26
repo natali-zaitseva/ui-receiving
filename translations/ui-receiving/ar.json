@@ -130,5 +130,11 @@
     "piece.actions.select": "اختر قطعة",
     "piece.confirmReceiving.title": "تم إغلاق الطلبية",
     "piece.confirmReceiving.message": "الطلبية المرتبطة بهذا العنوان تم إغلاقها. هل أنت متأكد من أنك تريد استلام هذه القطعة؟",
-    "titles.orderWorkflow": "حالة الطلبية"
+    "titles.orderWorkflow": "حالة الطلبية",
+    "piece.actions.delete": "حذف",
+    "piece.actions.delete.success": "تم <b>حذف</b> القطعة <b>{caption}</b> بنجاح",
+    "piece.actions.delete.error": "لم يتم حذف القطعة <b>{caption}</b>",
+    "piece.delete.confirm": "تأكيد",
+    "piece.delete.heading": "حذف القطعة",
+    "piece.delete.message": "هل أنت متأكد من أنك تريد حذف القطعة؟"
 }
