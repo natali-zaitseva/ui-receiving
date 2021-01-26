@@ -130,5 +130,11 @@
     "piece.actions.select": "Selecionar peça",
     "piece.confirmReceiving.title": "Pedido encerrado",
     "piece.confirmReceiving.message": "O pedido vinculado a este título está fechado. Tem certeza de que deseja receber esta(s) peça(s)?",
-    "titles.orderWorkflow": "Status do pedido"
+    "titles.orderWorkflow": "Status do pedido",
+    "piece.actions.delete": "Delete",
+    "piece.actions.delete.success": "The piece <b>{caption}</b> was successfully <b>deleted</b>",
+    "piece.actions.delete.error": "The piece <b>{caption}</b> was not deleted",
+    "piece.delete.confirm": "Confirm",
+    "piece.delete.heading": "Delete piece",
+    "piece.delete.message": "Are you sure you want to delete piece?"
 }
