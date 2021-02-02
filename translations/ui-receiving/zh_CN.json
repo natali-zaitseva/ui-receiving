@@ -131,10 +131,10 @@
     "piece.confirmReceiving.title": "订单已关闭",
     "piece.confirmReceiving.message": "链接到该标题的订单已关闭。确定要收件吗？",
     "titles.orderWorkflow": "订单状态",
-    "piece.actions.delete": "Delete",
-    "piece.actions.delete.success": "The piece <b>{caption}</b> was successfully <b>deleted</b>",
-    "piece.actions.delete.error": "The piece <b>{caption}</b> was not deleted",
-    "piece.delete.confirm": "Confirm",
-    "piece.delete.heading": "Delete piece",
-    "piece.delete.message": "Are you sure you want to delete piece?"
+    "piece.actions.delete": "删除",
+    "piece.actions.delete.success": "此件<b> {caption} </b>已成功<b>删除</b>",
+    "piece.actions.delete.error": "此件<b>{caption} </b>未删除",
+    "piece.delete.confirm": "确认",
+    "piece.delete.heading": "删除件",
+    "piece.delete.message": "确定要删除件吗？"
 }
