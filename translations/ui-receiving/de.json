@@ -92,7 +92,7 @@
     "piece.itemStatus.On order": "Im Erwerbungsvorgang",
     "piece.itemStatus.Received": "Inventarisiert",
     "piece.itemStatus.Undefined": "Undefiniert",
-    "piece.itemStatus": "Item status",
+    "piece.itemStatus": "Exemplarstatus",
     "piece.request": "Bestandsanfrage",
     "piece.request.isOpened": "Ja",
     "title.details.button.receive": "Inventarisieren",
