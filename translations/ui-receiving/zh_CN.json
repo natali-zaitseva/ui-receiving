@@ -136,5 +136,7 @@
     "piece.actions.delete.error": "此件<b>{caption} </b>未删除",
     "piece.delete.confirm": "确认",
     "piece.delete.heading": "删除件",
-    "piece.delete.message": "确定要删除件吗？"
+    "piece.delete.message": "确定要删除件吗？",
+    "errors.itemUpdateFailed": "Piece <b>{caption}</b> was not received. The item record failed to be updated",
+    "errors.instanceId": "Piece was not received. Instance record could not be found."
 }

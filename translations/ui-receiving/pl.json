@@ -136,5 +136,7 @@
     "piece.actions.delete.error": "Część <b>{caption}</b> nie została usunięta",
     "piece.delete.confirm": "Potwierdź",
     "piece.delete.heading": "Usuń część",
-    "piece.delete.message": "Czy na pewno chcesz usunąć część?"
+    "piece.delete.message": "Czy na pewno chcesz usunąć część?",
+    "errors.itemUpdateFailed": "Piece <b>{caption}</b> was not received. The item record failed to be updated",
+    "errors.instanceId": "Piece was not received. Instance record could not be found."
 }
