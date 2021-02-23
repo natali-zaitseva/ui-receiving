@@ -137,6 +137,6 @@
     "piece.delete.confirm": "Potwierdź",
     "piece.delete.heading": "Usuń część",
     "piece.delete.message": "Czy na pewno chcesz usunąć część?",
-    "errors.itemUpdateFailed": "Piece <b>{caption}</b> was not received. The item record failed to be updated",
-    "errors.instanceId": "Piece was not received. Instance record could not be found."
+    "errors.itemUpdateFailed": "Część <b>{caption}</b> nie została odebrana. Nie udało sie zaktualizować rekordu egzemplarza",
+    "errors.instanceId": "Część nie została odebrana. Nie można odnaleźć rekordu instancji."
 }
