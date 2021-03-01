@@ -132,11 +132,11 @@
     "piece.confirmReceiving.message": "O pedido vinculado a este título está fechado. Tem certeza de que deseja receber esta(s) peça(s)?",
     "titles.orderWorkflow": "Status do pedido",
     "piece.actions.delete": "Excluir",
-    "piece.actions.delete.success": "The piece <b>{caption}</b> was successfully <b>deleted</b>",
+    "piece.actions.delete.success": "A peça <b>{caption}</b> foi <b>deletada</b> com sucesso",
     "piece.actions.delete.error": "The piece <b>{caption}</b> was not deleted",
     "piece.delete.confirm": "Confirmar",
-    "piece.delete.heading": "Delete piece",
-    "piece.delete.message": "Are you sure you want to delete piece?",
+    "piece.delete.heading": "Deletar peça",
+    "piece.delete.message": "Tem certeza que deseja deletar a peça?",
     "errors.itemUpdateFailed": "Piece <b>{caption}</b> was not received. The item record failed to be updated",
     "errors.instanceId": "Piece was not received. Instance record could not be found."
 }
