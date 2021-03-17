@@ -137,6 +137,6 @@
     "piece.delete.confirm": "Confirmar",
     "piece.delete.heading": "Deletar peça",
     "piece.delete.message": "Tem certeza que deseja deletar a peça?",
-    "errors.itemUpdateFailed": "Piece <b>{caption}</b> was not received. The item record failed to be updated",
-    "errors.instanceId": "Piece was not received. Instance record could not be found."
+    "errors.itemUpdateFailed": "A peça <b>{caption}</b> não foi recebida. O registro do item falhou ao ser atualizado",
+    "errors.instanceId": "A peça não foi recebida. Não foi possível encontrar o registro da instância."
 }
