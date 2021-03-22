@@ -137,6 +137,6 @@
     "piece.delete.confirm": "Confirmer",
     "piece.delete.heading": "Supprimer la pièce",
     "piece.delete.message": "Êtes-vous sûr.e de vouloir supprimer la pièce ?",
-    "errors.itemUpdateFailed": "Piece <b>{caption}</b> was not received. The item record failed to be updated",
+    "errors.itemUpdateFailed": "La pièce <b> {caption} </b> n'a pas été réceptionnée. L'enregistrement de l'élément n'a pas pu être mis à jour",
     "errors.instanceId": "Piece was not received. Instance record could not be found."
 }
