@@ -40,7 +40,7 @@
     "title.package": "Paquete",
     "title.locations": "Localizaciones",
     "piece.actions.addItem": "Añadir item",
-    "piece.actions.addPiece.success": "La pieza <b>{caption}</b> se añadió con éxito",
+    "piece.actions.addPiece.success": "The piece <b>{caption}</b> was successfully <b>added</b>",
     "piece.actions.addPiece.error": "La pieza<b>{caption}</b> no se anadió",
     "piece.actions.cancel": "Cancelar",
     "piece.actions.checkInItem.error": "Error de recepción",
@@ -70,7 +70,7 @@
     "piece.actions.unreceive.message": "¿Estás seguro de que quieres una pieza sin recibir? Volverá a un estado de Esperado y cualquier artículo asociado se establecerá como En pedido.",
     "piece.actions.unreceive": "Sin recibir",
     "piece.actions.unreceivePiece.error": "La pieza<b>{caption}</b> no fue recibida",
-    "piece.actions.unreceivePiece.success": "La pieza<b>{caption} no fue recibida </b> con éxito",
+    "piece.actions.unreceivePiece.success": "The piece <b>{caption}</b> was successfully <b>unreceived</b>",
     "title.contributors.add": "Añadir colaborador",
     "title.contributors.contributor": "Colaborador",
     "title.contributors.contributorType": "Tipo de ID de colaborador",
@@ -138,5 +138,6 @@
     "piece.delete.heading": "Delete piece",
     "piece.delete.message": "Are you sure you want to delete piece?",
     "errors.itemUpdateFailed": "Piece <b>{caption}</b> was not received. The item record failed to be updated",
-    "errors.instanceId": "Piece was not received. Instance record could not be found."
+    "errors.instanceId": "Piece was not received. Instance record could not be found.",
+    "search.poLine.vendorDetail.referenceNumbers": "Vendor reference number"
 }
