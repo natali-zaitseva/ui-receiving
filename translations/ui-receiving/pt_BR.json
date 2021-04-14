@@ -139,5 +139,5 @@
     "piece.delete.message": "Tem certeza que deseja deletar a peça?",
     "errors.itemUpdateFailed": "A peça <b>{caption}</b> não foi recebida. O registro do item falhou ao ser atualizado",
     "errors.instanceId": "A peça não foi recebida. Não foi possível encontrar o registro da instância.",
-    "search.poLine.vendorDetail.referenceNumbers": "Vendor reference number"
+    "search.poLine.vendorDetail.referenceNumbers": "Número de referência do fornecedor"
 }
