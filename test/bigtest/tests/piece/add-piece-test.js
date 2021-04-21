@@ -11,14 +11,17 @@ import setupApplication from '../../helpers/setup-application';
 import {
   PieceFormInteractor,
   TitleDetailsInteractor,
+  TIMEOUT,
 } from '../../interactors';
 
-describe('Add piece', () => {
+describe('Add piece', function () {
   const titleDetails = new TitleDetailsInteractor();
   const pieceForm = new PieceFormInteractor();
   const receivingConfirmation = new ConfirmationInteractor('#confirm-receiving');
 
   setupApplication();
+
+  this.timeout(TIMEOUT);
 
   beforeEach(async function () {
     const vendor = this.server.create('vendor');
@@ -41,6 +44,7 @@ describe('Add piece', () => {
     });
 
     this.visit(`/receiving/${title.id}/view`);
+
     await titleDetails.whenLoaded();
   });
 
