@@ -138,6 +138,6 @@
     "piece.delete.heading": "Supprimer la pièce",
     "piece.delete.message": "Êtes-vous sûr.e de vouloir supprimer la pièce ?",
     "errors.itemUpdateFailed": "La pièce <b> {caption} </b> n'a pas été réceptionnée. L'enregistrement de l'exemplaire n'a pas pu être mis à jour",
-    "errors.instanceId": "Piece was not received. Instance record could not be found.",
+    "errors.instanceId": "La pièce n'a pas été reçue. L'enregistrement d'instance est introuvable.",
     "search.poLine.vendorDetail.referenceNumbers": "Numéro de référence du fournisseur"
 }
