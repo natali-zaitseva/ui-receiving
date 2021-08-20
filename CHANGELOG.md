@@ -2,6 +2,7 @@
 
 ## (IN PROGRESS)
 
+* Also support `holdings-storage` `5.0` and `inventory` `11.0`. Refs UIREC-139.
 * The Delete button is displayed in the Add piece pop up (new pice). Refs UIREC-146.
 * Ability to sort expected pieces by other table headers. Refs UIREC-147.
 * Connect items created for pieces to holdings. Refs UIREC-152.
