@@ -139,5 +139,5 @@
     "piece.delete.message": "Teil wirklich löschen?",
     "errors.itemUpdateFailed": "Teil <b>{caption}</b> wurde nicht inventarisiert. Exemplardatensatz konnte nicht aktualisiert werden",
     "errors.instanceId": "Teil wurde nicht inventarisiert. Instanzdatensatz konnte nicht gefunden werden.",
-    "search.poLine.vendorDetail.referenceNumbers": "Lieferanten-Referenznummern"
+    "search.poLine.vendorDetail.referenceNumbers": "Lieferantenreferenznummern"
 }
