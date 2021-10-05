@@ -3,17 +3,9 @@ import {
 } from '@folio/stripes-acq-components';
 
 import {
-  CHECKIN_API,
-  HOLDINGS_API,
   RECEIVE_API,
+  HOLDINGS_API,
 } from '../constants';
-
-export const checkInResource = {
-  ...baseManifest,
-  clientGeneratePk: false,
-  fetch: false,
-  path: CHECKIN_API,
-};
 
 export const receivingResource = {
   ...baseManifest,
