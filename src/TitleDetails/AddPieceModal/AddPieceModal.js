@@ -10,7 +10,6 @@ import {
   Button,
   Checkbox,
   Col,
-  ConfirmationModal,
   HasCommand,
   Modal,
   Row,
@@ -34,6 +33,7 @@ import {
   CreateItemField,
   LineLocationsView,
 } from '../../common/components';
+import { DeletePieceModal } from '../DeletePieceModal';
 
 const AddPieceModal = ({
   close,
@@ -65,9 +65,9 @@ const AddPieceModal = ({
     [close, formValues, onCheckIn],
   );
 
-  const onDelete = useCallback(() => {
+  const onDelete = useCallback((options) => {
     close();
-    deletePiece({ id, enumeration });
+    deletePiece({ id, enumeration }, options);
   }, [enumeration, close, deletePiece, id]);
 
   const onChangeDisplayOnHolding = ({ target: { checked } }) => {
@@ -310,14 +310,10 @@ const AddPieceModal = ({
       </HasCommand>
 
       {isDeleteConfirmation && (
-        <ConfirmationModal
-          id="delete-piece-confirmation"
-          confirmLabel={<FormattedMessage id="ui-receiving.piece.delete.confirm" />}
-          heading={<FormattedMessage id="ui-receiving.piece.delete.heading" />}
-          message={<FormattedMessage id="ui-receiving.piece.delete.message" />}
+        <DeletePieceModal
           onCancel={toggleDeleteConfirmation}
           onConfirm={onDelete}
-          open
+          piece={formValues}
         />
       )}
     </Modal>

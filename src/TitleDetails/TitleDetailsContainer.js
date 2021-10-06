@@ -145,8 +145,8 @@ const TitleDetailsContainer = ({ location, history, mutator, match }) => {
   );
 
   const onAddPiece = useCallback(
-    (values) => {
-      return mutatePiece(values)
+    (piece) => {
+      return mutatePiece({ piece })
         .then(() => {
           showCallout({
             messageId: 'ui-receiving.piece.actions.savePiece.success',
@@ -194,8 +194,16 @@ const TitleDetailsContainer = ({ location, history, mutator, match }) => {
     [fetchReceivingResources, poLine.id, showCallout],
   );
 
-  const deletePiece = useCallback((piece) => {
-    const apiCall = piece?.id ? mutator.orderPieces.DELETE({ id: piece.id }) : Promise.resolve();
+  const deletePiece = useCallback((piece, options = {}) => {
+    const apiCall = piece?.id
+      ? mutatePiece({
+        piece,
+        options: {
+          ...options,
+          method: 'delete',
+        },
+      })
+      : Promise.resolve();
 
     apiCall.then(
       () => {
@@ -217,8 +225,7 @@ const TitleDetailsContainer = ({ location, history, mutator, match }) => {
         }
       },
     ).finally(() => fetchReceivingResources(poLine.id));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fetchReceivingResources, poLine.id, showCallout]);
+  }, [fetchReceivingResources, poLine.id, showCallout, mutatePiece]);
 
   if (isLoading || !(pieces || locations || vendorsMap)) {
     return (

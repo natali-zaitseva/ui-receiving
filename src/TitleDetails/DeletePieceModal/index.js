@@ -1,0 +1,1 @@
+export { DeletePieceModal } from './DeletePieceModal';
