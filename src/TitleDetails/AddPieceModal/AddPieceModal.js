@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
@@ -34,13 +34,14 @@ import {
   LineLocationsView,
 } from '../../common/components';
 import { DeletePieceModal } from '../DeletePieceModal';
+import { DeleteHoldingsModal } from '../DeleteHoldingsModal';
 
 const AddPieceModal = ({
   close,
   createInventoryValues,
   deletePiece,
   canDeletePiece,
-  form: { mutators, change },
+  form: { mutators, change, getState },
   handleSubmit,
   hasValidationErrors,
   instanceId,
@@ -50,12 +51,16 @@ const AddPieceModal = ({
   pieceFormatOptions,
   values: formValues,
   poLine,
+  getHoldingsItemsAndPieces,
 }) => {
-  const { enumeration, format, id, receivingStatus } = formValues;
+  const { enumeration, format, id, receivingStatus, itemId } = formValues;
   const isLocationRequired = includes(createInventoryValues[format], INVENTORY_RECORDS_TYPE.instanceAndHolding);
   const isNotReceived = receivingStatus !== PIECE_STATUS.received;
   const labelId = id ? 'ui-receiving.piece.addPieceModal.editTitle' : 'ui-receiving.piece.addPieceModal.title';
   const [isDeleteConfirmation, toggleDeleteConfirmation] = useModalToggle();
+  const [isDeleteHoldingsConfirmation, toggleDeleteHoldingsConfirmation] = useModalToggle();
+
+  const initialHoldingId = useMemo(() => getState().initialValues?.holdingId, []);
 
   const receive = useCallback(
     () => {
@@ -75,6 +80,34 @@ const AddPieceModal = ({
 
     if (!checked) change('discoverySuppress', checked);
   };
+
+  const onSave = useCallback((e) => {
+    const holdingId = getState().values?.holdingId;
+
+    if ((id && initialHoldingId) && (holdingId !== initialHoldingId)) {
+      return getHoldingsItemsAndPieces(initialHoldingId, { limit: 1 })
+        .then(({ pieces, items }) => {
+          const canDeleteHolding = Boolean(
+            pieces && items
+            && (pieces.totalRecords === 1)
+            && ((items.totalRecords === 1 && itemId) || items.totalRecords === 0),
+          );
+
+          if (canDeleteHolding) {
+            return toggleDeleteHoldingsConfirmation();
+          }
+
+          return handleSubmit(e);
+        });
+    }
+
+    return handleSubmit(e);
+  }, []);
+
+  const onDeleteHoldings = useCallback(() => {
+    change('deleteHolding', true);
+    handleSubmit();
+  }, []);
 
   const start = (
     <Button
@@ -111,7 +144,7 @@ const AddPieceModal = ({
         data-test-add-piece-save
         disabled={hasValidationErrors}
         marginBottom0
-        onClick={handleSubmit}
+        onClick={onSave}
       >
         <FormattedMessage id="ui-receiving.piece.actions.save" />
       </Button>
@@ -311,13 +344,25 @@ const AddPieceModal = ({
         </form>
       </HasCommand>
 
-      {isDeleteConfirmation && (
-        <DeletePieceModal
-          onCancel={toggleDeleteConfirmation}
-          onConfirm={onDelete}
-          piece={formValues}
-        />
-      )}
+      {
+        isDeleteConfirmation && (
+          <DeletePieceModal
+            onCancel={toggleDeleteConfirmation}
+            onConfirm={onDelete}
+            piece={formValues}
+          />
+        )
+      }
+
+      {
+        isDeleteHoldingsConfirmation && (
+          <DeleteHoldingsModal
+            onCancel={toggleDeleteHoldingsConfirmation}
+            onKeepHoldings={handleSubmit}
+            onConfirm={onDeleteHoldings}
+          />
+        )
+      }
     </Modal>
   );
 };
@@ -340,6 +385,7 @@ AddPieceModal.propTypes = {
   locationIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   locations: PropTypes.arrayOf(PropTypes.object),
   poLine: PropTypes.object.isRequired,
+  getHoldingsItemsAndPieces: PropTypes.func.isRequired,
 };
 
 AddPieceModal.defaultProps = {

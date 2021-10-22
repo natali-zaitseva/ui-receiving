@@ -22,7 +22,13 @@ const defaultProps = {
   close: jest.fn(),
   createInventoryValues: {},
   deletePiece: jest.fn(),
-  form: {},
+  form: {
+    getState: jest.fn().mockReturnValue({
+      values: {
+        holdingId: 'holding',
+      },
+    }),
+  },
   onSubmit: jest.fn(),
   hasValidationErrors: false,
   instanceId: 'instanceId',
@@ -33,6 +39,10 @@ const defaultProps = {
   pieceFormatOptions: [],
   values: {},
   poLine: { locations: [{ locationId: '001' }] },
+  setSearchParams: jest.fn(),
+  getHoldingsItemsAndPieces: jest.fn().mockReturnValue({
+    then: () => ({}),
+  }),
 };
 
 const renderAddPieceModal = (props = defaultProps) => (render(
@@ -90,6 +100,29 @@ describe('AddPieceModal', () => {
       });
 
       expect(screen.queryByText('ui-receiving.piece.displayOnHolding')).toBeNull();
+    });
+  });
+
+  describe('Save piece', () => {
+    it('should call \'onSubmit\' when save button was clicked', async () => {
+      const format = 'Electronic';
+
+      renderAddPieceModal({
+        ...defaultProps,
+        createInventoryValues: { [format]: INVENTORY_RECORDS_TYPE.instanceAndHolding },
+        initialValues: {
+          format,
+          id: 'pieceId',
+          holdingId: 'holdingId',
+        },
+      });
+
+      const saveBtn = await screen.findByRole('button', {
+        name: 'ui-receiving.piece.actions.save',
+      });
+
+      user.click(saveBtn);
+      expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
   });
 });

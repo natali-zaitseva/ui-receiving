@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import omit from 'lodash/omit';
 
 import {
   ORDER_FORMATS,
@@ -20,6 +21,7 @@ const AddPieceModalContainer = ({
   onCheckIn,
   onSubmit,
   poLine,
+  getHoldingsItemsAndPieces,
 }) => {
   const createInventoryValues = useMemo(
     () => ({
@@ -29,6 +31,13 @@ const AddPieceModalContainer = ({
     }),
     [poLine],
   );
+
+  const onSavePiece = (formValues) => {
+    const { deleteHolding = false } = formValues;
+    const values = omit(formValues, 'deleteHolding');
+
+    onSubmit(values, { searchParams: { deleteHolding } });
+  };
 
   const orderFormat = poLine?.orderFormat;
   const pieceFormatOptions = orderFormat === ORDER_FORMATS.PEMix
@@ -46,9 +55,10 @@ const AddPieceModalContainer = ({
       locationIds={locationIds}
       locations={locations}
       onCheckIn={onCheckIn}
-      onSubmit={onSubmit}
+      onSubmit={onSavePiece}
       pieceFormatOptions={pieceFormatOptions}
       poLine={poLine}
+      getHoldingsItemsAndPieces={getHoldingsItemsAndPieces}
     />
   );
 };
@@ -64,6 +74,7 @@ AddPieceModalContainer.propTypes = {
   onCheckIn: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   poLine: PropTypes.object.isRequired,
+  getHoldingsItemsAndPieces: PropTypes.func.isRequired,
 };
 
 export default AddPieceModalContainer;
