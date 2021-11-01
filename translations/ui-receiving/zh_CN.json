@@ -154,5 +154,7 @@
     "piece.discoverySuppress": "在发现中隐藏",
     "piece.lineLocations": "订单行馆藏地",
     "piece.delete.deleteHoldingsAndItem.message": "此件连接到典藏中的记录。没有其他单件连接到相关馆藏记录。删除此件后，是否要FOLIO删除馆藏？",
-    "shortcut.receive": "接收件/快速接收"
+    "shortcut.receive": "接收件/快速接收",
+    "piece.actions.edit.keepHoldings": "Keep Holdings",
+    "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?"
 }
