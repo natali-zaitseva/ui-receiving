@@ -154,5 +154,7 @@
     "piece.discoverySuppress": "Suprimir da descoberta",
     "piece.lineLocations": "Localização das linhas de pedido",
     "piece.delete.deleteHoldingsAndItem.message": "Esta peça está conectada aos registros em inventário. Não há outros itens ligados ao registro de Holdings relacionado. Após apagar esta peça, você gostaria que o FOLIO apagasse os Holdings?",
-    "shortcut.receive": "Receber peças/Receber rápido"
+    "shortcut.receive": "Receber peças/Receber rápido",
+    "piece.actions.edit.keepHoldings": "Keep Holdings",
+    "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?"
 }
