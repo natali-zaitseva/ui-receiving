@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
+import { omit } from 'lodash';
 
 import {
   ORDER_FORMATS,
@@ -33,11 +33,13 @@ const AddPieceModalContainer = ({
   );
 
   const onSavePiece = (formValues) => {
-    const { deleteHolding = false } = formValues;
-    const values = omit(formValues, 'deleteHolding');
+    const { deleteHolding = false, isCreateAnother } = formValues;
+    const values = omit(formValues, ['deleteHolding', 'isCreateAnother']);
 
-    onSubmit(values, { searchParams: { deleteHolding } });
+    onSubmit(values, { searchParams: { deleteHolding } }, isCreateAnother);
   };
+
+  const onQuickReceive = (formValues) => onCheckIn(omit(formValues, 'isCreateAnother'), formValues.isCreateAnother);
 
   const orderFormat = poLine?.orderFormat;
   const pieceFormatOptions = orderFormat === ORDER_FORMATS.PEMix
@@ -54,7 +56,7 @@ const AddPieceModalContainer = ({
       instanceId={instanceId}
       locationIds={locationIds}
       locations={locations}
-      onCheckIn={onCheckIn}
+      onCheckIn={onQuickReceive}
       onSubmit={onSavePiece}
       pieceFormatOptions={pieceFormatOptions}
       poLine={poLine}

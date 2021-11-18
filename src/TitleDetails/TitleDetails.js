@@ -4,6 +4,8 @@ import { withRouter } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import {
   get,
+  noop,
+  omit,
   sortBy,
 } from 'lodash';
 import { FormattedMessage } from 'react-intl';
@@ -89,6 +91,7 @@ const TitleDetails = ({
   title,
   vendorsMap,
   getHoldingsItemsAndPieces,
+  getPieceValues,
 }) => {
   const stripes = useStripes();
   const [isAcknowledgeNote, toggleAcknowledgeNote] = useModalToggle();
@@ -96,8 +99,7 @@ const TitleDetails = ({
   const [pieceValues, setPieceValues] = useState({});
   const [confirmAcknowledgeNote, setConfirmAcknowledgeNote] = useState();
   const [isConfirmReceiving, toggleConfirmReceiving] = useModalToggle();
-  const [confirmReceiving, setConfirmReceiving] = useState();
-  const [checkInPieceValues, setCheckInPieceValues] = useState();
+  const confirmReceivingPromise = useRef({});
   const accordionStatusRef = useRef();
   const receivingNote = get(poLine, 'details.receivingNote');
   const expectedPieces = pieces.filter(({ receivingStatus }) => receivingStatus === PIECE_STATUS.expected);
@@ -190,31 +192,74 @@ const TitleDetails = ({
     [title.isAcknowledged, toggleAcknowledgeNote, goToReceiveList],
   );
 
-  const onReceivePieces = useCallback(() => {
-    setConfirmReceiving(() => openReceiveList);
+  const onCreateAnotherPiece = useCallback(piece => {
+    const pieceFormValues = {
+      ...omit(piece, ['id', 'itemId', 'receivingStatus', 'receivedDate']),
+      isCreateItem: piece?.itemId ? true : piece?.isCreateItem,
+      isCreateAnother: true,
+    };
 
-    return isOrderClosed ? toggleConfirmReceiving() : openReceiveList();
-  }, [isOrderClosed, toggleConfirmReceiving, openReceiveList]);
+    setPieceValues(pieceFormValues);
+    toggleAddPieceModal();
+  }, [setPieceValues, toggleAddPieceModal]);
 
-  const onConfirmReceiving = useCallback(() => {
-    toggleConfirmReceiving();
-    confirmReceiving(checkInPieceValues);
-  }, [toggleConfirmReceiving, confirmReceiving, checkInPieceValues]);
-
-  const onSave = useCallback(
-    (values, options) => {
-      onAddPiece(values, options);
-      toggleAddPieceModal();
-    },
-    [onAddPiece, toggleAddPieceModal],
+  const confirmReceiving = useCallback(
+    () => new Promise((resolve, reject) => {
+      confirmReceivingPromise.current = { resolve, reject };
+      toggleConfirmReceiving();
+    }),
+    [toggleConfirmReceiving],
   );
 
-  const onQuickReceive = useCallback(values => {
-    setConfirmReceiving(() => onCheckIn);
-    setCheckInPieceValues(values);
+  const onReceivePieces = useCallback(
+    () => (isOrderClosed ? confirmReceiving().then(openReceiveList, noop) : openReceiveList()),
+    [isOrderClosed, confirmReceiving, openReceiveList],
+  );
 
-    return isOrderClosed ? toggleConfirmReceiving() : onCheckIn(values);
-  }, [isOrderClosed, toggleConfirmReceiving, onCheckIn]);
+  const onConfirmReceiving = () => {
+    confirmReceivingPromise.current.resolve();
+    toggleConfirmReceiving();
+  };
+
+  const onCancelReceiving = () => {
+    confirmReceivingPromise.current.reject();
+    toggleConfirmReceiving();
+  };
+
+  const onSave = useCallback(
+    async (values, options, isCreateAnother) => {
+      toggleAddPieceModal();
+
+      const piece = await onAddPiece(values, options);
+
+      if (isCreateAnother) {
+        return values.id
+          ? getPieceValues(values.id).then(onCreateAnotherPiece)
+          : onCreateAnotherPiece(piece);
+      }
+
+      return piece;
+    },
+    [onAddPiece, toggleAddPieceModal, getPieceValues, onCreateAnotherPiece],
+  );
+
+  const onQuickReceive = useCallback((values, isCreateAnother) => {
+    const onReceive = async (receivingValues) => {
+      const res = await onCheckIn(receivingValues);
+
+      if (isCreateAnother) {
+        const pieceId = res?.[0]?.receivingItemResults?.[0]?.pieceId;
+
+        return pieceId && getPieceValues(pieceId).then(onCreateAnotherPiece);
+      }
+
+      return res;
+    };
+
+    return isOrderClosed
+      ? confirmReceiving().then(() => onReceive(values), noop)
+      : onReceive(values);
+  }, [isOrderClosed, confirmReceiving, onCheckIn, getPieceValues, onCreateAnotherPiece]);
 
   const hasReceive = Boolean(expectedPieces.length);
   const expectedPiecesActions = useMemo(
@@ -402,7 +447,7 @@ const TitleDetails = ({
             heading={<FormattedMessage id="ui-receiving.piece.confirmReceiving.title" />}
             id="confirm-receiving"
             message={<FormattedMessage id="ui-receiving.piece.confirmReceiving.message" />}
-            onCancel={toggleConfirmReceiving}
+            onCancel={onCancelReceiving}
             onConfirm={onConfirmReceiving}
             open
           />
@@ -427,6 +472,7 @@ TitleDetails.propTypes = {
   title: PropTypes.object.isRequired,
   vendorsMap: PropTypes.object.isRequired,
   getHoldingsItemsAndPieces: PropTypes.func.isRequired,
+  getPieceValues: PropTypes.func.isRequired,
 };
 
 TitleDetails.defaultProps = {

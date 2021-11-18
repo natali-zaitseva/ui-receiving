@@ -53,7 +53,7 @@ const AddPieceModal = ({
   poLine,
   getHoldingsItemsAndPieces,
 }) => {
-  const { enumeration, format, id, receivingStatus, itemId } = formValues;
+  const { enumeration, format, id, receivingStatus, itemId, isCreateAnother } = formValues;
   const isLocationRequired = includes(createInventoryValues[format], INVENTORY_RECORDS_TYPE.instanceAndHolding);
   const isNotReceived = receivingStatus !== PIECE_STATUS.received;
   const labelId = id ? 'ui-receiving.piece.addPieceModal.editTitle' : 'ui-receiving.piece.addPieceModal.title';
@@ -129,9 +129,17 @@ const AddPieceModal = ({
           <FormattedMessage id="ui-receiving.piece.actions.delete" />
         </Button>
       )}
+      <Checkbox
+        label={<FormattedMessage id="ui-receiving.piece.actions.createAnother" />}
+        value={isCreateAnother}
+        checked={isCreateAnother}
+        onChange={e => change('isCreateAnother', e.target.checked)}
+        inline
+      />
       {isNotReceived && (
         <Button
           data-test-add-piece-check-in
+          buttonStyle={isCreateAnother ? 'primary' : 'default'}
           disabled={hasValidationErrors}
           marginBottom0
           onClick={receive}
@@ -146,7 +154,9 @@ const AddPieceModal = ({
         marginBottom0
         onClick={onSave}
       >
-        <FormattedMessage id="ui-receiving.piece.actions.save" />
+        <FormattedMessage
+          id={isCreateAnother ? 'stripes-core.button.save' : 'ui-receiving.piece.actions.saveAndClose'}
+        />
       </Button>
     </>
   );

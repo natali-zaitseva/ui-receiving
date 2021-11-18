@@ -56,6 +56,7 @@ describe('AddPieceModal', () => {
   beforeEach(() => {
     defaultProps.close.mockClear();
     defaultProps.onCheckIn.mockClear();
+    defaultProps.onSubmit.mockClear();
   });
 
   it('should display Add piece modal', () => {
@@ -117,12 +118,32 @@ describe('AddPieceModal', () => {
         },
       });
 
-      const saveBtn = await screen.findByRole('button', {
-        name: 'ui-receiving.piece.actions.save',
+      const saveAndCloseBtn = await screen.findByRole('button', {
+        name: 'ui-receiving.piece.actions.saveAndClose',
       });
 
-      user.click(saveBtn);
+      user.click(saveAndCloseBtn);
       expect(defaultProps.onSubmit).toHaveBeenCalled();
+    });
+  });
+
+  describe('Create another piece', () => {
+    it('should update footer btns when \'Create another\' is active', async () => {
+      renderAddPieceModal({
+        ...defaultProps,
+        initialValues: { isCreateAnother: true },
+      });
+
+      const saveBtn = await screen.findByRole('button', {
+        name: 'stripes-core.button.save',
+      });
+
+      const quickReceiveBtn = await screen.findByRole('button', {
+        name: 'ui-receiving.piece.actions.quickReceive',
+      });
+
+      expect(saveBtn).toBeInTheDocument();
+      expect(quickReceiveBtn.classList.contains('primary')).toBeTruthy();
     });
   });
 });
