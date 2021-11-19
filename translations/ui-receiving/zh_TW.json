@@ -80,7 +80,7 @@
     "title.productIds.qualifier": "限定词",
     "piece.actions.checkInItem.success": "此件<b> {enumeration} </b>已成功<b>接收</b>",
     "piece.actions.edit": "编辑",
-    "piece.barcode": "条码",
+    "piece.barcode": "條碼",
     "piece.callNumber": "索书号",
     "piece.itemStatus.Available": "可用",
     "piece.itemStatus.In process": "处理中",
