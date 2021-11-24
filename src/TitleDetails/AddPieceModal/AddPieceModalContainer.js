@@ -46,13 +46,22 @@ const AddPieceModalContainer = ({
     ? PIECE_FORMAT_OPTIONS.filter(({ value }) => [PIECE_FORMAT.electronic, PIECE_FORMAT.physical].includes(value))
     : PIECE_FORMAT_OPTIONS.filter(({ value }) => value === initialValues.format);
 
+  const initialCheckboxValues = useMemo(() => (
+    ['discoverySuppress', 'isCreateAnother', 'isCreateItem', 'supplement']
+      .reduce((acc, key) => {
+        acc[key] = Boolean(initialValues[key]);
+
+        return acc;
+      }, {})
+  ), [initialValues]);
+
   return (
     <AddPieceModal
       close={close}
       createInventoryValues={createInventoryValues}
       deletePiece={deletePiece}
       canDeletePiece={canDeletePiece}
-      initialValues={initialValues}
+      initialValues={{ ...initialValues, ...initialCheckboxValues }}
       instanceId={instanceId}
       locationIds={locationIds}
       locations={locations}
