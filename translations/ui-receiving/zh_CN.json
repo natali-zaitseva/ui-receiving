@@ -141,7 +141,7 @@
     "title.checkinItems": "人工添加接收件",
     "title.receiptDue": "接收到期",
     "title.requester": "请求者",
-    "title.rush": "Rush",
+    "title.rush": "忙碌",
     "piece.actions.savePiece.error": "此件<b>未保存</b>",
     "piece.actions.savePiece.success": "此件已成功<b>保存</b>",
     "piece.actions.delete.deleteItem": "删除单件",
@@ -155,6 +155,6 @@
     "piece.lineLocations": "订单行馆藏地",
     "piece.delete.deleteHoldingsAndItem.message": "此件连接到典藏中的记录。没有其他单件连接到相关馆藏记录。删除此件后，是否要FOLIO删除馆藏？",
     "shortcut.receive": "接收件/快速接收",
-    "piece.actions.edit.keepHoldings": "Keep Holdings",
-    "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?"
+    "piece.actions.edit.keepHoldings": "保持馆藏",
+    "piece.actions.edit.deleteHoldings.message": "此件与典藏中的记录连接。在此编辑之后，将没有其他件或单件连接到相关馆藏记录。作此更改后，是否希望 FOLIO删除此馆藏？"
 }
