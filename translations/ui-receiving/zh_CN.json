@@ -44,7 +44,6 @@
     "piece.actions.checkInItem.error": "接收错误",
     "piece.actions.confirm": "继续",
     "piece.actions.load.error": "无法加载件",
-    "piece.actions.save": "保存并关闭",
     "piece.addPieceModal.editTitle": "编辑件",
     "piece.addPieceModal.title": "添加件",
     "piece.button.addPiece": "添加件",
@@ -138,7 +137,6 @@
     "errors.receivingProcessEncumbrancesError": "在相关采购订单行上的所有经费分配都从金额转换为百分比之前，不能在此标题中添加或删除件。",
     "titles.invalidReference": "无效参考",
     "title.changePieceQuantityMessage": "在此记录中添加或移除件将更新采购订单行数量和位置详情，进而更新估计价格。",
-    "title.checkinItems": "人工添加接收件",
     "title.receiptDue": "接收到期",
     "title.requester": "请求者",
     "title.rush": "忙碌",
@@ -156,5 +154,12 @@
     "piece.delete.deleteHoldingsAndItem.message": "此件连接到典藏中的记录。没有其他单件连接到相关馆藏记录。删除此件后，是否要FOLIO删除馆藏？",
     "shortcut.receive": "接收件/快速接收",
     "piece.actions.edit.keepHoldings": "保持馆藏",
-    "piece.actions.edit.deleteHoldings.message": "此件与典藏中的记录连接。在此编辑之后，将没有其他件或单件连接到相关馆藏记录。作此更改后，是否希望 FOLIO删除此馆藏？"
+    "piece.actions.edit.deleteHoldings.message": "此件与典藏中的记录连接。在此编辑之后，将没有其他件或单件连接到相关馆藏记录。作此更改后，是否希望 FOLIO删除此馆藏？",
+    "appMenu.receivingAppSearch": "接收应用搜索",
+    "button.actions": "操作",
+    "title.receivingWorkflow": "接收工作流程",
+    "title.receivingWorkflow.independent": "独立订单和接收数量",
+    "title.receivingWorkflow.synchronized": "同步订单和接收数量",
+    "piece.actions.saveAndClose": "保存并关闭",
+    "piece.actions.createAnother": "创建另一个"
 }
