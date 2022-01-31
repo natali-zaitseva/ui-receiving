@@ -44,7 +44,6 @@
     "piece.actions.checkInItem.error": "خطأ في الاستلام",
     "piece.actions.confirm": "متابعة",
     "piece.actions.load.error": "فشل تحميل القطع",
-    "piece.actions.save": "حفظ وإغلاق",
     "piece.addPieceModal.editTitle": "تحرير القطعة",
     "piece.addPieceModal.title": "إضافة قطعة",
     "piece.button.addPiece": "إضافة قطعة",
@@ -138,7 +137,6 @@
     "errors.receivingProcessEncumbrancesError": "لا يمكن إضافة القطع أو حذفها من هذا العنوان حتى يتم تحويل جميع توزيعات التمويل في سطر أمر الشراء ذي الصلة من مبالغ إلى نسب مئوية.",
     "titles.invalidReference": "مرجع غير صالح",
     "title.changePieceQuantityMessage": "ستؤدي إضافة أو إزالة القطع من هذه التسجيلة إلى تحديث كمية سطر أمر الشراء وتفاصيل الموقع وبالتالي السعر المقدر.",
-    "title.checkinItems": "إضاف قطع للاستلام يدويًا",
     "title.receiptDue": "الاستلام مستحق",
     "title.requester": "مقدم الطلب",
     "title.rush": "تسارع",
@@ -156,5 +154,12 @@
     "piece.delete.deleteHoldingsAndItem.message": "هذه القطعة مرتبطة بتسجيلات في المخزون. لا توجد مواد أخرى مرتبطة بتسجيلة المقتنيات ذات الصلة. بعد حذف هذه القطعة، هل ترغب في أن يقوم فوليو بحذف المقتنيات؟",
     "shortcut.receive": "استلام القطع / الاستلام السريع",
     "piece.actions.edit.keepHoldings": "احتفظ بالمقتنيات",
-    "piece.actions.edit.deleteHoldings.message": "هذه القطعة متصلة بتسجيلات في المخزون. بعد إجراء هذا التحرير لن تكون هناك أي قطع أو مواد متصلة بتسجيلة المقتنيات ذات الصلة. بعد القيام بهذا التغيير، هل ترغب في أن يقوم فوليو بحذف المقتنيات؟"
+    "piece.actions.edit.deleteHoldings.message": "هذه القطعة متصلة بتسجيلات في المخزون. بعد إجراء هذا التحرير لن تكون هناك أي قطع أو مواد متصلة بتسجيلة المقتنيات ذات الصلة. بعد القيام بهذا التغيير، هل ترغب في أن يقوم فوليو بحذف المقتنيات؟",
+    "appMenu.receivingAppSearch": "بحث تطبيق الاستلام",
+    "button.actions": "الإجراءات",
+    "title.receivingWorkflow": "سير عمل الاستلام",
+    "title.receivingWorkflow.independent": "كمية الطلبيات والاستلام المستقلة",
+    "title.receivingWorkflow.synchronized": "كمية الطلبيات والاستلام المتزامنة",
+    "piece.actions.saveAndClose": "حفظ وإغلاق",
+    "piece.actions.createAnother": "إنشاء آخر"
 }

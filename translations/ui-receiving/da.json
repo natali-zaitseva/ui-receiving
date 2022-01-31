@@ -44,7 +44,6 @@
     "piece.actions.checkInItem.error": "Receiving error",
     "piece.actions.confirm": "Continue",
     "piece.actions.load.error": "Failed to load pieces",
-    "piece.actions.save": "Gem & luk",
     "piece.addPieceModal.editTitle": "Rediger eksemplar",
     "piece.addPieceModal.title": "Add piece",
     "piece.button.addPiece": "Add piece",
@@ -138,7 +137,6 @@
     "errors.receivingProcessEncumbrancesError": "Pieces can not be added to or deleted from this Title until all the Fund distributions on the related purchase order line are converted from amounts to percentages.",
     "titles.invalidReference": "Invalid reference",
     "title.changePieceQuantityMessage": "Adding or removing pieces from this record will update the purchase order line quantity and location detail and in turn the estimated price.",
-    "title.checkinItems": "Manually add pieces for receiving",
     "title.receiptDue": "Receipt due",
     "title.requester": "Requester",
     "title.rush": "Rush",
@@ -156,5 +154,12 @@
     "piece.delete.deleteHoldingsAndItem.message": "This piece is connected to records in inventory. There are no other items connected to the related Holdings record. After deleting this piece would you like FOLIO to delete the Holdings?",
     "shortcut.receive": "Receive pieces/Quick receive",
     "piece.actions.edit.keepHoldings": "Keep Holdings",
-    "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?"
+    "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?",
+    "appMenu.receivingAppSearch": "Receiving app Search",
+    "button.actions": "Actions",
+    "title.receivingWorkflow": "Receiving workflow",
+    "title.receivingWorkflow.independent": "Independent order and receipt quantity",
+    "title.receivingWorkflow.synchronized": "Synchronized order and receipt quantity",
+    "piece.actions.saveAndClose": "Save & close",
+    "piece.actions.createAnother": "Create another"
 }

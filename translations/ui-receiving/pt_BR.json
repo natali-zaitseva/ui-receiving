@@ -44,7 +44,6 @@
     "piece.actions.checkInItem.error": "Erro no recebimento",
     "piece.actions.confirm": "Continuar",
     "piece.actions.load.error": "Falha ao carregar as peças",
-    "piece.actions.save": "Salvar e fechar",
     "piece.addPieceModal.editTitle": "Editar peça",
     "piece.addPieceModal.title": "Adicionar peça",
     "piece.button.addPiece": "Adicionar peça",
@@ -138,7 +137,6 @@
     "errors.receivingProcessEncumbrancesError": "As peças não podem ser adicionadas ou excluídas deste Título até que todas as distribuições do Fundo na linha de pedido de compra relacionada sejam convertidas de valores para porcentagens.",
     "titles.invalidReference": "Referência inválida",
     "title.changePieceQuantityMessage": "Adicionar ou remover peças desse registro atualizará a quantidade da linha do pedido de compra e os detalhes de localização e, por sua vez, o preço estimado.",
-    "title.checkinItems": "Adicionar manualmente peças para receber",
     "title.receiptDue": "Recebimento esperado",
     "title.requester": "Solicitante",
     "title.rush": "Urgente",
@@ -156,5 +154,12 @@
     "piece.delete.deleteHoldingsAndItem.message": "Esta peça está conectada aos registros em inventário. Não há outros itens ligados ao registro de Holdings relacionado. Após apagar esta peça, você gostaria que o FOLIO apagasse os Holdings?",
     "shortcut.receive": "Receber peças/Receber rápido",
     "piece.actions.edit.keepHoldings": "Keep Holdings",
-    "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?"
+    "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?",
+    "appMenu.receivingAppSearch": "Receiving app Search",
+    "button.actions": "Actions",
+    "title.receivingWorkflow": "Receiving workflow",
+    "title.receivingWorkflow.independent": "Independent order and receipt quantity",
+    "title.receivingWorkflow.synchronized": "Synchronized order and receipt quantity",
+    "piece.actions.saveAndClose": "Save & close",
+    "piece.actions.createAnother": "Create another"
 }
