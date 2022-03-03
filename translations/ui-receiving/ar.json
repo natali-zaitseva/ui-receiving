@@ -164,5 +164,5 @@
     "piece.actions.createAnother": "إنشاء آخر",
     "filter.supplements": "مكملات",
     "filter.nonSupplements": "غير مكملات",
-    "piece.itemStatus.info": "When receiving pieces that have connected items. A connected item with the status of \"Order closed\" or \"On order\" will be updated to a status of \"In process\". Items in other statuses will not have their status changed."
+    "piece.itemStatus.info": "عند استلام القطع التي تحتوي على مواد متصلة. سيتم تحديث المادة المتصلة ذات حالة \"تم إغلاق الطلببية\" أو \"قيد الطلب\" إلى حالة \"قيد المعالجة\". أما المواد ذات الحالات الأخرى فلن تتغير حالتها."
 }
