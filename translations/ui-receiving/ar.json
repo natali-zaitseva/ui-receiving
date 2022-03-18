@@ -158,11 +158,12 @@
     "appMenu.receivingAppSearch": "بحث تطبيق الاستلام",
     "button.actions": "الإجراءات",
     "title.receivingWorkflow": "سير عمل الاستلام",
-    "title.receivingWorkflow.independent": "كمية الطلبيات والاستلام المستقلة",
+    "title.receivingWorkflow.independent": "كمية الطلبيات والاستلام المستقل",
     "title.receivingWorkflow.synchronized": "كمية الطلبيات والاستلام المتزامنة",
     "piece.actions.saveAndClose": "حفظ وإغلاق",
     "piece.actions.createAnother": "إنشاء آخر",
     "filter.supplements": "مكملات",
     "filter.nonSupplements": "غير مكملات",
-    "piece.itemStatus.info": "عند استلام القطع التي تحتوي على مواد متصلة. سيتم تحديث المادة المتصلة ذات حالة \"تم إغلاق الطلببية\" أو \"قيد الطلب\" إلى حالة \"قيد المعالجة\". أما المواد ذات الحالات الأخرى فلن تتغير حالتها."
+    "piece.itemStatus.info": "عند استلام القطع التي تحتوي على مواد متصلة. سيتم تحديث المادة المتصلة ذات حالة \"تم إغلاق الطلببية\" أو \"قيد الطلب\" إلى حالة \"قيد المعالجة\". أما المواد ذات الحالات الأخرى فلن تتغير حالتها.",
+    "filter.rush": "Rush"
 }
