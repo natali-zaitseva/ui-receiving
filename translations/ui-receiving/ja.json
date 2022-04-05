@@ -48,7 +48,7 @@
     "piece.addPieceModal.title": "Add piece",
     "piece.button.addPiece": "Add piece",
     "piece.caption": "キャプション",
-    "piece.comment": "Comment",
+    "piece.comment": "コメント",
     "piece.format": "Piece format",
     "piece.location": "Select location",
     "piece.receiptDate": "受入予定日",
@@ -103,7 +103,7 @@
     "requests.message.barcode": "バーコード（ {barcode} ）",
     "requests.message.itemId": "Item ({itemId})",
     "requests.footer.close": "閉じる",
-    "title.closedOrderMessage": "Purchase order is closed - {reason}",
+    "title.closedOrderMessage": "発注はクローズされました- {reason}",
     "title.polDetails": "POL details",
     "piece.actions.quickReceive": "Quick receive",
     "filter.receivingStatus": "受入ステータス",
@@ -138,7 +138,7 @@
     "titles.invalidReference": "Invalid reference",
     "title.changePieceQuantityMessage": "このレコードにピースを追加または削除すると、発注行の数量と場所の詳細が更新され、見積価格も更新されます。",
     "title.receiptDue": "Receipt due",
-    "title.requester": "Requester",
+    "title.requester": "リクエスト者",
     "title.rush": "至急",
     "piece.actions.savePiece.error": "The piece was <b>not saved</b>",
     "piece.actions.savePiece.success": "The piece was successfully <b>saved</b>",
@@ -156,7 +156,7 @@
     "piece.actions.edit.keepHoldings": "Keep Holdings",
     "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?",
     "appMenu.receivingAppSearch": "Receiving app Search",
-    "button.actions": "Actions",
+    "button.actions": "アクション",
     "title.receivingWorkflow": "受入ワークフロー",
     "title.receivingWorkflow.independent": "Independent order and receipt quantity",
     "title.receivingWorkflow.synchronized": "Synchronized order and receipt quantity",
@@ -165,5 +165,5 @@
     "filter.supplements": "Supplements",
     "filter.nonSupplements": "Non supplements",
     "piece.itemStatus.info": "When receiving pieces that have connected items. A connected item with the status of \"Order closed\" or \"On order\" will be updated to a status of \"In process\". Items in other statuses will not have their status changed.",
-    "filter.rush": "Rush"
+    "filter.rush": "至急"
 }
