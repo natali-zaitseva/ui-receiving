@@ -131,10 +131,10 @@
     "piece.delete.confirm": "Confirm",
     "piece.delete.heading": "Delete piece",
     "piece.delete.message": "Are you sure you want to delete piece?",
-    "errors.itemUpdateFailed": "Piece <b>{enumeration}</b> was not received. The item record failed to be updated",
+    "errors.itemUpdateFailed": "Kus <b>{enumeration}</b> nebyl přijat. Záznam položky se nepodařilo aktualizovat",
     "errors.instanceId": "Piece was not received. Instance record could not be found.",
     "search.poLine.vendorDetail.referenceNumbers": "Vendor reference number",
-    "errors.receivingProcessEncumbrancesError": "Pieces can not be added to or deleted from this Title until all the Fund distributions on the related purchase order line are converted from amounts to percentages.",
+    "errors.receivingProcessEncumbrancesError": "Kusy nelze do tohoto titulu přidávat ani je z něj odstraňovat, dokud nebudou všechny distribuce související nákupní objednávky převedeny z částek na procenta.",
     "titles.invalidReference": "Neplatný odkaz",
     "title.changePieceQuantityMessage": "Přidání nebo odebrání kusů z tohoto záznamu aktualizuje množství řádku nákupní objednávky a podrobnosti o umístění a následně odhadovanou cenu.",
     "title.receiptDue": "Splatnost účtenky",
@@ -162,8 +162,8 @@
     "title.receivingWorkflow.synchronized": "Synchronizované množství objednávky a příjmu",
     "piece.actions.saveAndClose": "Save & close",
     "piece.actions.createAnother": "Create another",
-    "filter.supplements": "Supplements",
-    "filter.nonSupplements": "Non supplements",
+    "filter.supplements": "Doplňky",
+    "filter.nonSupplements": "Bez doplňků",
     "piece.itemStatus.info": "When receiving pieces that have connected items. A connected item with the status of \"Order closed\" or \"On order\" will be updated to a status of \"In process\". Items in other statuses will not have their status changed.",
-    "filter.rush": "Rush"
+    "filter.rush": "Spěch"
 }
