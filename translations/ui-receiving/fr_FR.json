@@ -139,7 +139,7 @@
     "title.changePieceQuantityMessage": "Adding or removing pieces from this record will update the purchase order line quantity and location detail and in turn the estimated price.",
     "title.receiptDue": "Receipt due",
     "title.requester": "Requester",
-    "title.rush": "Rush",
+    "title.rush": "Urgent",
     "piece.actions.savePiece.error": "The piece was <b>not saved</b>",
     "piece.actions.savePiece.success": "The piece was successfully <b>saved</b>",
     "piece.actions.delete.deleteItem": "Delete item",
@@ -160,10 +160,10 @@
     "title.receivingWorkflow": "Receiving workflow",
     "title.receivingWorkflow.independent": "Independent order and receipt quantity",
     "title.receivingWorkflow.synchronized": "Synchronized order and receipt quantity",
-    "piece.actions.saveAndClose": "Save & close",
+    "piece.actions.saveAndClose": "Sauvegarder et fermer",
     "piece.actions.createAnother": "Create another",
     "filter.supplements": "Supplements",
     "filter.nonSupplements": "Non supplements",
     "piece.itemStatus.info": "When receiving pieces that have connected items. A connected item with the status of \"Order closed\" or \"On order\" will be updated to a status of \"In process\". Items in other statuses will not have their status changed.",
-    "filter.rush": "Rush"
+    "filter.rush": "Urgente"
 }
