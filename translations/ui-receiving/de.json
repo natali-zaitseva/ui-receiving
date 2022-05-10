@@ -155,15 +155,15 @@
     "shortcut.receive": "Teile inventarisieren/Schnell inventarisieren",
     "piece.actions.edit.keepHoldings": "Bestand behalten",
     "piece.actions.edit.deleteHoldings.message": "Dieses Stück ist mit Datensätzen im Katalog verbunden. Nach dieser Bearbeitung gibt es keine anderen Stücke ODER Exemplare zu den zugehörigen Bestandsdatensätzen. Möchten Sie nach dieser Änderung, dass FOLIO die Bestandsdatensätze löscht?",
-    "appMenu.receivingAppSearch": "Receiving app Search",
-    "button.actions": "Actions",
-    "title.receivingWorkflow": "Receiving workflow",
+    "appMenu.receivingAppSearch": "Suche in Inventarisierung",
+    "button.actions": "Aktionen",
+    "title.receivingWorkflow": "Inventarisierungsworkflow",
     "title.receivingWorkflow.independent": "Independent order and receipt quantity",
     "title.receivingWorkflow.synchronized": "Synchronized order and receipt quantity",
-    "piece.actions.saveAndClose": "Save & close",
-    "piece.actions.createAnother": "Create another",
-    "filter.supplements": "Supplements",
+    "piece.actions.saveAndClose": "Speichern & schließen",
+    "piece.actions.createAnother": "Weitere erstellen",
+    "filter.supplements": "Supplemente",
     "filter.nonSupplements": "Non supplements",
     "piece.itemStatus.info": "When receiving pieces that have connected items. A connected item with the status of \"Order closed\" or \"On order\" will be updated to a status of \"In process\". Items in other statuses will not have their status changed.",
-    "filter.rush": "Rush"
+    "filter.rush": "Eilt"
 }
