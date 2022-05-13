@@ -159,7 +159,7 @@
     "button.actions": "Aktionen",
     "title.receivingWorkflow": "Inventarisierungsworkflow",
     "title.receivingWorkflow.independent": "Independent order and receipt quantity",
-    "title.receivingWorkflow.synchronized": "Synchronized order and receipt quantity",
+    "title.receivingWorkflow.synchronized": "Synchronisierte Bestell- und Eingangsmenge",
     "piece.actions.saveAndClose": "Speichern & schließen",
     "piece.actions.createAnother": "Weitere erstellen",
     "filter.supplements": "Supplemente",
