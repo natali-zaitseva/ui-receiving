@@ -85,7 +85,7 @@
     "piece.itemStatus.In process": "In process",
     "piece.itemStatus.In transit": "In transit",
     "piece.itemStatus.On order": "On order",
-    "piece.itemStatus.Received": "Received",
+    "piece.itemStatus.Received": "Přijato",
     "piece.itemStatus.Undefined": "Undefined",
     "piece.itemStatus": "Item status",
     "piece.request": "Request",
