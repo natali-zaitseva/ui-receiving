@@ -8,6 +8,17 @@
   "errors.instanceId": "Piece was not received. Instance record could not be found.",
   "errors.receivingProcessEncumbrancesError": "Pieces can not be added to or deleted from this Title until all the Fund distributions on the related purchase order line are converted from amounts to percentages.",
 
+  "exportSettings.export": "Export",
+  "exportSettings.export.all": "All",
+  "exportSettings.label": "Export settings",
+  "exportSettings.message": "This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with titles and pieces in a different browser tab if needed.",
+  "exportSettings.piece.all": "Export all piece fields",
+  "exportSettings.piece.fieldsLabel": "Piece fields",
+  "exportSettings.piece.selected": "Export selected piece fields",
+  "exportSettings.title.all": "Export all title fields",
+  "exportSettings.title.fieldsLabel": "Title fields",
+  "exportSettings.title.selected": "Export selected title fields",
+
   "search.keyword": "Keyword",
   "search.title": "Title (Receiving titles)",
   "search.poLine.titleOrPackage": "Package (POL Package name)",
@@ -47,6 +58,7 @@
   "title.details.button.receive": "Receive",
   "title.details.button.unreceive": "Unreceive",
   "title.edit.cancel": "Cancel",
+  "title.actions.exportCSV": "Export results (CSV)",
   "title.actions.load.error": "Failed to load Title or PO line data",
   "title.actions.missingLoanTypeId.error": "Item can't be created, permanentLoanTypeId is not set, please set it in Settings - Orders - Loan type",
   "title.actions.save.success": "The title <b>{title}</b> has been successfully added for <b>PO line {poLineNumber}</b>",
@@ -181,5 +193,6 @@
   "permission.view": "Receiving: View",
   "permission.edit": "Receiving: View, edit",
   "permission.create": "Receiving: View, edit, create",
-  "permission.delete": "Receiving: View, edit, delete"
+  "permission.delete": "Receiving: View, edit, delete",
+  "permission.exportCSV": "Receiving: Export search results"
 }
