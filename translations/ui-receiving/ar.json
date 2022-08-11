@@ -183,5 +183,5 @@
     "permission.edit": "Receiving: View, edit",
     "permission.create": "Receiving: View, edit, create",
     "permission.delete": "Receiving: View, edit, delete",
-    "permission.exportCSV": "Receiving: Export search results"
+    "permission.exportCSV": "الاستلام: تصدير نتائج البحث"
 }
