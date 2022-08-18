@@ -177,11 +177,11 @@
     "exportSettings.title.all": "تصدير كل حقول العنوان",
     "exportSettings.title.fieldsLabel": "حقول العنوان",
     "exportSettings.title.selected": "تصدير حقول العنوان المحددة",
-    "exportSettings.success": "Export has been started successfully",
+    "exportSettings.success": "تم بدء التصدير بنجاح",
     "title.actions.exportCSV": "تصدير النتائج (CSV)",
     "permission.view": "الاستلام: اعرض",
-    "permission.edit": "Receiving: View, edit",
-    "permission.create": "Receiving: View, edit, create",
-    "permission.delete": "Receiving: View, edit, delete",
+    "permission.edit": "الاستلام: اعرض، حرّر",
+    "permission.create": "الاستلام: اعرض، حرّر، أنشئ",
+    "permission.delete": "الاستلام: اعرض، حرّر، احذف",
     "permission.exportCSV": "الاستلام: تصدير نتائج البحث"
 }
