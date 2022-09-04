@@ -163,7 +163,7 @@
     "piece.actions.saveAndClose": "Speichern & schließen",
     "piece.actions.createAnother": "Weitere erstellen",
     "filter.supplements": "Supplemente",
-    "filter.nonSupplements": "Non supplements",
+    "filter.nonSupplements": "Keine Supplemente",
     "piece.itemStatus.info": "When receiving pieces that have connected items. A connected item with the status of \"Order closed\" or \"On order\" will be updated to a status of \"In process\". Items in other statuses will not have their status changed.",
     "filter.rush": "Eilt",
     "exportSettings.error": "Fehler beim Laden der Daten für Exportergebnisse (CSV)",
@@ -179,9 +179,9 @@
     "exportSettings.title.selected": "Export selected title fields",
     "exportSettings.success": "Der Export wurde erfolgreich gestartet",
     "title.actions.exportCSV": "Ergebnisse exportieren (CSV)",
-    "permission.view": "Receiving: View",
-    "permission.edit": "Receiving: View, edit",
-    "permission.create": "Receiving: View, edit, create",
-    "permission.delete": "Receiving: View, edit, delete",
-    "permission.exportCSV": "Receiving: Export search results"
+    "permission.view": "Inventarisierung: anzeigen",
+    "permission.edit": "Inventarisierung: anzeigen, bearbeiten",
+    "permission.create": "Inventarisierung: anzeigen, bearbeiten, erstellen",
+    "permission.delete": "Inventarisierung: anzeigen, bearbeiten, löschen",
+    "permission.exportCSV": "Inventarisierung: Suchergebnisse exportieren"
 }
