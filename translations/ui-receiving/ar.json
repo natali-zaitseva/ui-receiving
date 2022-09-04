@@ -170,7 +170,7 @@
     "exportSettings.export": "تصدير",
     "exportSettings.export.all": "الكل",
     "exportSettings.label": "إعدادات التصدير",
-    "exportSettings.message": "This export could take a few minutes. If you reload or close the page the export will not be completed. Once the file is ready it could take another minute for your browser to finish downloading the file. You can continue to work with titles and pieces in a different browser tab if needed.",
+    "exportSettings.message": "قد يستغرق هذا التصدير بضع دقائق. إذا قمت بإعادة تحميل الصفحة أو إغلاقها، فلن يكتمل التصدير. بمجرد أن يصبح الملف جاهزاً، قد يستغرق متصفحك دقيقة أخرى لإنهاء تنزيل الملف. يمكنك الاستمرار في العمل مع العناوين والقطع في تبويب متصفح مختلف إذا لزم الأمر.",
     "exportSettings.piece.all": "تصدير كل حقول القطع",
     "exportSettings.piece.fieldsLabel": "حقول القطعة",
     "exportSettings.piece.selected": "تصدير حقول القطعة المحددة",
