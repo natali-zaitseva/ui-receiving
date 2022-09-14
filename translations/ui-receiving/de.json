@@ -126,7 +126,7 @@
     "piece.confirmReceiving.message": "Mit diesem Titel verknüpfte Bestellung ist abgeschlossen. Teil wirklich inventarisieren?",
     "titles.orderWorkflow": "Bestellungsstatus",
     "piece.actions.delete": "Löschen",
-    "piece.actions.delete.success": "Teil <b>{enumeration}</b> wurde erfolgreich gelöscht",
+    "piece.actions.delete.success": "Teil <b>{enumeration}</b> wurde erfolgreich <b>gelöscht</b>",
     "piece.actions.delete.error": "Teil<b>{enumeration}</b> wurde nicht gelöscht",
     "piece.delete.confirm": "Bestätigen",
     "piece.delete.heading": "Teil löschen",
