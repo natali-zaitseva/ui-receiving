@@ -137,7 +137,7 @@
     "errors.receivingProcessEncumbrancesError": "Kusy nelze do tohoto názvu přidávat ani je z něj mazat, dokud nebudou všechny distribuce související nákupní objednávky převedeny z částek na procenta.",
     "titles.invalidReference": "Neplatný odkaz",
     "title.changePieceQuantityMessage": "Přidání nebo odebrání kusů z tohoto záznamu aktualizuje množství řádku nákupní objednávky a detaily o umístění a následně odhadovanou cenu.",
-    "title.receiptDue": "Splatnost účtenky",
+    "title.receiptDue": "Splatnost příjmu",
     "title.requester": "Žadatel",
     "title.rush": "Spěch",
     "piece.actions.savePiece.error": "Kus <b>nebyl uložen</b>",
