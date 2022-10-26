@@ -114,7 +114,7 @@
     "piece.createItem": "Crear ítem",
     "title.actions.missingLoanTypeId.error": "No se puede crear el ejemplar, permanentLoanTypeId no está configurado, por favor, configurelo en Configuraciones - Pedidos - Tipo de préstamo",
     "piece.locationLookup": "Asignar una localización diferente",
-    "title.accessProvider": "Access provider",
+    "title.accessProvider": "Proveedor de acceso",
     "title.materialSupplier": "Proveedor de materiales",
     "title.orderType.One-Time": "Una sola vez",
     "title.orderType.Ongoing": "En curso",
