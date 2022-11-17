@@ -59,7 +59,7 @@
     "filter.orderStatus": "Bestellungsstatus",
     "filter.vendor": "Organisation",
     "filter.orderType": "Bestellungstyp",
-    "filter.materialType": "Materialtyp",
+    "filter.materialType": "Materialart",
     "filter.orderFormat": "Bestellungsformat",
     "filter.location": "Standort",
     "piece.actions.unreceive.confirm": "Bestätigen",
