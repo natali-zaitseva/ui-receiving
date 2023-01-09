@@ -158,7 +158,7 @@
     "appMenu.receivingAppSearch": "Suche in Inventarisierungsapp",
     "button.actions": "Aktionen",
     "title.receivingWorkflow": "Inventarisierungsworkflow",
-    "title.receivingWorkflow.independent": "Independent order and receipt quantity",
+    "title.receivingWorkflow.independent": "Unabhängige Bestell- und Eingangsmenge",
     "title.receivingWorkflow.synchronized": "Synchronisierte Bestell- und Eingangsmenge",
     "piece.actions.saveAndClose": "Speichern & schließen",
     "piece.actions.createAnother": "Weitere erstellen",
