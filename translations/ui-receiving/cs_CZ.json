@@ -201,5 +201,5 @@
     "errors.pieceNotRetrieved": "Záznam kusu se nepodařilo načíst",
     "errors.piecePolMismatch": "Kus neodpovídá řádku NO",
     "errors.pieceUpdateFailed": "Záznam kusu se nepodařilo aktualizovat",
-    "errors.titleNotFound": "Tituly příjmu nebyly nalezeny"
+    "errors.titleNotFound": "Názvy příjmu nebyly nalezeny"
 }
