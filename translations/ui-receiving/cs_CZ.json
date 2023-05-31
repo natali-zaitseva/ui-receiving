@@ -120,7 +120,7 @@
     "title.orderType.Ongoing": "Pokračující",
     "title.orderType": "Typ objednávky",
     "title.vendor": "Prodejce",
-    "piece.actions.selectAll": "Vyberte všechny kusy",
+    "piece.actions.selectAll": "Vybrat všechny kusy",
     "piece.actions.select": "Vybrat kus",
     "piece.confirmReceiving.title": "Objednávka uzavřena",
     "piece.confirmReceiving.message": "Objednávka propojená s tímto názvem je uzavřena. Opravdu chcete obdržet tento kus(y)?",
