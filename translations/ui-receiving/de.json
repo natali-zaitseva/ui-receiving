@@ -202,5 +202,5 @@
     "errors.piecePolMismatch": "Teil stimmt mit dem Bestellposten nicht überein",
     "errors.pieceUpdateFailed": "Der Datensatz des Teils konnte nicht aktualisiert werden",
     "errors.titleNotFound": "Inventarisierter Titel konnte nicht gefunden werden",
-    "piece.accessionNumber": "Accession number"
+    "piece.accessionNumber": "Zugangsnummer"
 }
