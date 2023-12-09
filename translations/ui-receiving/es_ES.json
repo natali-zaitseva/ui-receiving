@@ -202,5 +202,7 @@
     "errors.piecePolMismatch": "The piece does not correspond to PO line",
     "errors.pieceUpdateFailed": "The piece record failed to be updated",
     "errors.titleNotFound": "The receiving title(s) could not be found",
-    "piece.accessionNumber": "Número acceso"
+    "piece.accessionNumber": "Número acceso",
+    "title.claimingActive": "Claiming active",
+    "title.claimingInterval": "Claiming interval"
 }

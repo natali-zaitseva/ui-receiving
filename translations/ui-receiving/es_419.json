@@ -202,5 +202,7 @@
     "errors.piecePolMismatch": "La pieza no corresponde a línea de orden de compra",
     "errors.pieceUpdateFailed": "No se ha podido actualizar el registro de piezas",
     "errors.titleNotFound": "No se han podido encontrar los títulos receptores",
-    "piece.accessionNumber": "Número de acceso"
+    "piece.accessionNumber": "Número de acceso",
+    "title.claimingActive": "Claiming active",
+    "title.claimingInterval": "Claiming interval"
 }

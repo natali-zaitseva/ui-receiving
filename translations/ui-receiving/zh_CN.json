@@ -202,5 +202,7 @@
     "errors.piecePolMismatch": "该件与采购订单行不对应",
     "errors.pieceUpdateFailed": "件记录更新失败",
     "errors.titleNotFound": "无法找到接收题名",
-    "piece.accessionNumber": "入藏号"
+    "piece.accessionNumber": "入藏号",
+    "title.claimingActive": "催缺激活",
+    "title.claimingInterval": "催缺间隔"
 }

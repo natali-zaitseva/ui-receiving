@@ -169,7 +169,7 @@
     "exportSettings.error": "Nie udało się załadować danych dla eksportu wyników (CSV)",
     "exportSettings.export": "Export",
     "exportSettings.export.all": "All",
-    "exportSettings.label": "Export settings",
+    "exportSettings.label": "Ustawienia eksportu",
     "exportSettings.message": "Ten eksport może potrwać kilka minut. Jeśli przeładujesz lub zamkniesz stronę, eksport nie zostanie ukończony. Gdy plik będzie gotowy, może minąć kolejna minuta, zanim przeglądarka zakończy jego pobieranie. W razie potrzeby możesz kontynuować pracę z zamówieniami i pozycjami zamówień w innej zakładce przeglądarki.",
     "exportSettings.piece.all": "Export all piece fields",
     "exportSettings.piece.fieldsLabel": "Piece fields",
@@ -202,5 +202,7 @@
     "errors.piecePolMismatch": "The piece does not correspond to PO line",
     "errors.pieceUpdateFailed": "The piece record failed to be updated",
     "errors.titleNotFound": "The receiving title(s) could not be found",
-    "piece.accessionNumber": "Accession number"
+    "piece.accessionNumber": "Accession number",
+    "title.claimingActive": "Claiming active",
+    "title.claimingInterval": "Claiming interval"
 }
