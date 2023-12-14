@@ -1,10 +1,14 @@
-import React, { useCallback, useMemo } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { includes } from 'lodash';
 import PropTypes from 'prop-types';
+import {
+  useCallback,
+  useMemo,
+} from 'react';
 import { Field } from 'react-final-form';
 import {
-  includes,
-} from 'lodash';
+  FormattedMessage,
+  useIntl,
+} from 'react-intl';
 
 import {
   Button,
@@ -37,6 +41,7 @@ import {
 import { HOLDINGS_API } from '../../common/constants';
 import { DeletePieceModal } from '../DeletePieceModal';
 import { DeleteHoldingsModal } from '../DeleteHoldingsModal';
+import { ModalActionButtons } from './ModalActionButtons';
 
 const AddPieceModal = ({
   close,
@@ -72,7 +77,7 @@ const AddPieceModal = ({
 
   const disabled = (initialValues.isCreateAnother && pristine) || hasValidationErrors;
 
-  const receive = useCallback(
+  const onReceive = useCallback(
     () => {
       onCheckIn(formValues);
       close();
@@ -123,6 +128,11 @@ const AddPieceModal = ({
     return handleSubmit(e);
   }, [checkHoldingAbandonment, getState, handleSubmit, id, initialHoldingId, toggleDeleteHoldingsConfirmation]);
 
+  const onCreateAnotherPiece = useCallback((e) => {
+    change('isCreateAnother', true);
+    onSave(e);
+  }, [change, onSave]);
+
   const onDeleteHoldings = useCallback(() => {
     change('deleteHolding', true);
     handleSubmit();
@@ -138,46 +148,17 @@ const AddPieceModal = ({
     </Button>
   );
   const end = (
-    <>
-      {id && (
-        <Button
-          marginBottom0
-          onClick={toggleDeleteConfirmation}
-          disabled={!canDeletePiece}
-        >
-          <FormattedMessage id="ui-receiving.piece.actions.delete" />
-        </Button>
-      )}
-      <Checkbox
-        label={<FormattedMessage id="ui-receiving.piece.actions.createAnother" />}
-        value={isCreateAnother}
-        checked={isCreateAnother}
-        onChange={e => change('isCreateAnother', e.target.checked)}
-        inline
-      />
-      {isNotReceived && (
-        <Button
-          data-test-add-piece-check-in
-          buttonStyle={isCreateAnother ? 'primary' : 'default'}
-          disabled={disabled}
-          marginBottom0
-          onClick={receive}
-        >
-          <FormattedMessage id="ui-receiving.piece.actions.quickReceive" />
-        </Button>
-      )}
-      <Button
-        buttonStyle="primary"
-        data-test-add-piece-save
-        disabled={disabled}
-        marginBottom0
-        onClick={onSave}
-      >
-        <FormattedMessage
-          id={isCreateAnother ? 'stripes-core.button.save' : 'ui-receiving.piece.actions.saveAndClose'}
-        />
-      </Button>
-    </>
+    <ModalActionButtons
+      canDeletePiece={canDeletePiece}
+      disabled={disabled}
+      isCreateAnother={isCreateAnother}
+      isEditMode={Boolean(id)}
+      onCreateAnotherPiece={onCreateAnotherPiece}
+      onDelete={toggleDeleteConfirmation}
+      onReceive={onReceive}
+      onSave={onSave}
+      status={receivingStatus}
+    />
   );
 
   const footer = (
@@ -200,7 +181,7 @@ const AddPieceModal = ({
     {
       name: 'receive',
       shortcut: 'mod + alt + r',
-      handler: handleKeyCommand(receive, { disabled }),
+      handler: handleKeyCommand(onReceive, { disabled }),
     },
   ];
 
