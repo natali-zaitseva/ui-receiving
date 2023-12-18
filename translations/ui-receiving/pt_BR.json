@@ -204,5 +204,13 @@
     "errors.titleNotFound": "O(s) título(s) recebido(s) não pode(m) ser encontrado(s)",
     "piece.accessionNumber": "Número de acesso",
     "title.claimingActive": "Reclamação ativa",
-    "title.claimingInterval": "Intervalo de reclamação"
+    "title.claimingInterval": "Intervalo de reclamação",
+    "piece.action.button.saveAndCreateAnother": "Salvar e criar outro",
+    "piece.action.button.quickReceive": "Recebimento rápido",
+    "piece.action.button.sendClaim": "Enviar reclamação",
+    "piece.action.button.delayClaim": "Reclamação de atraso",
+    "piece.action.button.unReceivable": "Não recebível",
+    "piece.action.button.delete": "Excluir",
+    "piece.action.button.expect": "Esperar",
+    "piece.action.button.unReceive": "Cancelar recebimento"
 }
