@@ -1,10 +1,13 @@
-import React from 'react';
+import omit from 'lodash/omit';
+import pick from 'lodash/pick';
 import { FormattedMessage } from 'react-intl';
-import { pick } from 'lodash';
 
+import { NoValue } from '@folio/stripes/components';
 import {
   ORDER_FORMATS,
   PIECE_FORMAT,
+  PIECE_FORMAT_LABELS,
+  PIECE_STATUS,
 } from '@folio/stripes-acq-components';
 
 export const TITLE_ACCORDION = {
@@ -12,6 +15,7 @@ export const TITLE_ACCORDION = {
   polDetails: 'polDetails',
   expected: 'expected',
   received: 'received',
+  unreceivable: 'unreceivable',
 };
 
 export const TITLE_ACCORDION_LABELS = {
@@ -19,6 +23,7 @@ export const TITLE_ACCORDION_LABELS = {
   [TITLE_ACCORDION.polDetails]: <FormattedMessage id="ui-receiving.title.polDetails" />,
   [TITLE_ACCORDION.expected]: <FormattedMessage id="ui-receiving.title.expected" />,
   [TITLE_ACCORDION.received]: <FormattedMessage id="ui-receiving.title.received" />,
+  [TITLE_ACCORDION.unreceivable]: <FormattedMessage id="ui-receiving.title.unreceivable" />,
 };
 
 export const ORDER_FORMAT_TO_PIECE_FORMAT = {
@@ -29,6 +34,7 @@ export const ORDER_FORMAT_TO_PIECE_FORMAT = {
 
 export const PIECE_COLUMNS = {
   caption: 'caption',
+  callNumber: 'callNumber',
   chronology: 'chronology',
   copyNumber: 'copyNumber',
   enumeration: 'enumeration',
@@ -38,6 +44,7 @@ export const PIECE_COLUMNS = {
   format: 'format',
   request: 'request',
   barcode: 'barcode',
+  location: 'location',
 };
 
 const PIECE_VISIBLE_COLUMNS = [
@@ -64,6 +71,8 @@ export const RECEIVED_PIECE_VISIBLE_COLUMNS = [
   PIECE_COLUMNS.request,
 ];
 
+export const UNRECEIVABLE_PIECE_VISIBLE_COLUMNS = [...RECEIVED_PIECE_VISIBLE_COLUMNS];
+
 export const PIECE_COLUMN_MAPPING = {
   [PIECE_COLUMNS.copyNumber]: <FormattedMessage id="ui-receiving.piece.copyNumber" />,
   [PIECE_COLUMNS.chronology]: <FormattedMessage id="ui-receiving.piece.chronology" />,
@@ -79,9 +88,21 @@ export const PIECE_COLUMN_MAPPING = {
   arrow: null,
 };
 
-export const EXPECTED_PIECE_COLUMN_MAPPING = pick(PIECE_COLUMN_MAPPING, EXPECTED_PIECE_VISIBLE_COLUMNS);
+export const PIECE_COLUMN_BASE_FORMATTER = {
+  [PIECE_COLUMNS.request]: record => (record.request ? <FormattedMessage id="ui-receiving.piece.request.isOpened" /> : <NoValue />),
+  [PIECE_COLUMNS.format]: ({ format }) => PIECE_FORMAT_LABELS[format],
+  [PIECE_COLUMNS.callNumber]: record => record.callNumber || <NoValue />,
+  [PIECE_COLUMNS.caption]: record => record.caption || <NoValue />,
+  [PIECE_COLUMNS.copyNumber]: record => record.copyNumber || <NoValue />,
+  [PIECE_COLUMNS.barcode]: record => record.barcode || <NoValue />,
+};
 
+export const EXPECTED_PIECE_COLUMN_MAPPING = pick(PIECE_COLUMN_MAPPING, EXPECTED_PIECE_VISIBLE_COLUMNS);
 export const RECEIVED_PIECE_COLUMN_MAPPING = pick(PIECE_COLUMN_MAPPING, RECEIVED_PIECE_VISIBLE_COLUMNS);
+export const UNRECEIVABLE_PIECE_COLUMN_MAPPING = {
+  ...pick(PIECE_COLUMN_MAPPING, UNRECEIVABLE_PIECE_VISIBLE_COLUMNS),
+  [PIECE_COLUMNS.callNumber]: <FormattedMessage id="ui-receiving.piece.callNumber" />,
+};
 
 export const MENU_FILTERS = {
   supplement: 'supplement',
@@ -97,3 +118,6 @@ export const SUPPLEMENT_MENU_FILTER_OPTIONS = [
     label: <FormattedMessage id="ui-receiving.filter.nonSupplements" />,
   },
 ];
+
+export const EXPECTED_PIECES_STATUSES = Object.values(omit(PIECE_STATUS, ['received', 'unreceivable']));
+export const EXPECTED_PIECES_SEARCH_VALUE = EXPECTED_PIECES_STATUSES.map(status => `"${status}"`).join(' or ');
