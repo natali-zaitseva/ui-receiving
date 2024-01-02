@@ -212,5 +212,10 @@
     "piece.action.button.unReceivable": "Não recebível",
     "piece.action.button.delete": "Excluir",
     "piece.action.button.expect": "Esperar",
-    "piece.action.button.unReceive": "Cancelar recebimento"
+    "piece.action.button.unReceive": "Cancelar recebimento",
+    "title.details.button.expect": "Esperar",
+    "title.actions.expect.error": "Peças com expectativa de fracasso",
+    "title.actions.expect.success": "Peças com expectativa de sucesso",
+    "title.unreceivable": "Não recebível",
+    "shortcut.piece.saveAndCreateAnother": "Salvar uma peça e criar outra"
 }

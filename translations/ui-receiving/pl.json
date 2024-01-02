@@ -156,11 +156,11 @@
     "piece.actions.edit.keepHoldings": "Keep Holdings",
     "piece.actions.edit.deleteHoldings.message": "This piece is connected to records in inventory. After this edit there will be no other pieces OR items connected to the related Holdings record. After making this change would you like FOLIO to delete the Holdings?",
     "appMenu.receivingAppSearch": "Receiving app Search",
-    "button.actions": "Actions",
+    "button.actions": "Akcje",
     "title.receivingWorkflow": "Receiving workflow",
     "title.receivingWorkflow.independent": "Independent order and receipt quantity",
     "title.receivingWorkflow.synchronized": "Synchronized order and receipt quantity",
-    "piece.actions.saveAndClose": "Save & close",
+    "piece.actions.saveAndClose": "Zapisz i zamknij",
     "piece.actions.createAnother": "Create another",
     "filter.supplements": "Supplements",
     "filter.nonSupplements": "Non supplements",
@@ -212,5 +212,10 @@
     "piece.action.button.unReceivable": "Unreceivable",
     "piece.action.button.delete": "Delete",
     "piece.action.button.expect": "Expect",
-    "piece.action.button.unReceive": "Unreceive"
+    "piece.action.button.unReceive": "Unreceive",
+    "title.details.button.expect": "Expect",
+    "title.actions.expect.error": "Pieces expect failed",
+    "title.actions.expect.success": "Pieces expect successful",
+    "title.unreceivable": "Unreceivable",
+    "shortcut.piece.saveAndCreateAnother": "Save a piece and create another"
 }
