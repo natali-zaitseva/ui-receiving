@@ -212,5 +212,10 @@
     "piece.action.button.unReceivable": "Unreceivable",
     "piece.action.button.delete": "Delete",
     "piece.action.button.expect": "Expect",
-    "piece.action.button.unReceive": "Unreceive"
+    "piece.action.button.unReceive": "Unreceive",
+    "title.details.button.expect": "Expect",
+    "title.actions.expect.error": "Pieces expect failed",
+    "title.actions.expect.success": "Pieces expect successful",
+    "title.unreceivable": "Unreceivable",
+    "shortcut.piece.saveAndCreateAnother": "Save a piece and create another"
 }
