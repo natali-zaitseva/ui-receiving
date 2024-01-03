@@ -1,7 +1,9 @@
-import { PIECE_ACTIONS_BY_STATUS, PIECE_STATUS } from './constants';
+import { PIECE_STATUS } from '@folio/stripes-acq-components';
+
+import { PIECE_ACTIONS_BY_STATUS } from './constants';
 import { getPieceActionMenu } from './utils';
 
-const { expected, unReceivable, received } = PIECE_STATUS;
+const { expected, unreceivable, received } = PIECE_STATUS;
 
 describe('getPieceActionMenus', () => {
   it('should return empty array if status is not provided', () => {
@@ -40,7 +42,7 @@ describe('getPieceActionMenus', () => {
   describe('expect action', () => {
     it('should `onStatusChange` be called with `Expected` status value', () => {
       const onStatusChange = jest.fn();
-      const result = getPieceActionMenu({ status: unReceivable, disabled: true, onStatusChange });
+      const result = getPieceActionMenu({ status: unreceivable, disabled: true, onStatusChange });
       const expectButton = result.find(i => i.props['data-testid'] === 'expect-piece-button');
 
       expectButton.props.onClick();
@@ -69,7 +71,7 @@ describe('getPieceActionMenus', () => {
 
       receiveButton.props.onClick();
 
-      expect(onStatusChange).toHaveBeenCalledWith(PIECE_STATUS.unReceivable);
+      expect(onStatusChange).toHaveBeenCalledWith(PIECE_STATUS.unreceivable);
     });
   });
 });
