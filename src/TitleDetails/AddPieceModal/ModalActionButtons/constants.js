@@ -1,4 +1,3 @@
-import { noop } from 'lodash';
 import { FormattedMessage } from 'react-intl';
 
 import {
@@ -18,15 +17,20 @@ export const PIECE_ACTION_NAMES = {
   delete: 'delete',
 };
 
+export const EXPECTED_PIECES_ACTIONS = [
+  PIECE_ACTION_NAMES.saveAndCreate,
+  PIECE_ACTION_NAMES.quickReceive,
+  PIECE_ACTION_NAMES.sendClaim,
+  PIECE_ACTION_NAMES.delayClaim,
+  PIECE_ACTION_NAMES.unReceivable,
+  PIECE_ACTION_NAMES.delete,
+];
+
 export const PIECE_ACTIONS_BY_STATUS = {
-  [PIECE_STATUS.expected]: [
-    PIECE_ACTION_NAMES.saveAndCreate,
-    PIECE_ACTION_NAMES.quickReceive,
-    PIECE_ACTION_NAMES.sendClaim,
-    PIECE_ACTION_NAMES.delayClaim,
-    PIECE_ACTION_NAMES.unReceivable,
-    PIECE_ACTION_NAMES.delete,
-  ],
+  [PIECE_STATUS.expected]: EXPECTED_PIECES_ACTIONS,
+  [PIECE_STATUS.claimDelayed]: EXPECTED_PIECES_ACTIONS,
+  [PIECE_STATUS.claimSent]: EXPECTED_PIECES_ACTIONS,
+  [PIECE_STATUS.late]: EXPECTED_PIECES_ACTIONS,
   [PIECE_STATUS.received]: [
     PIECE_ACTION_NAMES.saveAndCreate,
     PIECE_ACTION_NAMES.unReceive,
@@ -43,6 +47,8 @@ export const PIECE_ACTIONS = ({
   canDeletePiece,
   disabled,
   isEditMode,
+  onClaimDelay,
+  onClaimSend,
   onCreateAnotherPiece,
   onStatusChange,
   onDelete,
@@ -52,7 +58,8 @@ export const PIECE_ACTIONS = ({
     <Button
       disabled={disabled}
       buttonStyle="dropdownItem"
-      onClick={noop} // TODO UIOR-1160
+      data-testid="delay-claim-button"
+      onClick={onClaimDelay}
     >
       <Icon icon="calendar">
         <FormattedMessage id="ui-receiving.piece.action.button.delayClaim" />
@@ -111,7 +118,8 @@ export const PIECE_ACTIONS = ({
     <Button
       disabled={disabled}
       buttonStyle="dropdownItem"
-      onClick={noop} // TODO UIOR-1152
+      data-testid="send-claim-button"
+      onClick={onClaimSend}
     >
       <Icon icon="envelope">
         <FormattedMessage id="ui-receiving.piece.action.button.sendClaim" />
