@@ -47,7 +47,6 @@
     "piece.addPieceModal.editTitle": "Upravit kus",
     "piece.addPieceModal.title": "Přidat kus",
     "piece.button.addPiece": "Přidat kus",
-    "piece.caption": "Titulek",
     "piece.comment": "Komentář",
     "piece.format": "Formát kusu",
     "piece.location": "Zvolit lokaci",
@@ -233,5 +232,6 @@
     "modal.delayClaim.field.delayTo": "Zpoždění do",
     "modal.sendClaim.heading": "Odeslat nárok",
     "modal.sendClaim.field.claimExpiryDate": "Datum vypršení platnosti nároku",
-    "validation.dateAfter": "Vybrané datum musí být pozdější než aktuální datum"
+    "validation.dateAfter": "Vybrané datum musí být pozdější než aktuální datum",
+    "piece.displaySummary": "Display summary"
 }

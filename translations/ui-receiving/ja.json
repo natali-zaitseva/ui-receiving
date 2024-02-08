@@ -47,7 +47,6 @@
     "piece.addPieceModal.editTitle": "Edit piece",
     "piece.addPieceModal.title": "Add piece",
     "piece.button.addPiece": "ピースを追加",
-    "piece.caption": "キャプション",
     "piece.comment": "コメント",
     "piece.format": "Piece format",
     "piece.location": "Select location",
@@ -233,5 +232,6 @@
     "modal.delayClaim.field.delayTo": "Delay to",
     "modal.sendClaim.heading": "クレームを送信する",
     "modal.sendClaim.field.claimExpiryDate": "クレーム有効期限",
-    "validation.dateAfter": "Selected date must be later than the current date"
+    "validation.dateAfter": "Selected date must be later than the current date",
+    "piece.displaySummary": "Display summary"
 }

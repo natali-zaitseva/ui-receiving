@@ -47,7 +47,6 @@
     "piece.addPieceModal.editTitle": "Éditer la pièce",
     "piece.addPieceModal.title": "Ajouter une pièce",
     "piece.button.addPiece": "Ajouter une pièce",
-    "piece.caption": "Légende",
     "piece.comment": "Commentaire",
     "piece.format": "Format de la pièce",
     "piece.location": "Sélectionner un emplacement",
@@ -233,5 +232,6 @@
     "modal.delayClaim.field.delayTo": "Delay to",
     "modal.sendClaim.heading": "Send claim",
     "modal.sendClaim.field.claimExpiryDate": "Claim expiry date",
-    "validation.dateAfter": "Selected date must be later than the current date"
+    "validation.dateAfter": "Selected date must be later than the current date",
+    "piece.displaySummary": "Display summary"
 }
