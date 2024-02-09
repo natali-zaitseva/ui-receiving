@@ -47,7 +47,6 @@
     "piece.addPieceModal.editTitle": "Editar peça",
     "piece.addPieceModal.title": "Adicionar peça",
     "piece.button.addPiece": "Adicionar peça",
-    "piece.caption": "Legenda",
     "piece.comment": "Comentário",
     "piece.format": "Formato da peça",
     "piece.location": "Selecione a localização",
@@ -233,5 +232,6 @@
     "modal.delayClaim.field.delayTo": "Atrasar para",
     "modal.sendClaim.heading": "Enviar reclamação",
     "modal.sendClaim.field.claimExpiryDate": "Data de expiração da reclamação",
-    "validation.dateAfter": "A data selecionada deve ser posterior à data atual"
+    "validation.dateAfter": "A data selecionada deve ser posterior à data atual",
+    "piece.displaySummary": "Exibir resumo"
 }

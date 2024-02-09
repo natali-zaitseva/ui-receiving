@@ -47,7 +47,6 @@
     "piece.addPieceModal.editTitle": "Modifica pezzo",
     "piece.addPieceModal.title": "Aggiungi pezzo",
     "piece.button.addPiece": "Aggiungi pezzo",
-    "piece.caption": "Didascalia",
     "piece.comment": "Commento",
     "piece.format": "Formato del pezzo",
     "piece.location": "Seleziona sezione",
@@ -233,5 +232,6 @@
     "modal.delayClaim.field.delayTo": "Delay to",
     "modal.sendClaim.heading": "Send claim",
     "modal.sendClaim.field.claimExpiryDate": "Claim expiry date",
-    "validation.dateAfter": "Selected date must be later than the current date"
+    "validation.dateAfter": "Selected date must be later than the current date",
+    "piece.displaySummary": "Display summary"
 }

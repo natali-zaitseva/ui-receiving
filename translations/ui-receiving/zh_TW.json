@@ -47,7 +47,6 @@
     "piece.addPieceModal.editTitle": "编辑件",
     "piece.addPieceModal.title": "添加件",
     "piece.button.addPiece": "添加件",
-    "piece.caption": "标题",
     "piece.comment": "备注",
     "piece.format": "件格式",
     "piece.location": "选择馆藏地",
@@ -233,5 +232,6 @@
     "modal.delayClaim.field.delayTo": "Delay to",
     "modal.sendClaim.heading": "Send claim",
     "modal.sendClaim.field.claimExpiryDate": "Claim expiry date",
-    "validation.dateAfter": "Selected date must be later than the current date"
+    "validation.dateAfter": "Selected date must be later than the current date",
+    "piece.displaySummary": "Display summary"
 }
