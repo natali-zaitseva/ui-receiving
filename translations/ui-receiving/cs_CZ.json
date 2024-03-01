@@ -233,5 +233,9 @@
     "modal.sendClaim.heading": "Odeslat nárok",
     "modal.sendClaim.field.claimExpiryDate": "Datum vypršení platnosti nároku",
     "validation.dateAfter": "Vybrané datum musí být pozdější než aktuální datum",
-    "piece.displaySummary": "Display summary"
+    "piece.displaySummary": "Zobrazit souhrn",
+    "errors.userNotAMemberOfTheAcq": "Akce je omezena akviziční jednotkou. Uživatel není přiřazen k uvedené akviziční jednotce.",
+    "errors.userHasNoPermission": "Akce je omezena akviziční jednotkou. Uživatel není přiřazen k uvedené akviziční jednotce.",
+    "errors.barcodeMustBeUnique": "Čárový kód musí být jedinečný.",
+    "piece.statusChangeLog.column.interval": "Interval"
 }

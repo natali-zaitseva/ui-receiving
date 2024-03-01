@@ -83,7 +83,7 @@
     "piece.itemStatus.Available": "Disponível",
     "piece.itemStatus.In process": "Em processamento",
     "piece.itemStatus.In transit": "Em trânsito",
-    "piece.itemStatus.On order": "Em processo de compra",
+    "piece.itemStatus.On order": "Encomendado",
     "piece.itemStatus.Received": "Recebido",
     "piece.itemStatus.Undefined": "Indefinido",
     "piece.itemStatus": "Status do item",
@@ -121,7 +121,7 @@
     "title.vendor": "Fornecedor",
     "piece.actions.selectAll": "Selecionar todas as peças",
     "piece.actions.select": "Selecionar peça",
-    "piece.confirmReceiving.title": "Pedido encerrado",
+    "piece.confirmReceiving.title": "Pedido fechado",
     "piece.confirmReceiving.message": "O pedido vinculado a este título está fechado. Tem certeza de que deseja receber esta(s) peça(s)?",
     "titles.orderWorkflow": "Status do pedido",
     "piece.actions.delete": "Excluir",
@@ -163,7 +163,7 @@
     "piece.actions.createAnother": "Crie outra",
     "filter.supplements": "Suplementos",
     "filter.nonSupplements": "Não suplementos",
-    "piece.itemStatus.info": "Ao receber peças que tenham exemplares conectados. Um exemplar conectado com o status de \"Pedido fechado\" ou \"Em pedido\" será atualizado para um status de \"Em processo\". Exemplares em outros status não terão seu status alterado.",
+    "piece.itemStatus.info": "Ao receber peças que tenham exemplares conectados. Um exemplar conectado com o status de \"Pedido fechado\" ou \"Em pedido\" será atualizado para um status de \"Em processamento\". Exemplares em outros status não terão seu status alterado.",
     "filter.rush": "Prioritário",
     "exportSettings.error": "Falha na carga de dados para exportar resultados (CSV)",
     "exportSettings.export": "Exportar",
@@ -233,5 +233,9 @@
     "modal.sendClaim.heading": "Enviar reclamação",
     "modal.sendClaim.field.claimExpiryDate": "Data de expiração da reclamação",
     "validation.dateAfter": "A data selecionada deve ser posterior à data atual",
-    "piece.displaySummary": "Exibir resumo"
+    "piece.displaySummary": "Exibir resumo",
+    "errors.userNotAMemberOfTheAcq": "A ação é restrita por unidade de aquisição. O usuário não está atribuído à unidade de aquisição especificada.",
+    "errors.userHasNoPermission": "A ação é restrita por unidade de aquisição. O usuário não está atribuído à unidade de aquisição especificada.",
+    "errors.barcodeMustBeUnique": "O código de barras deve ser único.",
+    "piece.statusChangeLog.column.interval": "Intervalo"
 }

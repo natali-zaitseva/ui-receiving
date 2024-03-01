@@ -233,5 +233,9 @@
     "modal.sendClaim.heading": "发送催缺",
     "modal.sendClaim.field.claimExpiryDate": "催缺到期日",
     "validation.dateAfter": "所选日期必须晚于当前日期",
-    "piece.displaySummary": "显示摘要"
+    "piece.displaySummary": "显示摘要",
+    "errors.userNotAMemberOfTheAcq": "Action is restricted by acquisition unit. User is not assigned to the specified acquisitions unit.",
+    "errors.userHasNoPermission": "Action is restricted by acquisition unit. User is not assigned to the specified acquisitions unit.",
+    "errors.barcodeMustBeUnique": "Barcode must be unique.",
+    "piece.statusChangeLog.column.interval": "Interval"
 }

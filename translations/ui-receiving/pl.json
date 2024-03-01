@@ -17,7 +17,7 @@
     "title.information": "Informacje o tytule",
     "title.polNumber": "Numer pozycji zamówienia",
     "title.productIds": "Identyfikatory produktu",
-    "title.publicationDate": "Data publikacji",
+    "title.publicationDate": "Data wydania",
     "title.publisher": "Wydawca",
     "title.received": "Odebrane",
     "title.receivingNote": "Uwaga do odbioru",
@@ -137,7 +137,7 @@
     "titles.invalidReference": "Invalid reference",
     "title.changePieceQuantityMessage": "Adding or removing pieces from this record will update the purchase order line quantity and location detail and in turn the estimated price.",
     "title.receiptDue": "Receipt due",
-    "title.requester": "Requester",
+    "title.requester": "Rezerwujący",
     "title.rush": "Rush",
     "piece.actions.savePiece.error": "The piece was <b>not saved</b>",
     "piece.actions.savePiece.success": "The piece was successfully <b>saved</b>",
@@ -201,7 +201,7 @@
     "errors.piecePolMismatch": "The piece does not correspond to PO line",
     "errors.pieceUpdateFailed": "The piece record failed to be updated",
     "errors.titleNotFound": "The receiving title(s) could not be found",
-    "piece.accessionNumber": "Accession number",
+    "piece.accessionNumber": "Nr dowodu wpływu",
     "title.claimingActive": "Claiming active",
     "title.claimingInterval": "Claiming interval",
     "piece.action.button.saveAndCreateAnother": "Zapisz i utwórz kolejny",
@@ -233,5 +233,9 @@
     "modal.sendClaim.heading": "Wyślij monit",
     "modal.sendClaim.field.claimExpiryDate": "Data wygaśnięcia monitu",
     "validation.dateAfter": "Wybrana data musi być późniejsza od daty aktualnej",
-    "piece.displaySummary": "Display summary"
+    "piece.displaySummary": "Display summary",
+    "errors.userNotAMemberOfTheAcq": "Action is restricted by acquisition unit. User is not assigned to the specified acquisitions unit.",
+    "errors.userHasNoPermission": "Action is restricted by acquisition unit. User is not assigned to the specified acquisitions unit.",
+    "errors.barcodeMustBeUnique": "Barcode must be unique.",
+    "piece.statusChangeLog.column.interval": "Interval"
 }
