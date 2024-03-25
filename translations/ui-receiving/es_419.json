@@ -143,7 +143,7 @@
     "piece.actions.savePiece.success": "La pieza se ha <b>guardado</b> correctamente",
     "piece.actions.delete.deleteItem": "Borrar elemento",
     "piece.actions.delete.deleteHoldings": "Eliminar participaciones",
-    "piece.actions.delete.deleteHoldingsAndItem": "Suprimir participaciones y artículos",
+    "piece.actions.delete.deleteHoldingsAndItem": "Suprimir participaciones y ítems",
     "piece.copyNumber": "Número de copia",
     "piece.enumeration": "Enumeración",
     "piece.chronology": "Cronología",
@@ -153,7 +153,7 @@
     "piece.delete.deleteHoldingsAndItem.message": "Esta pieza está conectada a registros en inventario. No hay ninguna otra pieza relacionada con el registro de Holdings. ¿Deseas que FOLIO elimine las Holdings después de eliminar esta pieza?",
     "shortcut.receive": "Recepción de piezas/recepción rápida",
     "piece.actions.edit.keepHoldings": "Mantener participaciones",
-    "piece.actions.edit.deleteHoldings.message": "Esta pieza está conectada a registros en el inventario. Después de esta edición no habrá otras piezas O artículos conectados al registro de Holdings relacionado. ¿Deseas que FOLIO elimine las Holdings después de realizar este cambio?",
+    "piece.actions.edit.deleteHoldings.message": "Esta pieza está conectada a registros en el inventario. Después de esta edición no habrá otras piezas O ítems conectados al registro de Holdings relacionado. ¿Deseas que FOLIO elimine las Holdings después de realizar este cambio?",
     "appMenu.receivingAppSearch": "Recepción de la aplicación Búsqueda",
     "button.actions": "Acciones",
     "title.receivingWorkflow": "Flujo de trabajo de recepción",
@@ -236,6 +236,8 @@
     "piece.displaySummary": "Display summary",
     "errors.userNotAMemberOfTheAcq": "Action is restricted by acquisition unit. User is not assigned to the specified acquisitions unit.",
     "errors.userHasNoPermission": "Action is restricted by acquisition unit. User is not assigned to the specified acquisitions unit.",
-    "errors.barcodeMustBeUnique": "Barcode must be unique.",
-    "piece.statusChangeLog.column.interval": "Interval"
+    "piece.statusChangeLog.column.interval": "Interval",
+    "systemUser.label": "System",
+    "errors.barcodeIsNotUnique": "Barcode must be unique, piece and item data could not be updated.",
+    "document.title.search": "Receiving - {query} - Search"
 }
