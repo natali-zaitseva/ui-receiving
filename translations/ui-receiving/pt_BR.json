@@ -240,5 +240,13 @@
     "systemUser.label": "Sistema",
     "errors.barcodeIsNotUnique": "O código de barras deve ser único, os dados da peça e do item não podem ser atualizados.",
     "document.title.search": "Recebimento - {query} - Pesquisa",
-    "piece.displayToPublic": "Exibir ao público"
+    "piece.displayToPublic": "Exibir ao público",
+    "filter.createdBy": "Criado por",
+    "filter.updatedBy": "Atualizado por",
+    "filter.dateCreated": "Data de criação",
+    "filter.dateUpdated": "Data de atualização",
+    "filter.piece.createdBy": "Criado por (peça)",
+    "filter.piece.updatedBy": "Atualizado por (Piece)",
+    "filter.piece.dateCreated": "Data de criação (Peça)",
+    "filter.piece.dateUpdated": "Data de atualização (peça)"
 }

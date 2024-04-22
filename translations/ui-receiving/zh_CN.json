@@ -240,5 +240,13 @@
     "systemUser.label": "系统",
     "errors.barcodeIsNotUnique": "条码必须唯一，件和单触目数据无法更新。",
     "document.title.search": "接收 - {query} - 搜索",
-    "piece.displayToPublic": "Display to public"
+    "piece.displayToPublic": "Display to public",
+    "filter.createdBy": "Created by",
+    "filter.updatedBy": "Updated by",
+    "filter.dateCreated": "Date created",
+    "filter.dateUpdated": "Date updated",
+    "filter.piece.createdBy": "Created by (Piece)",
+    "filter.piece.updatedBy": "Updated by (Piece)",
+    "filter.piece.dateCreated": "Date created (Piece)",
+    "filter.piece.dateUpdated": "Date updated (Piece)"
 }
