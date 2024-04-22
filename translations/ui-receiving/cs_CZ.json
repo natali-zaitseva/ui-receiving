@@ -240,5 +240,13 @@
     "systemUser.label": "Systém",
     "errors.barcodeIsNotUnique": "Čárový kód musí být jedinečný, údaje o kusech a jednotkách nelze aktualizovat.",
     "document.title.search": "Příjem - {query} - Vyhledat",
-    "piece.displayToPublic": "Zobrazit pro veřejnost"
+    "piece.displayToPublic": "Zobrazit pro veřejnost",
+    "filter.createdBy": "Created by",
+    "filter.updatedBy": "Updated by",
+    "filter.dateCreated": "Date created",
+    "filter.dateUpdated": "Date updated",
+    "filter.piece.createdBy": "Created by (Piece)",
+    "filter.piece.updatedBy": "Updated by (Piece)",
+    "filter.piece.dateCreated": "Date created (Piece)",
+    "filter.piece.dateUpdated": "Date updated (Piece)"
 }

@@ -240,5 +240,13 @@
     "systemUser.label": "System",
     "errors.barcodeIsNotUnique": "Barcode must be unique, piece and item data could not be updated.",
     "document.title.search": "Receiving - {query} - Search",
-    "piece.displayToPublic": "Display to public"
+    "piece.displayToPublic": "Display to public",
+    "filter.createdBy": "Created by",
+    "filter.updatedBy": "Updated by",
+    "filter.dateCreated": "Date created",
+    "filter.dateUpdated": "Date updated",
+    "filter.piece.createdBy": "Created by (Piece)",
+    "filter.piece.updatedBy": "Updated by (Piece)",
+    "filter.piece.dateCreated": "Date created (Piece)",
+    "filter.piece.dateUpdated": "Date updated (Piece)"
 }
