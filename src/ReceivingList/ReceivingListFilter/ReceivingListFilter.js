@@ -109,6 +109,15 @@ const ReceivingListFilter = ({
         options={PIECE_STATUS_OPTIONS}
       />
 
+      <BooleanFilter
+        id={`filter-${FILTERS.BINDERY_ACTIVE}`}
+        activeFilters={activeFilters[FILTERS.BINDERY_ACTIVE]}
+        disabled={disabled}
+        labelId="ui-receiving.filter.isBinderyActive"
+        name={FILTERS.BINDERY_ACTIVE}
+        onChange={adaptedApplyFilters}
+      />
+
       <AcqUnitFilter
         id={`filter-${FILTERS.ACQUISITIONS_UNIT}`}
         activeFilters={activeFilters[FILTERS.ACQUISITIONS_UNIT]}
