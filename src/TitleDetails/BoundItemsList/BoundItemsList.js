@@ -4,38 +4,26 @@ import { useMemo } from 'react';
 import {
   acqRowFormatter,
   PrevNextPagination,
+  useLocalPagination,
 } from '@folio/stripes-acq-components';
-import { MultiColumnList } from '@folio/stripes/components';
+import {
+  Loading,
+  MultiColumnList,
+} from '@folio/stripes/components';
 import { useStripes } from '@folio/stripes/core';
 
 import { PIECE_COLUMN_MAPPING } from '../constants';
-import { usePiecesList } from '../hooks';
 import {
   BOUND_ITEMS_LIMIT,
   VISIBLE_COLUMNS,
 } from './constants';
+import { useBoundItems } from './hooks';
 import { getColumnFormatter } from './utils';
 
-export const BoundPiecesList = ({
-  filters,
-  id,
-  title,
-}) => {
+export const BoundItemsList = ({ id, title }) => {
   const stripes = useStripes();
-  const {
-    isFetching,
-    pagination,
-    pieces,
-    setPagination,
-    totalRecords,
-  } = usePiecesList({
-    filters,
-    limit: BOUND_ITEMS_LIMIT,
-    title,
-    queryParams: {
-      isBound: true,
-    },
-  });
+  const { isFetching, items, totalRecords } = useBoundItems({ titleId: title.id, poLineId: title.poLineId });
+  const { paginatedData, pagination, setPagination } = useLocalPagination(items, BOUND_ITEMS_LIMIT);
 
   const onPageChange = newPagination => {
     setPagination({ ...newPagination, timestamp: new Date() });
@@ -46,13 +34,13 @@ export const BoundPiecesList = ({
     return getColumnFormatter(hasViewInventoryPermissions, title?.instanceId);
   }, [hasViewInventoryPermissions, title?.instanceId]);
 
-  if (!pieces) return null;
+  if (isFetching) return <Loading />;
 
   return (
     <>
       <MultiColumnList
         id={id}
-        contentData={pieces}
+        contentData={paginatedData}
         totalCount={totalRecords}
         columnMapping={PIECE_COLUMN_MAPPING}
         visibleColumns={VISIBLE_COLUMNS}
@@ -61,7 +49,7 @@ export const BoundPiecesList = ({
         rowFormatter={acqRowFormatter}
       />
 
-      {pieces.length > 0 && (
+      {totalRecords > 0 && (
         <PrevNextPagination
           {...pagination}
           totalCount={totalRecords}
@@ -73,8 +61,7 @@ export const BoundPiecesList = ({
   );
 };
 
-BoundPiecesList.propTypes = {
-  filters: PropTypes.object.isRequired,
+BoundItemsList.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.object.isRequired,
 };
