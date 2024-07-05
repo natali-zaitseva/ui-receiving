@@ -8,11 +8,7 @@ import {
   screen,
   within,
 } from '@folio/jest-config-stripes/testing-library/react';
-
-import { checkIfUserInCentralTenant } from '@folio/stripes/core';
-import {
-  useLocationsQuery,
-} from '@folio/stripes-acq-components';
+import { useLocationsQuery } from '@folio/stripes-acq-components';
 
 import { FILTERS } from '../constants';
 import ReceivingListFilter from './ReceivingListFilter';
@@ -22,7 +18,11 @@ jest.mock('@folio/stripes-acq-components/lib/hooks', () => ({
   useLocationsQuery: jest.fn(),
 }));
 
-const queryClient = new QueryClient();
+const locations = [
+  { id: 'location-1', name: 'Test non-ECS location 1' },
+  { id: 'location-2', name: 'Test non-ECS location 2' },
+  { id: 'location-3', name: 'Test non-ECS location 3' },
+];
 
 const locationsECS = [
   {
@@ -37,36 +37,32 @@ const locationsECS = [
   },
 ];
 
-const buildContextProviderMock = (Context, value) => ({ children }) => {
-  return (
-    <Context.Provider value={value}>
-      {children}
-    </Context.Provider>
-  );
-};
-
 const defaultProps = {
   activeFilters: {},
   applyFilters: jest.fn(),
   disabled: false,
 };
 
-const renderReceivingListFilter = (props = {}) => (render(
+const queryClient = new QueryClient();
+const wrapper = ({ children }) => (
   <QueryClientProvider client={queryClient}>
-    <ReceivingListFilter
-      {...defaultProps}
-      {...props}
-    />
-  </QueryClientProvider>,
+    {children}
+  </QueryClientProvider>
+);
+
+const renderReceivingListFilter = (props = {}) => (render(
+  <ReceivingListFilter
+    {...defaultProps}
+    {...props}
+  />,
+  { wrapper },
 ));
 
 describe('ReceivingListFilter', () => {
   beforeEach(() => {
-    useLocationsQuery.mockClear().mockReturnValue({ locations: [] });
-
-    checkIfUserInCentralTenant
+    useLocationsQuery
       .mockClear()
-      .mockReturnValue(false);
+      .mockReturnValue({ locations });
   });
 
   it('should display receiving filters', async () => {
@@ -84,16 +80,14 @@ describe('ReceivingListFilter', () => {
 
   describe('ECS mode', () => {
     beforeEach(() => {
-      checkIfUserInCentralTenant
+      useLocationsQuery
         .mockClear()
-        .mockReturnValue(true);
-
-      useLocationsQuery.mockClear().mockReturnValue({ locations: locationsECS });
+        .mockReturnValue({ locations: locationsECS });
     });
 
     it('should render locations filter with selected options', () => {
       const { container } = renderReceivingListFilter({
-        centralOrdering: true,
+        crossTenant: true,
         activeFilters: { [FILTERS.LOCATION]: locationsECS.map(({ id }) => id) },
       });
 

@@ -26,8 +26,9 @@ const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters
 const ReceivingListFilter = ({
   activeFilters,
   applyFilters,
-  centralOrdering = false,
+  crossTenant = false,
   disabled,
+  tenantId,
 }) => {
   const adaptedApplyFilters = useCallback((data) => applyFiltersAdapter(applyFilters)(data), [applyFilters]);
 
@@ -50,6 +51,7 @@ const ReceivingListFilter = ({
         labelId="ui-receiving.filter.vendor"
         name={FILTERS.ORDER_ORGANIZATION}
         onChange={adaptedApplyFilters}
+        tenantId={tenantId}
       />
 
       <AcqCheckboxFilter
@@ -69,6 +71,7 @@ const ReceivingListFilter = ({
         labelId="ui-receiving.filter.materialType"
         name={FILTERS.MATERIAL_TYPE}
         onChange={adaptedApplyFilters}
+        tenantId={tenantId}
       />
 
       <AcqCheckboxFilter
@@ -87,6 +90,7 @@ const ReceivingListFilter = ({
         disabled={disabled}
         name={FILTERS.POL_TAGS}
         onChange={adaptedApplyFilters}
+        tenantId={tenantId}
       />
 
       <LocationFilterContainer
@@ -96,7 +100,7 @@ const ReceivingListFilter = ({
         labelId="ui-receiving.filter.location"
         name={FILTERS.LOCATION}
         onChange={adaptedApplyFilters}
-        crossTenant={centralOrdering}
+        crossTenant={crossTenant}
       />
 
       <AcqCheckboxFilter
@@ -124,6 +128,7 @@ const ReceivingListFilter = ({
         disabled={disabled}
         name={FILTERS.ACQUISITIONS_UNIT}
         onChange={adaptedApplyFilters}
+        tenantId={tenantId}
       />
 
       <BooleanFilter
@@ -166,6 +171,7 @@ const ReceivingListFilter = ({
         name={FILTERS.CREATED_BY}
         onChange={adaptedApplyFilters}
         disabled={disabled}
+        tenantId={tenantId}
       />
 
       <AcqDateRangeFilter
@@ -184,6 +190,7 @@ const ReceivingListFilter = ({
         name={FILTERS.UPDATED_BY}
         onChange={adaptedApplyFilters}
         disabled={disabled}
+        tenantId={tenantId}
       />
 
       <AcqDateRangeFilter
@@ -202,6 +209,7 @@ const ReceivingListFilter = ({
         name={FILTERS.PIECE_CREATED_BY}
         onChange={adaptedApplyFilters}
         disabled={disabled}
+        tenantId={tenantId}
       />
 
       <AcqDateRangeFilter
@@ -220,6 +228,7 @@ const ReceivingListFilter = ({
         name={FILTERS.PIECE_UPDATED_BY}
         onChange={adaptedApplyFilters}
         disabled={disabled}
+        tenantId={tenantId}
       />
 
       <AcqDateRangeFilter
@@ -237,8 +246,9 @@ const ReceivingListFilter = ({
 ReceivingListFilter.propTypes = {
   activeFilters: PropTypes.object.isRequired,
   applyFilters: PropTypes.func.isRequired,
-  centralOrdering: PropTypes.bool,
+  crossTenant: PropTypes.bool,
   disabled: PropTypes.bool.isRequired,
+  tenantId: PropTypes.string.isRequired,
 };
 
 export default ReceivingListFilter;

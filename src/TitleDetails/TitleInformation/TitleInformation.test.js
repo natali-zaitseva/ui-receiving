@@ -5,13 +5,20 @@ import {
   QueryClientProvider,
 } from 'react-query';
 
-import { render, cleanup } from '@folio/jest-config-stripes/testing-library/react';
+import { render } from '@folio/jest-config-stripes/testing-library/react';
 
 import TitleInformation from './TitleInformation';
 
+jest.mock('@folio/stripes-acq-components/lib/hooks', () => ({
+  ...jest.requireActual('@folio/stripes-acq-components/lib/hooks'),
+  useAcquisitionUnits: jest.fn(() => ({ acquisitionsUnits: [] })),
+  useContributorNameTypes: jest.fn(() => ({ contributorNameTypes: [] })),
+  useIdentifierTypes: jest.fn(() => ({ identifierTypes: [] })),
+}));
+
 const queryClient = new QueryClient();
 
-const renderTitleInformation = (titleProp) => (render(
+const renderTitleInformation = (titleProp) => render(
   <IntlProvider locale="en">
     <MemoryRouter>
       <QueryClientProvider client={queryClient}>
@@ -30,7 +37,7 @@ const renderTitleInformation = (titleProp) => (render(
       </QueryClientProvider>
     </MemoryRouter>
   </IntlProvider>,
-));
+);
 
 const title = {
   claimingActive: true,
@@ -46,8 +53,6 @@ const title = {
 };
 
 describe('Given Title information', () => {
-  afterEach(cleanup);
-
   it('Than it should display title values', () => {
     const { getByText } = renderTitleInformation(title);
 

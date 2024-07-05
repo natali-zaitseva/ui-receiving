@@ -1,18 +1,23 @@
-import { MemoryRouter } from 'react-router-dom';
-import { useHistory } from 'react-router';
 import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query';
+import {
+  MemoryRouter,
+  useHistory,
+} from 'react-router-dom';
 
-import { render, screen } from '@folio/jest-config-stripes/testing-library/react';
+import {
+  render,
+  screen,
+} from '@folio/jest-config-stripes/testing-library/react';
 import user from '@folio/jest-config-stripes/testing-library/user-event';
-
 import {
   HasCommand,
   expandAllSections,
   collapseAllSections,
 } from '@folio/stripes/components';
+import { useOkapiKy } from '@folio/stripes/core';
 
 import TitleForm from './TitleForm';
 
@@ -30,18 +35,38 @@ jest.mock('@folio/stripes-acq-components', () => ({
     isLoading: false,
   }),
 }));
+jest.mock('@folio/stripes-acq-components/lib/hooks', () => ({
+  ...jest.requireActual('@folio/stripes-acq-components/lib/hooks'),
+  useAcquisitionUnits: jest.fn(() => ({ acquisitionsUnits: [] })),
+  useContributorNameTypes: jest.fn(() => ({ contributorNameTypes: [] })),
+  useIdentifierTypes: jest.fn(() => ({ identifierTypes: [] })),
+}));
 jest.mock('react-router', () => ({
   ...jest.requireActual('react-router'),
   useHistory: jest.fn(),
 }));
-
-const queryClient = new QueryClient();
 
 const defaultProps = {
   onCancel: jest.fn(),
   onSubmit: jest.fn(),
   initialValues: { metadata: {} },
 };
+
+const kyMock = {
+  extend: () => kyMock,
+  get: jest.fn(() => ({
+    json: () => Promise.resolve({}),
+  })),
+};
+
+const queryClient = new QueryClient();
+const wrapper = ({ children }) => (
+  <MemoryRouter>
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  </MemoryRouter>
+);
 
 const renderTitleForm = (props = defaultProps) => render(
   <QueryClientProvider client={queryClient}>
@@ -53,6 +78,13 @@ const renderTitleForm = (props = defaultProps) => render(
 );
 
 describe('TitleForm', () => {
+  beforeEach(() => {
+    kyMock.get.mockClear();
+    useOkapiKy
+      .mockClear()
+      .mockReturnValue(kyMock);
+  });
+
   it('should display title', () => {
     const { getByText } = renderTitleForm();
 
