@@ -148,7 +148,7 @@
     "piece.chronology": "Chronology",
     "piece.displayOnHolding": "Display on holding",
     "piece.discoverySuppress": "Ukryty w katalogu WWW",
-    "piece.lineLocations": "Order line locations",
+    "piece.lineLocations": "Lokalizacje zamówionych pozycji",
     "piece.delete.deleteHoldingsAndItem.message": "This piece is connected to records in inventory. There are no other items connected to the related Holdings record. After deleting this piece would you like FOLIO to delete the Holdings?",
     "shortcut.receive": "Receive pieces/Quick receive",
     "piece.actions.edit.keepHoldings": "Keep Holdings",
