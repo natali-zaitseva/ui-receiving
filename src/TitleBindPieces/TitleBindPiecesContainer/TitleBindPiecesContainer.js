@@ -105,6 +105,7 @@ export const TitleBindPiecesContainer = () => {
       bindItem: {
         ...values.bindItem,
       },
+      ...(orderLine.isPackage ? { instanceId: title.instanceId } : {}),
     };
 
     if (openRequests?.length) {
