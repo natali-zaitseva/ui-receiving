@@ -10,7 +10,7 @@ import { getHoldingLocationName } from '@folio/stripes-acq-components';
 import {
   PIECE_COLUMN_BASE_FORMATTER,
   UNRECEIVABLE_PIECE_COLUMN_MAPPING,
-} from '../TitleDetails/constants';
+} from '../Piece';
 
 export const getResultFormatter = ({ field, intl, pieceHoldingMap, pieceLocationMap }) => ({
   ...PIECE_COLUMN_BASE_FORMATTER,
@@ -33,7 +33,7 @@ export const getResultFormatter = ({ field, intl, pieceHoldingMap, pieceLocation
   ),
   location: ({ locationId, holdingId }) => (
     holdingId
-      ? getHoldingLocationName(pieceHoldingMap[holdingId], pieceLocationMap)
+      ? getHoldingLocationName(pieceHoldingMap[holdingId], pieceLocationMap, intl.formatMessage({ id: 'ui-receiving.titles.invalidReference' }))
       : (pieceLocationMap[locationId]?.name && `${pieceLocationMap[locationId].name} (${pieceLocationMap[locationId].code})`) || ''
   ),
 });

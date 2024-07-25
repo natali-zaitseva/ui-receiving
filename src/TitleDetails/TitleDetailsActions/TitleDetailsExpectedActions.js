@@ -1,9 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import { FilterMenu } from '@folio/stripes-acq-components';
-import { CheckboxFilter, ColumnManagerMenu } from '@folio/stripes/smart-components';
+import {
+  CheckboxFilter,
+  ColumnManagerMenu,
+} from '@folio/stripes/smart-components';
 import {
   Button,
   Dropdown,
@@ -16,12 +18,12 @@ import {
   EXPECTED_PIECE_COLUMN_MAPPING,
   MENU_FILTERS,
   SUPPLEMENT_MENU_FILTER_OPTIONS,
-} from '../constants';
+} from '../../Piece';
 
 export function TitleDetailsExpectedActions({
   applyFilters,
   filters,
-  openAddPieceModal,
+  onPieceCreate,
   openReceiveList,
   hasReceive,
   disabled,
@@ -49,7 +51,7 @@ export function TitleDetailsExpectedActions({
             data-testid="add-piece-button"
             data-test-add-piece-button
             buttonStyle="dropdownItem"
-            onClick={openAddPieceModal}
+            onClick={onPieceCreate}
             disabled={!canAddPiece}
           >
             <Icon size="small" icon="plus-sign">
@@ -98,7 +100,7 @@ TitleDetailsExpectedActions.propTypes = {
   applyFilters: PropTypes.func.isRequired,
   filters: PropTypes.object.isRequired,
   hasReceive: PropTypes.bool.isRequired,
-  openAddPieceModal: PropTypes.func.isRequired,
+  onPieceCreate: PropTypes.func.isRequired,
   openReceiveList: PropTypes.func.isRequired,
   toggleColumn: PropTypes.func.isRequired,
   visibleColumns: PropTypes.arrayOf(PropTypes.string).isRequired,

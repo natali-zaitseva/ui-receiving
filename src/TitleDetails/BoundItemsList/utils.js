@@ -1,10 +1,13 @@
 import { FormattedMessage } from 'react-intl';
 
 import { getItemStatusLabel } from '@folio/stripes-acq-components';
-import { NoValue, TextLink } from '@folio/stripes/components';
+import {
+  NoValue,
+  TextLink,
+} from '@folio/stripes/components';
 
 import { getPieceStatusFromItem } from '../../common/utils';
-import { PIECE_COLUMNS } from '../constants';
+import { PIECE_COLUMNS } from '../../Piece';
 
 export const getColumnFormatter = (hasViewInventoryPermissions, instanceId) => {
   return ({

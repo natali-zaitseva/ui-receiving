@@ -25,6 +25,7 @@
 * Add barcode values for "Bind" process messages. Refs UIREC-372.
 * Receiving app closes after closing Routing list page. Refs UIREC-380.
 * Improve item record behavior for items associated with receiving pieces after binding. Refs UIREC-371.
+* Move the piece form out of the modal to a separate route with a full view. Refs UIREC-368.
 
 ## [5.0.4](https://github.com/folio-org/ui-receiving/tree/v5.0.4) (2024-04-22)
 [Full Changelog](https://github.com/folio-org/ui-receiving/compare/v5.0.3...v5.0.4)
