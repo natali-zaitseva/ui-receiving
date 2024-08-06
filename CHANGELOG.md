@@ -32,6 +32,7 @@
 [Full Changelog](https://github.com/folio-org/ui-receiving/compare/v5.0.4...v5.0.5)
 
 * Break order lines in chunks on receiving list. Refs UIREC-385.
+* ECS - Check a holding abandonment when deleting a piece or changing the holding in central ordering mode. Refs UIREC-374.
 
 ## [5.0.4](https://github.com/folio-org/ui-receiving/tree/v5.0.4) (2024-04-22)
 [Full Changelog](https://github.com/folio-org/ui-receiving/compare/v5.0.3...v5.0.4)
