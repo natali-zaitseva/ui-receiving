@@ -270,5 +270,5 @@
     "bind.pieces.modal.delete.message": "There are requests on the following pieces: <b>{barcodes}</b>. Please <b>delete requests</b> before proceeding.",
     "piece.accordion.originalItemDetails": "Item details (original)",
     "piece.pieceForm.edit.title": "Edit piece",
-    "piece.pieceForm.create.title": "Add piece"
+    "piece.pieceForm.create.title": "Dodaj część"
 }
