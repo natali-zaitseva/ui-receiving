@@ -5,9 +5,12 @@ import {
   LINES_API,
   LOCATIONS_API,
   ORDER_FORMATS,
-  SEARCH_API,
 } from '@folio/stripes-acq-components';
 
+import {
+  BATCH_IDENTIFIER_TYPE,
+  CONSORTIUM_BATCH_HOLDINGS,
+} from '../common/constants';
 import { FILTERS } from './constants';
 import {
   fetchConsortiumOrderLineHoldings,
@@ -258,7 +261,7 @@ describe('ReceivingList utils', () => {
       it('should fetch order line holdings from consortium tenants', async () => {
         const ky = {
           extend: () => ky,
-          get: jest.fn(() => ({
+          post: jest.fn(() => ({
             json: () => Promise.resolve({ holdings: [] }),
           })),
         };
@@ -278,19 +281,17 @@ describe('ReceivingList utils', () => {
           },
         ];
 
-        fetchConsortiumOrderLineHoldings(ky, {})(orderLines).then(() => {
-          expect(ky.get).toHaveBeenCalledTimes(2);
-          expect(ky.get).toHaveBeenNthCalledWith(
-            1,
-            `${SEARCH_API}/consortium/holdings`,
-            { searchParams: { instanceId: orderLines[0].instanceId } },
-          );
-          expect(ky.get).toHaveBeenNthCalledWith(
-            2,
-            `${SEARCH_API}/consortium/holdings`,
-            { searchParams: { instanceId: orderLines[1].instanceId } },
-          );
-        });
+        await fetchConsortiumOrderLineHoldings(ky, {})(orderLines);
+
+        expect(ky.post).toHaveBeenCalledWith(
+          CONSORTIUM_BATCH_HOLDINGS,
+          {
+            json: {
+              identifierType: BATCH_IDENTIFIER_TYPE.instanceId,
+              identifierValues: [...new Set(orderLines.map(({ instanceId }) => instanceId))],
+            },
+          },
+        );
       });
     });
 

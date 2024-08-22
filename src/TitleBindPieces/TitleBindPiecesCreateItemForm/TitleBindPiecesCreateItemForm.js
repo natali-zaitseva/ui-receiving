@@ -27,7 +27,11 @@ import {
 } from '../hooks';
 import { buildOptions } from '../utils';
 
-export const TitleBindPiecesCreateItemForm = ({ instanceId, bindItemValues = {}, setLocationValue }) => {
+export const TitleBindPiecesCreateItemForm = ({
+  instanceId,
+  bindItemValues = {},
+  selectLocation,
+}) => {
   const { materialTypes } = useMaterialTypes();
   const { loanTypes } = useLoanTypes();
   const intl = useIntl();
@@ -131,7 +135,7 @@ export const TitleBindPiecesCreateItemForm = ({ instanceId, bindItemValues = {},
           locations={locations}
           holdingName={PIECE_FORM_FIELD_NAMES.holdingId}
           locationName={PIECE_FORM_FIELD_NAMES.locationId}
-          onChange={setLocationValue}
+          onChange={selectLocation}
           locationLabelId="ui-receiving.piece.permanentLocationId"
           holdingLabelId="ui-receiving.piece.permanentLocationId"
           required
@@ -143,6 +147,6 @@ export const TitleBindPiecesCreateItemForm = ({ instanceId, bindItemValues = {},
 
 TitleBindPiecesCreateItemForm.propTypes = {
   instanceId: PropTypes.string.isRequired,
+  selectLocation: PropTypes.func.isRequired,
   bindItemValues: PropTypes.object,
-  setLocationValue: PropTypes.func.isRequired,
 };

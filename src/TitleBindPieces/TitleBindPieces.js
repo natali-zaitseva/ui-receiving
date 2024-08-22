@@ -15,6 +15,7 @@ import {
 } from '@folio/stripes/components';
 import stripesFinalForm from '@folio/stripes/final-form';
 
+import { setLocationValueFormMutator } from '../common/utils';
 import { TitleBindPiecesCreateItemForm } from './TitleBindPiecesCreateItemForm';
 import { TitleBindPiecesList } from './TitleBindPiecesList';
 
@@ -28,7 +29,6 @@ const TitleBindPieces = ({
   paneTitle,
   pristine,
   submitting,
-  titleId,
   values,
   isLoading,
 }) => {
@@ -76,9 +76,8 @@ const TitleBindPieces = ({
           >
             <TitleBindPiecesCreateItemForm
               instanceId={instanceId}
-              titleId={titleId}
+              selectLocation={form.mutators.setLocationValue}
               bindItemValues={values?.bindItem}
-              setLocationValue={form.mutators.setLocationValue}
             />
             <FieldArray
               id={FIELD_NAME}
@@ -102,7 +101,6 @@ TitleBindPieces.propTypes = {
   paneTitle: PropTypes.string.isRequired,
   pristine: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
-  titleId: PropTypes.string,
   values: PropTypes.object.isRequired,
 };
 
@@ -117,15 +115,6 @@ export default stripesFinalForm({
         tools.changeValue(state, `${FIELD_NAME}[${i}].checked`, () => isChecked);
       });
     },
-    setLocationValue: (args, state, tools) => {
-      const [location, locationField, holdingFieldName, holdingId] = args;
-      const locationId = holdingId ? undefined : location?.id || location;
-
-      tools.changeValue(state, locationField, () => locationId);
-
-      if (holdingFieldName) {
-        tools.changeValue(state, holdingFieldName, () => holdingId);
-      }
-    },
+    setLocationValue: setLocationValueFormMutator,
   },
 })(TitleBindPieces);
