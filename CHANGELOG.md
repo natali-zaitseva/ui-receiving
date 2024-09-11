@@ -36,6 +36,7 @@
 * ECS - Fix invalid reference for holding drop-down component. Refs UIREC-393.
 * Sort pieces on bind items screen by expected receipt date. Refs UIREC-392.
 * Disable `Delete` and `Unreceive` buttons if the piece is bound. Refs UIREC-382.
+* Leverage new endpoint to get items across tenants. Refs UIREC-388.
 
 ## [5.0.5](https://github.com/folio-org/ui-receiving/tree/v5.0.5) (2024-08-05)
 [Full Changelog](https://github.com/folio-org/ui-receiving/compare/v5.0.4...v5.0.5)
