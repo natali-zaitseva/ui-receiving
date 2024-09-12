@@ -9,7 +9,18 @@ import { extendKyWithTenant } from './utils';
 
 const DEFAULT_DATA = [];
 
-export const getHoldingLocations = async ({ ky, searchParams, signal, tenantId }) => {
+export const getHoldingLocations = async ({
+  ky,
+  searchParams,
+  signal,
+  /*
+    Non-ECS mode:
+    `additionalLocationIds` is a list of locationIds for the case when we need to fetch additional
+    locations for the selected location in the form so that the value is displayed in the selection.
+  */
+  additionalLocationIds = [],
+  tenantId,
+}) => {
   const holdings = await ky
     .get(HOLDINGS_API, { searchParams, signal })
     .json()
@@ -20,10 +31,11 @@ export const getHoldingLocations = async ({ ky, searchParams, signal, tenantId }
     });
 
   const locationIds = holdings?.map(({ permanentLocationId }) => permanentLocationId) || DEFAULT_DATA;
+  const uniqueLocationIds = [...new Set([...locationIds, ...additionalLocationIds])];
 
   const locations = await batchRequest(
     ({ params }) => ky.get(LOCATIONS_API, { searchParams: params, signal }).json(),
-    locationIds,
+    uniqueLocationIds,
   ).then(responses => responses.flatMap(response => {
     return tenantId
       ? response.locations.map(location => ({ ...location, tenantId }))
@@ -37,16 +49,41 @@ export const getHoldingLocations = async ({ ky, searchParams, signal, tenantId }
   };
 };
 
-export const getHoldingLocationsByTenants = async ({ ky, instanceId, receivingTenantIds = DEFAULT_DATA }) => {
+export const getHoldingLocationsByTenants = async ({
+  ky,
+  instanceId,
+  /*
+    ECS mode:
+    `additionalTenantLocationIdsMap` is a map of tenantId to locationIds for ECS mode.
+    The format can be: { tenantId: [locationId1, locationId2] }
+    The purpose is that we need to fetch newly added locations when we select a location
+    from "Create new holdings for location" modal so that the value is displayed in the selection
+  */
+  additionalTenantLocationIdsMap = {},
+  receivingTenantIds = DEFAULT_DATA,
+}) => {
   const searchParams = {
     query: `instanceId==${instanceId}`,
     limit: LIMIT_MAX,
   };
 
+  if (!receivingTenantIds.length) {
+    return {
+      locations: DEFAULT_DATA,
+      locationIds: DEFAULT_DATA,
+      holdings: DEFAULT_DATA,
+    };
+  }
+
   const locationsRequest = receivingTenantIds.map(async (tenantId) => {
     const tenantKy = extendKyWithTenant(ky, tenantId);
 
-    return getHoldingLocations({ ky: tenantKy, searchParams, tenantId });
+    return getHoldingLocations({
+      ky: tenantKy,
+      searchParams,
+      tenantId,
+      additionalLocationIds: additionalTenantLocationIdsMap[tenantId],
+    });
   });
 
   const locationsResponse = await Promise.all(locationsRequest).then(responses => {
