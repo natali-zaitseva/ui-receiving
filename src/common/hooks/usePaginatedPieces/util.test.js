@@ -1,9 +1,9 @@
-import {
-  ITEMS_API,
-  SEARCH_API,
-} from '@folio/stripes-acq-components';
+import { ITEMS_API } from '@folio/stripes-acq-components';
 
-import { PIECE_REQUESTS_API } from '../../constants';
+import {
+  PIECE_REQUESTS_API,
+  TENANT_ITEMS_API,
+} from '../../constants';
 import {
   fetchConsortiumPieceItems,
   fetchLocalPieceItems,
@@ -23,6 +23,9 @@ const buildKyMock = (res) => ({
   get: jest.fn(() => ({
     json: () => Promise.resolve(res),
   })),
+  post: jest.fn(() => ({
+    json: () => Promise.resolve(res),
+  })),
 });
 
 describe('Paginated pieces utilities', () => {
@@ -38,13 +41,14 @@ describe('Paginated pieces utilities', () => {
   });
 
   describe('fetchConsortiumPieceItems', () => {
-    const kyMock = buildKyMock({ items });
+    const tenantId = 'tenantId';
+    const kyMock = buildKyMock({ tenantItems: items.map((item) => ({ item, tenantId })) });
 
     it('should fetch pieces items from the all related tenants', async () => {
       const result = await fetchConsortiumPieceItems(kyMock, { pieces });
 
-      expect(result).toEqual(items);
-      expect(kyMock.get).toHaveBeenCalledWith(`${SEARCH_API}/consortium/items`, expect.objectContaining({}));
+      expect(result).toEqual(items.map((item) => ({ ...item, tenantId })));
+      expect(kyMock.post).toHaveBeenCalledWith(TENANT_ITEMS_API, expect.objectContaining({}));
     });
   });
 
