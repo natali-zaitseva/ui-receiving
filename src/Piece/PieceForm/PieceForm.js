@@ -94,6 +94,7 @@ const PieceForm = ({
     isBound,
     isCreateItem,
     locationId,
+    holdingId,
     metadata,
     receivingStatus,
     receivingTenantId,
@@ -110,8 +111,15 @@ const PieceForm = ({
     return [];
   }, [receivingTenantId, poLine?.locations]);
 
-  const additionalLocationIds = locationId ? [locationId] : [];
-  const additionalTenantLocationIdsMap = receivingTenantId ? { [receivingTenantId]: additionalLocationIds } : {};
+  const additionalLocations = useMemo(() => {
+    const locationIds = locationId ? [locationId] : [];
+    const tenantLocationIdsMap = receivingTenantId ? { [receivingTenantId]: locationIds } : {};
+
+    return {
+      additionalLocationIds: locationIds,
+      additionalTenantLocationIdsMap: tenantLocationIdsMap,
+    };
+  }, [locationId, receivingTenantId]);
 
   const {
     locations,
@@ -121,8 +129,7 @@ const PieceForm = ({
     instanceId,
     receivingTenantIds,
     tenantId: receivingTenantId,
-    additionalLocationIds,
-    additionalTenantLocationIdsMap,
+    ...additionalLocations,
   });
 
   useEffect(() => {
@@ -142,10 +149,11 @@ const PieceForm = ({
   const [isClaimSendModalOpen, toggleClaimSendModal] = useModalToggle();
 
   const { protectCreate, protectUpdate, protectDelete } = restrictionsByAcqUnit;
+  const isEditMode = Boolean(id);
   const disabled = (initialValues.isCreateAnother && pristine) || hasValidationErrors;
   const isItemFieldsDisabled = !itemId && !isCreateItem;
   const isSaveAndCreateDisabled = disabled || protectUpdate || protectCreate;
-  const isSaveAndCloseDisabled = disabled || (protectUpdate && Boolean(id));
+  const isSaveAndCloseDisabled = disabled || (protectUpdate && isEditMode);
   const isEditDisabled = disabled || protectUpdate;
   const isOriginalItemDetailsVisible = Boolean(itemId && bindItemId && isBound);
   const itemDetailsAccordionLabelId = isOriginalItemDetailsVisible
@@ -162,10 +170,10 @@ const PieceForm = ({
   }, [change]);
 
   const onSave = useCallback(async (e) => {
-    const holdingId = getState().values?.holdingId;
+    const currentHoldingId = getState().values?.holdingId;
     const initialHoldingId = getState().initialValues?.holdingId;
 
-    const shouldCheckHoldingAbandonment = (id && initialHoldingId) && (holdingId !== initialHoldingId);
+    const shouldCheckHoldingAbandonment = (id && initialHoldingId) && (currentHoldingId !== initialHoldingId);
 
     if (shouldCheckHoldingAbandonment) {
       return checkHoldingAbandonment(initialHoldingId)
@@ -256,7 +264,7 @@ const PieceForm = ({
   const end = (
     <PieceFormActionButtons
       actionsDisabled={actionsDisabled}
-      isEditMode={Boolean(id)}
+      isEditMode={isEditMode}
       onCreateAnotherPiece={onCreateAnotherPiece}
       onClaimDelay={toggleClaimDelayModal}
       onClaimSend={toggleClaimSendModal}
@@ -350,7 +358,7 @@ const PieceForm = ({
                         poLine={poLine}
                         locationIds={locationIds}
                         locations={locations}
-                        isLocationsLoading={isFetching}
+                        isLocationsLoading={isEditMode && (!locationId || !holdingId) && isFetching}
                         setLocationValue={mutators.setLocationValue}
                         onChangeDisplayOnHolding={onChangeDisplayOnHolding}
                       />
